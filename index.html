@@ -154,7 +154,7 @@ function loadVideo(iframe) {
       console.log(videoNumber);
       var link = data.items[videoNumber].link;
       id = link.substr(link.indexOf("=") + 1);
-      iframe.setAttribute("src", "https://www.youtube.com/embed/" + id + "?controls=0&autoplay=1");
+      iframe.setAttribute("src", "https://www.youtube.com/embed/" + id + "?controls=0&autoplay=0");
     }
   );
 }
