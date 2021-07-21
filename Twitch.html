@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Jason Media Group</title>
+<title>Twitch</title>
 <link rel="icon" href="https://yt3.ggpht.com/ytc/AAUvwngbn3KSSWZ8IBFBSaCzRYMKrzxFFvfqrX7dSMr1=s48-c-k-c0x00ffffff-no-rj"/>
 <style>
 * {
@@ -124,56 +124,42 @@ body {
     <a href="index.html">Jason Media Group</a>
   </div>
   <div class="header">
-    <h1>Jason media group</h1>
-    <p>Youtuber and game developer</p>
+    <h1>Twitch</h1>
   </div>
-
   <div class="navbar">
-    <a href="BDStudio.html">Bullet Drop</a>
+
   </div>
-
-
-
-<center><h1>TEST5</h1>
-
-  <script src="https://apis.google.com/js/platform.js"></script>
-  <div class="g-ytsubscribe" data-channelid="UC-T36SdSiyLIG9UGU8eWKTg" data-layout="full" data-theme="dark" data-count="default"></div>
-
 <br>
-<br>
-<center><a href="https://discord.gg/qy58Upzxxf" target="_blank"><img src="joinDiscord.png" alt="Join our discord"></a></center>
-<br>
-<br>
-<center>
-<a href="Twitch.html"><img src="TwitchBannerLogo.png" alt="Join our discord"></a>
-<!-- put youtube and twitch buttons here -->
-</center>
 <br>
 <br>
 
+<!-- Add a placeholder for the Twitch embed -->
+    <div id="twitch-embed"></div>
 
-<iframe class="latestVideoEmbed" vnum='0' cid="UC-T36SdSiyLIG9UGU8eWKTg" width="600" height="340" frameborder="0" allowfullscreen></iframe>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script>
-var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
-function loadVideo(iframe) {
-  $.getJSON(reqURL + iframe.getAttribute('cid'),
-    function(data) {
-      var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
-      console.log(videoNumber);
-      var link = data.items[videoNumber].link;
-      id = link.substr(link.indexOf("=") + 1);
-      iframe.setAttribute("src", "https://www.youtube.com/embed/" + id + "?controls=1&autoplay=0");
-    }
-  );
-}
-var iframes = document.getElementsByClassName('latestVideoEmbed');
-for (var i = 0, len = iframes.length; i < len; i++) {
-  loadVideo(iframes[i]);
-}
-</script>
+    <!-- Load the Twitch embed script -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
 
-</center>
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element. -->
+    <script type="text/javascript">
+      var embed = new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "Tracer755",
+        layout: "video",
+        autoplay: false,
+        // Only needed if this page is going to be embedded on other websites
+        parent: ["www.jasonmediagroup.com/Twitch.html", "othersite.example.com"]
+      });
+
+      embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+        var player = embed.getPlayer();
+        player.play();
+      });
+    </script>
+
+
+
+
 
 </body>
 </html>
