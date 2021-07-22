@@ -133,7 +133,20 @@ body {
 <br>
 <br>
 <iframe src="https://player.twitch.tv/?channel=tracer755&parent=www.jasonmediagroup.com" frameborder="0" allowfullscreen="true" scrolling="no" height="400" width="620"></iframe>
-
+<h1>Devide</h1>
+<script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+<div id="<player div ID>"></div>
+<script type="text/javascript">
+  var options = {
+    width: <width>,
+    height: <height>,
+    channel: "tracer755",
+    // only needed if your site is also embedded on embed.example.com and othersite.example.com
+    parent: "www.jasonmediagroup.com"
+  };
+  var player = new Twitch.Player("<player div ID>", options);
+  player.setVolume(0.5);
+</script>
 
 
 </body>
