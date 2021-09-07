@@ -5,7 +5,9 @@ body {
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 800;
 }
-
+header {
+  background: #141414;
+}
 .container {
 	width: 80%;
 	margin: 0 auto;
