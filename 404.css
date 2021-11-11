@@ -39,6 +39,9 @@ h2{
   text-shadow: 0px 0px 4px #12000a;
   animation: fadeInText 3s ease-in 3.5s forwards, flicker4 5s linear 7.5s infinite, hueRotate 6s ease-in-out 3s infinite;
 }
+h2:hover a {
+	color: pink;
+}
 
 #svgWrap_1,
 #svgWrap_2{
