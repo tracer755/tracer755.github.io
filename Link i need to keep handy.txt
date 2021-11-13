@@ -1,1 +1,5 @@
-Discord invite link : https://discord.gg/qy58Upzxxf
+Discord invite link : https://discord.gg/qy58Upzxxf (Moon server)
+
+Bot Website redirect oauth2 link : https://discord.com/oauth2/authorize?client_id=883408360580476969&permissions=8&redirect_uri=https%3A%2F%2Fwww.jasonmediagroup.com%2FMelodicaJoin.html&scope=bot&response_type=code
+
+
