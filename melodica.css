@@ -1,1 +1,14 @@
+.botinvitebtn {
+  background-color: #5865f2;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: 0.3s;
+}
 
+.botinvitebtn:hover {background-color : #1224ed}
