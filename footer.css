@@ -127,11 +127,13 @@ p.hovertext:hover{
 }
 a.hovertext{
     color:#41b0ec;
+        text-decoration: none;
     transition: 0.4s;
 }
 
 a.hovertext:hover{
     color:#417dec;
+        text-decoration: none;
 }
 br.footer-copyright {
     line-height: 59px;
