@@ -7,8 +7,36 @@
   display: inline-block;
   margin: 4px 2px;
   cursor: pointer;
+  border-radius: 21px;
+  transition: 0.3s;
+}
+
+.botinvitebtn:hover {
+    background-color : #4150f1;
+    transform:scale(1.05,1.05);
+    -webkit-transform:scale(1.05,1.05);
+    -moz-transform:scale(1.05,1.05);
+    border-radius: 24px;
+}
+
+.botinvitebtnwhite {
+  background-color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
   border-radius: 16px;
   transition: 0.3s;
 }
 
-.botinvitebtn:hover {background-color : #1224ed}
+.botinvitebtnwhite:hover {
+    background-color: #e3e3e3;
+    transform:scale(1.1,1.1);
+    -webkit-transform:scale(1.1,1.1);
+    -moz-transform:scale(1.1,1.1);
+    border-radius: 24px;
+    position:relative; top:-0.5px; left:-0.5px;
+}
