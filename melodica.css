@@ -49,16 +49,22 @@ body {
 
 .featurebox{
   background-color: black;
-  border: 4px solid black;
+  border: 5px solid #AD91FF;
   margin: auto;  
   padding: 20px;
-border-radius: 10px;
+border-radius: 15px;
         height: 280 !important;
     width: 332 !important;
     max-height: 280 !important;
     max-width: 332 !important;
 flex: 1;
+    transition: 0.3s;
 }
+.featurebox:hover{
+    background-color: #333333;
+}
+
+
 .featuretitle{
     
     font-size: 28px !important;
@@ -69,7 +75,10 @@ flex: 1;
 
 .featuredesc{
       text-align: left;
+    font-size: 18px;
+    font-weight: 600 !important;
     color: #c2c2c2 !important
+        
 }
 
 .features {
@@ -98,7 +107,6 @@ flex: 1;
 }
 
 .subtitle {
-    color: rgba(255, 255, 255, 0.685) !important;
-    font-size: 16px !important;
+    font-size: 20px !important;
     font-family: 'Lato', sans-serif;
 }
