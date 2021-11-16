@@ -1,0 +1,10 @@
+.rotated-image {
+    transition: 0.3s;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg)
+}
+.normal-image{
+      transition: 0.3s;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg)
+}
