@@ -107,12 +107,19 @@ br.mobilehide{
     display: none;
 }
 
+img.status{
+    width: 60%;
+}
+
 @media (min-width: 700px) {
    .flex-container {
         flex-direction: row;
     } 
     br.mobilehide{
         display: initial;
+    }
+    img.status{
+     width: 22%;   
     }
 }
 
