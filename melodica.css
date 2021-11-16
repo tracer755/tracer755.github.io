@@ -100,7 +100,15 @@ flex: 1;
 }
 .flex-container {
     display: flex;
+  flex-direction: column;
 }
+
+@media (min-width: 700px) {
+   .flex-container {
+        flex-direction: row;
+    } 
+}
+
 .title {
     font-size: 40px !important;
     line-height: 70px !important;
