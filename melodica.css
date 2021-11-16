@@ -110,3 +110,8 @@ flex: 1;
     font-size: 20px !important;
     font-family: 'Lato', sans-serif;
 }
+.circle{
+    border-radius: 100%; /* or 50% */
+
+    background-color: black;
+}
