@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Melodica's Commands Documentation</title>
     <meta property="og:site_name" content="Melodica's Commands">
-    <meta content="Melodica's Commands - A higly detailed Documentation" property="og:title" />
-    <meta content="Find documentation on all of the commands, fetures, and services Melodica  supports and cech what ways users can use commands." property="og:description" />
+    <meta content="Melodica's Commands - A highly detailed Documentation" property="og:title" />
+    <meta content="Find documentation on all of the commands, fetures, and services Melodica  supports and ways users can use commands." property="og:description" />
     <meta content="Https://www.jasonmediagroup.com/Melodica/Commands" property="og:url" />
     <meta content="https://www.jasonmediagroup.com/Melodica_Logo.png" property="og:image" />
     <meta content="#e34e3b" data-react-helmet="true" name="theme-color" />
@@ -61,19 +61,162 @@
       <br><br><br><br>
     
     
-
-<center>
-    <div>
-    <button onclick="myFunction('arw1')" class="collapsible" ><h4><img id="arw1" src="arrow1.png" class="arrow" width="20" height="30">   -Play <p style="color: grey">[Test] </p></h4></button>
-<div class="content">
-  <p style="color: white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-
-    </div>
-    </center>
+    <!-- Template for the help dropdown-->
     
-    <br><br><br><br><br>
+    <!--
+    <div style="padding: 6px; ">
+    <button onclick="myFunction('arw1')" class="collapsible" ><img id="arw1" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -Play </h4>
+        <h4 style="color: grey; position:relative; left:6px;">[Link]</h4>
+        </div>
+        </button>
+<div class="content">
+<p></p>
+  <p style="color: white;" align="left">Takes the input link and adds the song to the queue, if there is no song currently playing it will start playing the song.</p>
+    <p style="color: white" align="left">Aliases: p</p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -play </p>
+</div>
+    </div>-->
+    
+    <!--For the arrow rotation to work you need to change the id a non existing arw id-->
+    
+    
+    
+    
+    
+<div>
+<center>
+    <div style="padding: 6px; ">
+    <button onclick="myFunction('arw1')" class="collapsible" ><img id="arw1" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -Play </h4>
+        <h4 style="color: grey; position:relative; left:6px;">[Link]</h4>
+        </div>
+        </button>
+<div class="content">
+    <p></p>
+  <p style="color: white;" align="left">Takes the input link and adds the song to the queue, if there is no song currently playing it will start playing the song.</p>
+    <p style="color: white" align="left">Aliases: p</p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -play <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" style="color: white"> https://www.youtube.com/watch?v=dQw4w9WgXcQ</a></p>
+</div>
+    </div>
+    
 
+        <div style="padding: 6px; ">
+    <button onclick="myFunction('arw2')" class="collapsible" ><img id="arw2" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -Queue </h4>
+        <h4 style="color: grey; position:relative; left:6px;"></h4>
+        </div>
+        </button>
+<div class="content">
+    <p></p>
+  <p style="color: white;" align="left">Sends a message with the current queue.</p>
+    <p style="color: white" align="left"></p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -queue  |  -queue [pagenum]</p>
+</div>
+    </div>
+    
+    
+            <div style="padding: 6px; ">
+    <button onclick="myFunction('arw3')" class="collapsible" ><img id="arw3" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -Skip </h4>
+        <h4 style="color: grey; position:relative; left:6px;"></h4>
+        </div>
+        </button>
+<div class="content">
+    <p></p>
+  <p style="color: white;" align="left">Skips to the next song in queue.</p>
+    <p style="color: white" align="left"></p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -skip</p>
+</div>
+    </div>
+    
+    
+                <div style="padding: 6px; ">
+    <button onclick="myFunction('arw4')" class="collapsible" ><img id="arw4" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -Back </h4>
+        <h4 style="color: grey; position:relative; left:6px;"></h4>
+        </div>
+        </button>
+<div class="content">
+    <p></p>
+  <p style="color: white;" align="left">Skips to the previous song in queue.</p>
+    <p style="color: white" align="left"></p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -back</p>
+</div>
+    </div>
+    
+                <div style="padding: 6px; ">
+    <button onclick="myFunction('arw5')" class="collapsible" ><img id="arw5" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -Clear </h4>
+        <h4 style="color: grey; position:relative; left:6px;"></h4>
+        </div>
+        </button>
+<div class="content">
+    <p></p>
+  <p style="color: white;" align="left">Removes all tracks from queue and stopping any currently playing track.</p>
+    <p style="color: white" align="left"></p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -clear</p>
+</div>
+    </div>
+    
+    
+                <div style="padding: 6px; ">
+    <button onclick="myFunction('arw6')" class="collapsible" ><img id="arw6" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -Jump </h4>
+        <h4 style="color: grey; position:relative; left:6px;"></h4>
+        </div>
+        </button>
+<div class="content">
+    <p></p>
+  <p style="color: white;" align="left">Skips to the specified track.</p>
+    <p style="color: white" align="left"></p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -Jump [trackid]</p>
+</div>
+    </div>
+    
+    
+    
+    </center>
+    </div>
+    <br><br><br><br><br>
+<script>
+        let latch = 1;
+    var queryString = window.location.search.substr(1);
+    
+    if(queryString === ""){
+        alert("empty");
+        latch = 0;
+    }
+    if(latch === 1){
+    var commandFiler = "";
+        
+        commandFiler = queryString.split("&")[0].split("=")[1];
+    
+
+        if(queryString.includes("catagory=")){
+                
+        }
+
+
+    }
+        
+    </script>
+    
+    
 
 <script>
 var coll = document.getElementsByClassName("collapsible");
@@ -92,9 +235,7 @@ for (i = 0; i < coll.length; i++) {
     } 
   });
 }
-    
 
-    
     
 </script>
       
