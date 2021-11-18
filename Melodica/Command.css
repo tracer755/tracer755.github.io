@@ -1,3 +1,8 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
 .collapsible {
   background-color: #2f3237;
   color: white;
@@ -9,7 +14,7 @@
   outline: none;
   font-size: 15px;
   border-radius: 5px;
-  width: 60%;
+  width: 80%;
   text-shadow: 0.5px 0.5px 1px #000000;
   box-shadow: 1px 1px 2px #000000;
   
@@ -22,7 +27,7 @@
   transition: max-height 0.2s ease-out;
   background-color: #2f3237;
   position:relative; top:-12px;
-  width: 60%; 
+  width: 80%; 
     background-color: #2a2d32;
   border-color: #2f3237; 
   border-style: solid;
@@ -31,6 +36,17 @@
     
   
 }
+
+@media (min-width: 700px) {
+    .content{
+        width: 60%;
+    }
+    .collapsible{
+        width: 60%;
+    }
+}
+
+
 .rotated-image {
     transition: 0.2s;
   -webkit-transform: rotate(90deg);

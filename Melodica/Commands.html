@@ -58,7 +58,11 @@
     </div>
   </div>
 </nav>
-      <br><br><br><br>
+    <br><br><br><br>
+    <!--Premium command star-->
+    <!--  
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" style="color: #fc8af9; fill: currentColor; float: right !important; position:relative; top:-5px;" width=40px ><path d="M38.2 9.7l5.3 16.2c.3 1 1.2 1.6 2.2 1.6h17c2.3 0 3.2 2.9 1.4 4.2l-13.8 10c-.8.6-1.2 1.6-.8 2.6l5.3 16.2c.7 2.1-1.8 3.9-3.6 2.6l-13.8-10c-.8-.6-1.9-.6-2.7 0l-13.8 10c-1.8 1.3-4.3-.5-3.6-2.6l5.3-16.2c.3-1 0-2-.8-2.6L8 31.7c-1.8-1.3-.9-4.2 1.4-4.2h17c1 0 1.9-.6 2.2-1.6l5.3-16.2c.6-2.1 3.6-2.1 4.3 0z"></path></svg> 
+-->
     
     
     <!-- Template for the help dropdown-->
@@ -88,6 +92,25 @@
     
 <div>
 <center>
+    
+                    <div style="padding: 6px; ">
+    <button onclick="myFunction('arw17')" class="collapsible" ><img id="arw17" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -Join </h4>
+        <h4 style="color: grey; position:relative; left:6px;"></h4>
+        </div>
+        </button>
+<div class="content">
+    <p></p>
+  <p style="color: white;" align="left">Joins the bot to your current voice channel.</p>
+    <p style="color: white" align="left">This command is required to run most other commands.</p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -join</p>
+</div>
+    </div>
+    
+    
+    
     <div style="padding: 6px; ">
     <button onclick="myFunction('arw1')" class="collapsible" ><img id="arw1" src="arrow1.png" class="arrow" width="20" height="30" align="left">
         <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
@@ -98,9 +121,25 @@
 <div class="content">
     <p></p>
   <p style="color: white;" align="left">Takes the input link and adds the song to the queue, if there is no song currently playing it will start playing the song.</p>
-    <p style="color: white" align="left">Aliases: p</p>
+    <p style="color: white" align="left">Aliases: -p</p>
     <hr size="4" width="95%" style="color: #757c8a"> 
     <p style="color: white">Example: -play <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" style="color: white"> https://www.youtube.com/watch?v=dQw4w9WgXcQ</a></p>
+</div>
+    </div>
+    
+                <div style="padding: 6px; ">
+    <button onclick="myFunction('arw11')" class="collapsible" ><img id="arw11" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -Disconnect </h4>
+        <h4 style="color: grey; position:relative; left:6px;"></h4>
+        </div>
+        </button>
+<div class="content">
+    <p></p>
+  <p style="color: white;" align="left">Disconnects the bot from the current voice chanel and clear the server queue.</p>
+    <p style="color: white" align="left">Aliases: -dc -leave</p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -disconnect -dc -leave</p>
 </div>
     </div>
     
@@ -176,17 +215,172 @@
     <button onclick="myFunction('arw6')" class="collapsible" ><img id="arw6" src="arrow1.png" class="arrow" width="20" height="30" align="left">
         <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
         <h4> -Jump </h4>
-        <h4 style="color: grey; position:relative; left:6px;"></h4>
+        <h4 style="color: grey; position:relative; left:6px;"> [track position]</h4>
         </div>
         </button>
 <div class="content">
     <p></p>
   <p style="color: white;" align="left">Skips to the specified track.</p>
-    <p style="color: white" align="left"></p>
+    <p style="color: white" align="left"> You can use -queue to find the trackid's</p>
     <hr size="4" width="95%" style="color: #757c8a"> 
     <p style="color: white">Example: -Jump [trackid]</p>
 </div>
     </div>
+    
+    
+                <div style="padding: 6px; ">
+    <button onclick="myFunction('arw7')" class="collapsible" ><img id="arw7" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -Looping </h4>
+        <h4 style="color: grey; position:relative; left:6px;"></h4>
+        </div>
+        </button>
+<div class="content">
+    <p></p>
+  <p style="color: white;" align="left">Toggles looping the server queue.</p>
+    <p style="color: white" align="left"></p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -looping | -looping [on/off]</p>
+</div>
+    </div>
+    
+                <div style="padding: 6px; ">
+    <button onclick="myFunction('arw8')" class="collapsible" ><img id="arw8" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -Pause </h4>
+        <h4 style="color: grey; position:relative; left:6px;"></h4>
+        </div>
+        </button>
+<div class="content">
+    <p></p>
+  <p style="color: white;" align="left">Pauses the curently playing song</p>
+    <p style="color: white" align="left"></p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -pause</p>
+</div>
+    </div>
+    
+    
+                <div style="padding: 6px; ">
+    <button onclick="myFunction('arw9')" class="collapsible" ><img id="arw9" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -Unpause </h4>
+        <h4 style="color: grey; position:relative; left:6px;"></h4>
+        </div>
+        </button>
+<div class="content">
+    <p></p>
+  <p style="color: white;" align="left">Unpauses the curently paused track.</p>
+    <p style="color: white" align="left">You can also use the play command to unpause the track</p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -unpause</p>
+</div>
+    </div>
+    
+    
+                <div style="padding: 6px; ">
+    <button onclick="myFunction('arw10')" class="collapsible" ><img id="arw10" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -Remove </h4>
+        <h4 style="color: grey; position:relative; left:6px;"> [Track Position]</h4>
+        </div>
+        </button>
+<div class="content">
+    <p></p>
+  <p style="color: white;" align="left">Removes the specified track from the queue.</p>
+    <p style="color: white" align="left"></p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -remove [Track ID]</p>
+</div>
+    </div>
+    
+                <div style="padding: 6px; ">
+    <button onclick="myFunction('arw12')" class="collapsible" ><img id="arw12" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -Shuffle </h4>
+        <h4 style="color: grey; position:relative; left:6px;"></h4>
+        </div>
+        </button>
+<div class="content">
+    <p></p>
+  <p style="color: white;" align="left">Toggles the server shuffle. On every song change a random song is selected.</p>
+    <p style="color: white" align="left">This does not affect the -jump command</p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -shuffle | -shuffle [on/off]</p>
+</div>
+    </div>
+    
+    
+                <div style="padding: 6px; ">
+    <button onclick="myFunction('arw13')" class="collapsible" ><img id="arw13" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" style="color: #fc8af9; fill: currentColor; float: right !important; position:relative; top:-5px;" width=40px ><path d="M38.2 9.7l5.3 16.2c.3 1 1.2 1.6 2.2 1.6h17c2.3 0 3.2 2.9 1.4 4.2l-13.8 10c-.8.6-1.2 1.6-.8 2.6l5.3 16.2c.7 2.1-1.8 3.9-3.6 2.6l-13.8-10c-.8-.6-1.9-.6-2.7 0l-13.8 10c-1.8 1.3-4.3-.5-3.6-2.6l5.3-16.2c.3-1 0-2-.8-2.6L8 31.7c-1.8-1.3-.9-4.2 1.4-4.2h17c1 0 1.9-.6 2.2-1.6l5.3-16.2c.6-2.1 3.6-2.1 4.3 0z"></path></svg>
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -247 </h4>
+        <h4 style="color: grey; position:relative; left:6px;"></h4>
+        
+        </div>
+        </button>
+<div class="content">
+    <p></p>
+  <p style="color: white;" align="left">Toggles 247 mode which disables automatic inactivity-based disconnects.</p>
+    <p style="color: #fc8af9" align="left">This is a premium command.</p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -247</p>
+</div>
+    </div>
+    
+                    <div style="padding: 6px; ">
+    <button onclick="myFunction('arw14')" class="collapsible" ><img id="arw14" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" style="color: #fc8af9; fill: currentColor; float: right !important; position:relative; top:-5px;" width=40px ><path d="M38.2 9.7l5.3 16.2c.3 1 1.2 1.6 2.2 1.6h17c2.3 0 3.2 2.9 1.4 4.2l-13.8 10c-.8.6-1.2 1.6-.8 2.6l5.3 16.2c.7 2.1-1.8 3.9-3.6 2.6l-13.8-10c-.8-.6-1.9-.6-2.7 0l-13.8 10c-1.8 1.3-4.3-.5-3.6-2.6l5.3-16.2c.3-1 0-2-.8-2.6L8 31.7c-1.8-1.3-.9-4.2 1.4-4.2h17c1 0 1.9-.6 2.2-1.6l5.3-16.2c.6-2.1 3.6-2.1 4.3 0z"></path></svg>
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -Download </h4>
+        <h4 style="color: grey; position:relative; left:6px;"></h4>
+        
+        </div>
+        </button>
+<div class="content">
+    <p></p>
+  <p style="color: white;" align="left">Sends the currently playing song as an mp3 to the channel the user used the command in.</p>
+    <p style="color: #fc8af9" align="left">This is a premium command</p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -download</p>
+</div>
+    </div>
+    
+    
+                    <div style="padding: 6px; ">
+    <button onclick="myFunction('arw15')" class="collapsible" ><img id="arw15" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -Search </h4>
+        <h4 style="color: grey; position:relative; left:6px;">[query]</h4>
+        </div>
+        </button>
+<div class="content">
+    <p></p>
+  <p style="color: white;" align="left">Searches the query on youtube and return a track to the queue.</p>
+    <p style="color: white" align="left">This command limits the track legnth to 1hr 30min it does give the command to get the longer track.</p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -search [query]</p>
+</div>
+    </div>
+    
+    
+                    <div style="padding: 6px; ">
+    <button onclick="myFunction('arw16')" class="collapsible" ><img id="arw16" src="arrow1.png" class="arrow" width="20" height="30" align="left">
+        <div style="display: flex; flex-wrap: wrap; position:relative; left:10px;">
+        <h4> -Stop </h4>
+        <h4 style="color: grey; position:relative; left:6px;"></h4>
+        </div>
+        </button>
+<div class="content">
+    <p></p>
+  <p style="color: white;" align="left">Stops the currently plying track.</p>
+    <p style="color: white" align="left"></p>
+    <hr size="4" width="95%" style="color: #757c8a"> 
+    <p style="color: white">Example: -stop</p>
+</div>
+    </div>
+    
     
     
     
