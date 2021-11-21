@@ -57,3 +57,9 @@ body {
   -webkit-transform: rotate(0deg);
   transform: rotate(0deg)
 }
+.bg-blurple {
+  --bg-opacity: 1;
+  background-color: #7289DA;
+  background-color: rgba(114, 137, 218, var(--bg-opacity));
+}
+
