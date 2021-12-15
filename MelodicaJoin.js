@@ -2,13 +2,13 @@
 var colors = ['#5865F2', '#505cde'];
 
 // do this for 30 seconds
-var duration = 2.5 * 1000;
+var duration = 2.2 * 1000;
 var end = Date.now() + duration;
 
 (function frame() {
   // launch a few confetti from the left edge
   confetti({
-    particleCount: 5,
+    particleCount: 4,
     angle: 60,
     spread: 65,
     origin: { x: 0 },
@@ -18,7 +18,7 @@ var end = Date.now() + duration;
   });
   // and launch a few from the right edge
   confetti({
-    particleCount: 5,
+    particleCount: 4,
     angle: 120,
     spread: 65,
     origin: { x: 1 },
