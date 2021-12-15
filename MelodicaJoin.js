@@ -9,7 +9,7 @@ if(check){
 }
 else if (!check){
     particles = 1;
-    duration = 2.1 * 1000;
+    duration = 1 * 1000;
 }
 var colors = ['#5865F2', '#505cde'];
 
