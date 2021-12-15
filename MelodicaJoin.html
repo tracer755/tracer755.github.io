@@ -141,10 +141,16 @@
         var myCanvas = document.createElement('canvas');
 document.appendChild(myCanvas);
 
-var myConfetti = confetti.create(myCanvas, {
+var myConfetti1 = confetti.create(myCanvas, {
   resize: true,
-  useWorker: true
+  useWorker: true,
+  particleCount: 2,
+  angle: 60,
+  spread: 55,
+  origin: { x: 0 },
+  colors: colors
 });
+
 
 
 var end = Date.now() + (15 * 150);
