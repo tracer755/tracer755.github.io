@@ -144,13 +144,13 @@ document.appendChild(myCanvas);
 var colors = ['#5865F2'];
 
 var myConfetti1 = confetti.create(myCanvas, {
-  resize: true,
-  useWorker: true,
   particleCount: 150,
   angle: 60,
   spread: 55,
   origin: { x: 0, y: 60},
-  colors: colors
+  colors: colors,
+  resize: true,
+  useWorker: true
 });
 
 
