@@ -145,12 +145,33 @@ var myConfetti = confetti.create(myCanvas, {
   resize: true,
   useWorker: true
 });
-myConfetti({
-  particleCount: 100,
-  spread: 160
-  // any other options from the global
-  // confetti function
-});
+
+
+var end = Date.now() + (15 * 150);
+
+// go Buckeyes!
+var colors = ['#5865F2'];
+
+(function frame() {
+  confetti({
+    particleCount: 2,
+    angle: 60,
+    spread: 55,
+    origin: { x: 0 },
+    colors: colors
+  });
+  confetti({
+    particleCount: 2,
+    angle: 120,
+    spread: 55,
+    origin: { x: 1 },
+    colors: colors
+  });
+
+  if (Date.now() < end) {
+    requestAnimationFrame(frame);
+  }
+}());
     </script>
 </body>
 </html>
