@@ -12,7 +12,9 @@ var end = Date.now() + duration;
     angle: 60,
     spread: 65,
     origin: { x: 0 },
-    colors: colors
+    colors: colors,
+    resize: true,
+    useWorker: true
   });
   // and launch a few from the right edge
   confetti({
@@ -20,7 +22,9 @@ var end = Date.now() + duration;
     angle: 120,
     spread: 65,
     origin: { x: 1 },
-    colors: colors
+    colors: colors,
+    resize: true,
+    useWorker: true
   });
 
   // keep going until we are out of time
