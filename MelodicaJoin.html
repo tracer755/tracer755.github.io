@@ -61,8 +61,19 @@
 
     <!--Confetti script-->
     <script>
+        var myCanvas = document.createElement('canvas');
+document.appendChild(myCanvas);
 
-        confetti();
+var myConfetti = confetti.create(myCanvas, {
+  resize: true,
+  useWorker: true
+});
+myConfetti({
+  particleCount: 100,
+  spread: 160
+  // any other options from the global
+  // confetti function
+});
     </script>
 
     <!--Footer will not sync with other pages going to look into this.-->
