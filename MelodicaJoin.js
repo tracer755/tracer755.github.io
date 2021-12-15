@@ -4,10 +4,10 @@ let check = false;
     var particles = 0;
     var duration = 2.1 * 1000;
 
-if(check){
+if(!check){
     particles = 2;
 }
-else if (!check){
+else if (check){
     particles = 1;
     duration = 1 * 1000;
 }
