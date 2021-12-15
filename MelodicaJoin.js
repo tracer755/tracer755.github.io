@@ -8,9 +8,9 @@ var end = Date.now() + duration;
 (function frame() {
   // launch a few confetti from the left edge
   confetti({
-    particleCount: 3,
+    particleCount: 2,
     angle: 60,
-    spread: 65,
+    spread: 75,
     origin: { x: 0 },
     colors: colors,
     resize: true,
@@ -18,9 +18,9 @@ var end = Date.now() + duration;
   });
   // and launch a few from the right edge
   confetti({
-    particleCount: 3,
+    particleCount: 2,
     angle: 120,
-    spread: 65,
+    spread: 75,
     origin: { x: 1 },
     colors: colors,
     resize: true,
