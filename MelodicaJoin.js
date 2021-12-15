@@ -20,7 +20,7 @@ var end = Date.now() + duration;
 (function frame() {
   // launch a few confetti from the left edge
   confetti({
-    particleCount: 2,
+    particleCount: particles,
     angle: 60,
     spread: 75,
     origin: { x: 0 },
@@ -30,7 +30,7 @@ var end = Date.now() + duration;
   });
   // and launch a few from the right edge
   confetti({
-    particleCount: 2,
+    particleCount: particles,
     angle: 120,
     spread: 75,
     origin: { x: 1 },
