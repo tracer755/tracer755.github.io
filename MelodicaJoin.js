@@ -23,3 +23,4 @@ var colors = ['#5865F2'];
     requestAnimationFrame(frame);
   }
 }());
+frame();
