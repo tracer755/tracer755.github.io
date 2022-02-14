@@ -117,7 +117,24 @@ An incredibly easy to use music bot for Discord that doesn't skip on features. S
     </center>
     <br><br><br><br><br><br><br><br><br><br><br>
 
-    
+    <script>
+var url = "https://discordbotlist.com/api/v1/bots/883408360580476969";
+
+var xhr = new XMLHttpRequest();
+xhr.open("GET", url);
+
+xhr.onreadystatechange = function () {
+   if (xhr.readyState === 4) {
+      console.log(xhr.status);
+      console.log(xhr.responseText);
+   }};
+
+xhr.send();
+
+    </script>
+
+
+
 
 
     <footer id="footer" class="footer-1">
