@@ -146,6 +146,11 @@ An incredibly easy to use music bot for Discord that doesn't skip on features. S
 
 
     <script>
+loadData();
+var t=setInterval(loadData,20000);
+
+
+function loadData(){
       var url = "https://discordbotlist.com/api/v1/bots/883408360580476969";
       
       var xhr = new XMLHttpRequest();
@@ -171,6 +176,7 @@ An incredibly easy to use music bot for Discord that doesn't skip on features. S
       document.getElementById("vccounttext").textContent = vccount.toString();
       
     }, 350);
+}
           </script>
     
 
