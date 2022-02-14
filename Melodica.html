@@ -165,7 +165,7 @@ An incredibly easy to use music bot for Discord that doesn't skip on features. S
       const vccount = JSON.parse(xhr.responseText).stats.voice_connections.toString();
       
       
-      document.getElementById("usercounttext").innerHTML = users;
+      document.getElementById("usercounttext").textContent = users.toString();
       
       
           </script>
