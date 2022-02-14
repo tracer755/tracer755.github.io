@@ -117,36 +117,35 @@ An incredibly easy to use music bot for Discord that doesn't skip on features. S
     </center>
     <br><br><br><br><br><br><br><br><br><br><br>
 
+
+
     <script>
-var url = "https://discordbotlist.com/api/v1/bots/883408360580476969";
-
-var xhr = new XMLHttpRequest();
-xhr.open("GET", url);
-
-xhr.onreadystatechange = function () {
-   if (xhr.readyState === 4) {
-      console.log(xhr.status);
-      console.log(xhr.responseText);
-   }};
-
-xhr.send();
-
-   xhr.responseText.getElementById("stats").innerHTML = obj.stats;
-
-   console.log("----");
-   console.log(obj.stats);
-
-let users = JSON.parse(xhr.responseText).stats.users;
-let servers = JSON.parse(xhr.responseText).stats.guilds;
-let vc = JSON.parse(xhr.responseText).stats.voice_connections;
-
-Console.log(JSON.parse(xhr.responseText).stats.users + " - " + JSON.parse(xhr.responseText).stats.guilds + " - " + JSON.parse(xhr.responseText).stats.voice_connections);
-
-
-    </script>
-
-
-
+      var url = "https://discordbotlist.com/api/v1/bots/883408360580476969";
+      
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", url);
+      
+      xhr.onreadystatechange = function () {
+         if (xhr.readyState === 4) {
+            console.log(xhr.status);
+            console.log(xhr.responseText);
+         }};
+      
+      xhr.send();
+           
+              
+      setTimeout(() => {
+      const guilds = JSON.parse(xhr.responseText).stats.guilds.toString();
+      const users = JSON.parse(xhr.responseText).stats.users.toString();
+      const vccount = JSON.parse(xhr.responseText).stats.voice_connections.toString();
+      
+      
+      alert(guilds + " - " + users + " - " + vccount);
+      }, 350);
+      
+      
+          </script>
+    
 
 
     <footer id="footer" class="footer-1">
