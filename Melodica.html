@@ -136,6 +136,11 @@ xhr.send();
    console.log("----");
    console.log(obj.stats);
 
+let users = JSON.parse(xhr.responseText).stats.users;
+let servers = JSON.parse(xhr.responseText).stats.guilds;
+let vc = JSON.parse(xhr.responseText).stats.voice_connections;
+
+
 
     </script>
 
