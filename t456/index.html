@@ -53,7 +53,7 @@
   <!--Page Header start-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html"><img class="circle" src="Img/MainLogo.png" alt="Melodica logo" width="75" height="75"></a>
+      <a class="navbar-brand" href="index.html"><img class="circle" src="Img/MainLogo.png" alt="TroopLogo" width="75" height="75"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -77,18 +77,18 @@
           <li class="nav-item">
             <h2 class="nav-link" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><h2 style="font-family: "Lucida Console", "Courier New", monospace;">Pictures</h2></a>
+          <li id="picturesLink" class="nav-item" style="display: none;">
+            <a class="nav-link" href="pictures.html"><h2 style="font-family: "Lucida Console", "Courier New", monospace;">Pictures</h2></a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <div class="g-signin2" data-onsuccess="onSignIn" id="loginButton"></div>
 
-            <h2  id="loginNameText">N/A</h2>
+            <h2 id="loginNameText" style="display: none;">N/A</h2>
           </li>
           <li class="nav-item">
-            <img src="" alt="User icon" width="50" height="50" style="border-radius: 50%;" id="loginUserIcon">
+            <img src="" alt="User icon" width="50" height="50" style="border-radius: 50%; display: none;" id="loginUserIcon">
           </li>
         </ul>
       </div>
@@ -98,15 +98,15 @@
 
 <br><br>
 <!--Login alert-->
-<div class="alert success" id="alertSuccess">
+<div class="alert success" id="alertSuccess" style="opacity: 0">
   <span class="closebtn">&times;</span>
-  <strong>Success!</strong> Indicates a successful or positive action.
+  <center><strong>Success!</strong> Login was successful</center>
 </div>
 
 
-<div class="alert warning" id="alertFail">
+<div class="alert warning" id="alertFail" style="opacity: 0">
   <span class="closebtn">&times;</span>
-  <strong>Warning!</strong> Indicates a warning that might need attention.
+  <center><strong>Warning!</strong> Either An error has occoured or you are trying to interact with something you not supposed to.</center>
 </div>
 <p></p>
 
@@ -139,22 +139,35 @@ return;
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
 
-
+  let latch = true;
 
   axios.get('https://troop456loginapinodejs.herokuapp.com/email:' + profile.getEmail())
     .then(response => {
       console.log(response.data);
       if(response.data == "error"){
         console.log("Error / 404");
+        document.getElementById("alertFail").style.opacity = "1";
         document.getElementById("alertFail").style.display = "block";
         signOut();
+        latch = false;
         return;
+      }
+      if(response.data != "error"){
+        console.log("loginSuccess");
+        SetProfileData(googleUser);
       }
     })
 
 
 
 
+    if(latch){
+
+    }
+}
+
+function SetProfileData(googleUser){
+  var profile = googleUser.getBasicProfile();
 
   console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
   console.log('Name: ' + profile.getName());
@@ -163,7 +176,9 @@ function onSignIn(googleUser) {
   document.getElementById("loginButton").style.display = "none";
   document.getElementById("loginNameText").style.display = "block";
   document.getElementById("loginUserIcon").style.display = "block";
+  document.getElementById("alertSuccess").style.opacity = "1";
   document.getElementById("alertSuccess").style.display = "block";
+  document.getElementById("picturesLink").style.display = "block";
 
   document.getElementById("loginNameText").innerHTML = profile.getName() + "";
   document.getElementById("loginUserIcon").src = profile.getImageUrl();
