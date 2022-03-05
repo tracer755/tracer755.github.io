@@ -70,7 +70,25 @@ background-color:white;
   border-radius: 15px;
 }
 
+.flex-container {
+    display: flex;
+  flex-direction: column;
+  margin: auto;
+}
 
+@media (min-width: 700px) {
+   .flex-container {
+        flex-direction: row;
+        margin: auto;
+    }
+    br.mobilehide{
+        display: initial;
+        margin: auto;
+    }
+    img.status{
+     width: 22%;
+    }
+}
 
 
 </style>
@@ -148,6 +166,10 @@ background-color:white;
 <center>
 </center>
 
+<div class="flex-container">
+
+
+</div>
 
 
 <div id="elements">
@@ -241,7 +263,16 @@ function signOut() {
   function Load(googleUser){
     var profile = googleUser.getBasicProfile();
 
-console.log("testtesttesttesttesttesttesttest");
+
+
+    let itemcount = 0;
+    let groupitemlatch = true;
+    let conatinercount = 0;
+
+
+    let container = 0;
+
+
 
     axios.get('https://troop456loginapinodejs.herokuapp.com/pictures:' + profile.getEmail())
       .then(response => {
@@ -269,6 +300,8 @@ console.log(count);
 let temp = 1;
 
 
+
+
 while(year > 1960){
 
 let yearlatch = true;
@@ -294,6 +327,16 @@ if(yearlatch){
   div.querySelector("#sectionTitle").innerHTML = "Outings - " + year;
 }
 
+if(itemcount == 0 && groupitemlatch){
+conatinercount = conatinercount + 1;
+document.body.innerHTML += `
+<div id="container` + conatinercount +`" class="flex-container">
+`;
+  container = document.getElementById("container" + conatinercount);
+
+  groupitemlatch = false;
+}
+
 
 yearlatch = false;
 
@@ -310,24 +353,31 @@ yearlatch = false;
   </div>
   </center>
   `;
-  document.body.appendChild(div);
+  container.appendChild(div);
 
   var url = "";
 
-  console.log('https://troop456loginapinodejs.herokuapp.com/img:' + response.data[i].Thumbnail.split("/")[3]);
 
-  axios.get('https://troop456loginapinodejs.herokuapp.com/img:' + response.data[i].Thumbnail.split("/")[3])
-    .then((response) => {
-       div.querySelector("#thumbnailimg").src = response.data[0].url;
-    });
 
       console.log(response.data[i].Link);
+
+LoadThumbnail(div.querySelector("#thumbnailimg"), 'https://troop456loginapinodejs.herokuapp.com/img:' + response.data[i].Thumbnail.split("/")[3])
+
   div.querySelector("#AlbumLink").href = response.data[i].Link;
   div.querySelector("#title").innerHTML = response.data[i].Title;
   div.querySelector("#desc").innerHTML = response.data[i].Description;
+  conatinercount += 1;
+}
+
+if(conatinercount == 3){
+
+ groupitemlatch = true;
+ containercount = 0;
 }
 
   }
+  groupitemlatch = true;
+  containercount = 0;
 
   console.log(temp);
   temp = temp + 1;
@@ -345,7 +395,18 @@ yearlatch = false;
 
 
 
+
   }
+
+
+
+    function LoadThumbnail(obj, link){
+      axios.get(link)
+        .then((response) => {
+           obj.src = response.data[0].url;
+           console.log(obj.src);
+        });
+    }
 </script>
 <script>
 var close = document.getElementsByClassName("closebtn");
