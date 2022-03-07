@@ -353,7 +353,7 @@ yearlatch = false;
   </div>
   </center>
   `;
-  container.appendChild(div);
+
 
   var url = "";
 
@@ -366,6 +366,7 @@ LoadThumbnail(div.querySelector("#thumbnailimg"), 'https://troop456loginapinodej
   div.querySelector("#AlbumLink").href = response.data[i].Link;
   div.querySelector("#title").innerHTML = response.data[i].Title;
   div.querySelector("#desc").innerHTML = response.data[i].Description;
+  container.appendChild(div);
   conatinercount += 1;
 }
 
