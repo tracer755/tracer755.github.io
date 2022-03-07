@@ -387,7 +387,7 @@ LoadThumbnail(div.querySelector("#thumbnailimg"), 'https://troop456loginapinodej
         axios.get("https://troop456loginapinodejs.herokuapp.com/img:" + response.data[i].Thumbnail.split("/")[3])
         .then((response) => {
            url = response.data[0].url;
-           console.log(obj.src);
+           console.log(url);
         });
   
   alert(url);
