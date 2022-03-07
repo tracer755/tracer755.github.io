@@ -337,6 +337,9 @@ if(yearlatch){
   document.body.appendChild(div);
 
   div.querySelector("#sectionTitle").innerHTML = "Outings - " + year;
+  document.body.innerHTML += `
+<div id="container` + conatinercount +`" class="flex-container">
+`;
 }
 
 if(itemcount == 0 && groupitemlatch){
