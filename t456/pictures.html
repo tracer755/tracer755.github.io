@@ -384,7 +384,7 @@ LoadThumbnail(div.querySelector("#thumbnailimg"), 'https://troop456loginapinodej
   var timestamp = new Date().getTime();  
   var queryString = "?t=" + timestamp;  
   
-        axios.get(link)
+        axios.get("https://troop456loginapinodejs.herokuapp.com/img:" + response.data[i].Thumbnail.split("/")[3])
         .then((response) => {
            url = response.data[0].url;
            console.log(obj.src);
