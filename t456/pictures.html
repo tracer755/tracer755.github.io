@@ -373,13 +373,19 @@ yearlatch = false;
 
       console.log(response.data[i].Link);
 
-LoadThumbnail(div.querySelector("#thumbnailimg"), 'https://troop456loginapinodejs.herokuapp.com/img:' + response.data[i].Thumbnail.split("/")[3])
+let url = LoadThumbnail(div.querySelector("#thumbnailimg"), 'https://troop456loginapinodejs.herokuapp.com/img:' + response.data[i].Thumbnail.split("/")[3]);
 
   div.querySelector("#AlbumLink").href = response.data[i].Link;
   div.querySelector("#title").innerHTML = response.data[i].Title;
   div.querySelector("#desc").innerHTML = response.data[i].Description;
   container.appendChild(div);
   conatinercount += 1;
+  
+  var timestamp = new Date().getTime();  
+  var queryString = "?t=" + timestamp;  
+  alert(url);
+  
+  div.querySelector("#thumbnailimg").src = url + queryString;
 }
 
 if(conatinercount == 3){
@@ -418,6 +424,7 @@ if(conatinercount == 3){
         .then((response) => {
            obj.src = response.data[0].url;
            console.log(obj.src);
+        return response.data[0].url;
         });
     }
 </script>
