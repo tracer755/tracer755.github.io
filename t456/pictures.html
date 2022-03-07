@@ -373,7 +373,7 @@ yearlatch = false;
 
       console.log(response.data[i].Link);
 
-let url = LoadThumbnail(div.querySelector("#thumbnailimg"), 'https://troop456loginapinodejs.herokuapp.com/img:' + response.data[i].Thumbnail.split("/")[3]);
+url = LoadThumbnail(div.querySelector("#thumbnailimg"), 'https://troop456loginapinodejs.herokuapp.com/img:' + response.data[i].Thumbnail.split("/")[3]);
 
   div.querySelector("#AlbumLink").href = response.data[i].Link;
   div.querySelector("#title").innerHTML = response.data[i].Title;
