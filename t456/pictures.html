@@ -1,128 +1,155 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <Head>
-  <meta name="google-signin-client_id" content="529630701561-hk5ka2erbhg4ao9orhlvi1ohrjn0npc3.apps.googleusercontent.com">
+  <meta name="google-signin-client_id"
+    content="529630701561-hk5ka2erbhg4ao9orhlvi1ohrjn0npc3.apps.googleusercontent.com">
 
   <!--MetaData tags-->
   <title>Troop 456</title>
-  <link rel="icon" href="Img/MainLogo.png"/>
+  <link rel="icon" href="Img/MainLogo.png" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!--End of metadata tags-->
 
   <!--css file start-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/AlertBox.css">
   <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
   <!--css file end-->
 
 
-<style>
-.alert {
-  padding: 20px;
-  background-color: #f44336;
-  color: white;
-  opacity: 1;
-  transition: opacity 0.6s;
-  margin-bottom: 15px;
-}
+  <style>
+    .alert {
+      padding: 20px;
+      background-color: #f44336;
+      color: white;
+      opacity: 1;
+      transition: opacity 0.6s;
+      margin-bottom: 15px;
+    }
 
-.alert.success {background-color: #04AA6D;}
-.alert.info {background-color: #2196F3;}
-.alert.warning {background-color: #ff9800;}
+    .alert.success {
+      background-color: #04AA6D;
+    }
 
-.closebtn {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
+    .alert.info {
+      background-color: #2196F3;
+    }
 
-.closebtn:hover {
-  color: black;
-}
-.featurebox{
-  background-color: black;
-  border: 5px solid #AD91FF;
-  margin: auto;
-  padding: 10px;
-border-radius: 5px;
+    .alert.warning {
+      background-color: #ff9800;
+    }
 
-width: 400px !important;
-    max-height: 7000px !important;
-    max-width: 400px !important;
-flex: 1;
-    transition: 0.3s;
-}
+    .closebtn {
+      margin-left: 15px;
+      color: white;
+      font-weight: bold;
+      float: right;
+      font-size: 22px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .closebtn:hover {
+      color: black;
+    }
+
+    .featurebox {
+      background-color: black;
+      border: 5px solid #AD91FF;
+      margin: auto;
+      padding: 10px;
+      border-radius: 5px;
+
+      width: 400px !important;
+      max-height: 7000px !important;
+      max-width: 400px !important;
+      flex: 1;
+      transition: 0.3s;
+    }
 
 
-hr.year{
-height:4px;
-border-width:0;
-color:white;
-background-color:white;
-  border: 2px solid #white;
-  border-radius: 15px;
-}
+    hr.year {
+      height: 4px;
+      border-width: 0;
+      color: white;
+      background-color: white;
+      border: 2px solid white;
+      border-radius: 15px;
+    }
 
-.flex-container {
-    display: flex;
-  flex-direction: column;
-}
+    .flex-container {
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      justify-content: center;
+    }
+    .centerpadding {
+      padding: 6px;
+    }
 
-@media (min-width: 700px) {
-   .flex-container {
+
+    @media (min-width: 700px) {
+      .flex-container {
         flex-direction: row;
         margin: auto;
-    }
-    br.mobilehide{
+      }
+
+      br.mobilehide {
         display: initial;
         margin: auto;
-    }
-    img.status{
-     width: 22%;
-    }
-}
+      }
 
-
-</style>
+      img.status {
+        width: 22%;
+      }
+    }
+  </style>
 
 </head>
+
 <body style="background-color: #1d1e28">
   <!--Page Header start-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.html"><img class="circle" src="Img/MainLogo.png" alt="TroopLogo" width="75" height="75"></a>
+      <a class="navbar-brand" href="index.html"><img class="circle" src="Img/MainLogo.png" alt="TroopLogo" width="75"
+          height="75"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
-                <a class="nav-link" href="#"><h2 style="font-family: "Lucida Console", "Courier New", monospace;">Troop 456</h2></a>
+            <a class="nav-link" href="#">
+              <h2 style="font-family: " Lucida Console", "Courier New" , monospace;">Troop 456</h2>
+            </a>
           </li>
           <li class="nav-item">
-            <h2 class="nav-link" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
+            <h2 class="nav-link" style="font-family: " Lucida Console", "Courier New" , monospace;">-</h2>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><h2 style="font-family: "Lucida Console", "Courier New", monospace;">Resources</h2></a>
+            <a class="nav-link" href="#">
+              <h2 style="font-family: " Lucida Console", "Courier New" , monospace;">Resources</h2>
+            </a>
           </li>
           <li class="nav-item">
-            <h2 class="nav-link" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
+            <h2 class="nav-link" style="font-family: " Lucida Console", "Courier New" , monospace;">-</h2>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><h2 style="font-family: "Lucida Console", "Courier New", monospace;">News</h2></a>
+            <a class="nav-link" href="#">
+              <h2 style="font-family: " Lucida Console", "Courier New" , monospace;">News</h2>
+            </a>
           </li>
           <li class="nav-item">
-            <h2 class="nav-link" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
+            <h2 class="nav-link" style="font-family: " Lucida Console", "Courier New" , monospace;">-</h2>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><h2 style="font-family: "Lucida Console", "Courier New", monospace;">Pictures</h2></a>
+            <a class="nav-link" href="#">
+              <h2 style="font-family: " Lucida Console", "Courier New" , monospace;">Pictures</h2>
+            </a>
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -132,7 +159,8 @@ background-color:white;
             <h2 id="loginNameText" style="display: none;">N/A</h2>
           </li>
           <li class="nav-item">
-            <img src="" alt="User icon" width="50" height="50" style="border-radius: 50%; display: none;" id="loginUserIcon">
+            <img src="" alt="User icon" width="50" height="50" style="border-radius: 50%; display: none;"
+              id="loginUserIcon">
           </li>
         </ul>
       </div>
@@ -140,225 +168,256 @@ background-color:white;
   </nav>
   <!--Page header end-->
 
-<br><br>
-<!--Login alert-->
-<div class="alert success" id="alertSuccess" style="opacity: 0">
-  <span class="closebtn">&times;</span>
-  <center><strong>Success!</strong> Login was successful</center>
-</div>
-
-
-<div class="alert warning" id="alertFail" style="opacity: 0">
-  <span class="closebtn">&times;</span>
-  <center><strong>Warning!</strong> Either An error has occoured or you are trying to interact with something you not supposed to.</center>
-</div>
-<p></p>
-
-<br><br>
-
-<center>
-<h1 id="picturetext" style="color:white; display: none;">Pictures</h1>
-<h1 id="logintext" style="color:white">Please login to view troop photos</h1>
-</center>
-<br><br><br>
-
-<center>
-</center>
-
-<div class="flex-container">
-
-    <center>
-    <div class="featurebox" style="width: 20rem;">
-      <a id="AlbumLink" target=”_blank” href="">
-    <img id="thumbnailimg" style="max-height: 300px !important;  max-width: 340px !important; border-radius: 2%;" alt="Album thumbnail" src="" referrerpolicy="no-referrer">
-    <h2 id="title" style="color:white">Title</h2>
-    <h4 id="desc" style="color:white">Description</h4>
-    </a>
+  <br><br>
+  <!--Login alert-->
+  <div class="alert success" id="alertSuccess" style="opacity: 0">
+    <span class="closebtn">&times;</span>
+    <center><strong>Success!</strong> Login was successful</center>
   </div>
+
+
+  <div class="alert warning" id="alertFail" style="opacity: 0">
+    <span class="closebtn">&times;</span>
+    <center><strong>Warning!</strong> Either An error has occoured or you are trying to interact with something you not
+      supposed to.</center>
+  </div>
+  <p></p>
+
+  <br><br>
+
+  <center>
+    <h1 id="picturetext" style="color:white; display: none;">Pictures</h1>
+    <h1 id="logintext" style="color:white">Please login to view troop photos</h1>
   </center>
-  
-    <center>
-    <div class="featurebox" style="width: 20rem;">
-      <a id="AlbumLink" target=”_blank” href="">
-    <img id="thumbnailimg" style="max-height: 300px !important;  max-width: 340px !important; border-radius: 2%;" alt="Album thumbnail" src="" referrerpolicy="no-referrer">
-    <h2 id="title" style="color:white">Title</h2>
-    <h4 id="desc" style="color:white">Description</h4>
-    </a>
-  </div>
+  <br><br><br>
+
+  <center>
   </center>
 
-</div>
+  <div class="flex-container">
+
+    <center>
+      <div class="featurebox" style="width: 20rem;">
+        <a id="AlbumLink" target=”_blank” href="">
+          <img id="thumbnailimg" style="max-height: 300px !important;  max-width: 340px !important; border-radius: 2%;"
+            alt="Album thumbnail" src="" referrerpolicy="no-referrer">
+          <h2 id="title" style="color:white">Title</h2>
+          <h4 id="desc" style="color:white">Description</h4>
+        </a>
+      </div>
+    </center>
+
+    <center>
+      <div class="featurebox" style="width: 20rem;">
+        <a id="AlbumLink" target=”_blank” href="">
+          <img id="thumbnailimg" style="max-height: 300px !important;  max-width: 340px !important; border-radius: 2%;"
+            alt="Album thumbnail" src="" referrerpolicy="no-referrer">
+          <h2 id="title" style="color:white">Title</h2>
+          <h4 id="desc" style="color:white">Description</h4>
+        </a>
+      </div>
+    </center>
+
+  </div>
 
 
 
 
 
-<script>
-window.onload = function(){
-<!--
-
-  -->
-
-
-  document.getElementById("loginNameText").style.display = "none";
-  document.getElementById("loginUserIcon").style.display = "none";
-  document.getElementById("alertFail").style.display = "none";
-  document.getElementById("alertSuccess").style.display = "none";
-
-return;
-
-}
-
-function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-
-  let latch = true;
-
-  axios.get('https://troop456loginapinodejs.herokuapp.com/email:' + profile.getEmail())
-    .then(response => {
-      console.log(response.data);
-      if(response.data == "error"){
-        console.log("Error / 404");
-        document.getElementById("alertFail").style.opacity = "1";
-        document.getElementById("alertFail").style.display = "block";
-        signOut();
-        latch = false;
-        return;
-      }
-      if(response.data != "error"){
-        console.log("loginSuccess");
-        SetProfileData(googleUser);
-        Load(googleUser);
-      }
-    })
+  <script>
+    let imageloadlatch = true;
 
 
 
 
-    if(latch){
+
+    window.onload = function () {
+
+
+        document.getElementById("loginNameText").style.display = "none";
+      document.getElementById("loginUserIcon").style.display = "none";
+      document.getElementById("alertFail").style.display = "none";
+      document.getElementById("alertSuccess").style.display = "none";
+
+      return;
 
     }
-}
 
-function SetProfileData(googleUser){
-  var profile = googleUser.getBasicProfile();
+    function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
 
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  document.getElementById("loginButton").style.display = "none";
-  document.getElementById("loginNameText").style.display = "block";
-  document.getElementById("loginUserIcon").style.display = "block";
-  document.getElementById("alertSuccess").style.opacity = "1";
-  document.getElementById("alertSuccess").style.display = "block";
-  document.getElementById("logintext").style.display = "none";
-  document.getElementById("picturetext").style.display = "block";
+      let latch = true;
 
-  document.getElementById("loginNameText").innerHTML = profile.getName() + "";
-  document.getElementById("loginUserIcon").src = profile.getImageUrl();
-}
-
-function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-      document.getElementById("loginButton").style.display = "block";
-      document.getElementById("loginNameText").style.display = "none";
-      document.getElementById("loginUserIcon").style.display = "none";
-      document.getElementById("loginNameText").innerHTML = "N/A";
-      document.getElementById("loginUserIcon").src = "";
-      document.getElementById("logintext").style.display = "block";
-      document.getElementById("picturetext").style.display = "none";
-    });
-  }
-  function Load(googleUser){
-    var profile = googleUser.getBasicProfile();
-
-
-
-    let itemcount = 0;
-    let groupitemlatch = true;
-    let conatinercount = 0;
-
-
-    let container = 0;
-
-
-
-    axios.get('https://troop456loginapinodejs.herokuapp.com/pictures:' + profile.getEmail())
-      .then(response => {
-        if(response.data == "error"){
-          console.log("Error / 404");
-          document.getElementById("alertFail").style.opacity = "1";
-          document.getElementById("alertFail").style.display = "block";
-          signOut();
-          latch = false;
-          return;
-        }
-        if(response.data != "error"){
-
-
-console.log(response.data.length);
-
-let year  = new Date().getFullYear() + 1;
-
-
-let count = new Date().getFullYear() - 1960;
-
-console.log(count);
-
-
-let temp = 1;
+      axios.get('https://troop456loginapinodejs.herokuapp.com/email:' + profile.getEmail())
+        .then(response => {
+          console.log(response.data);
+          if (response.data == "error") {
+            console.log("Error / 404");
+            document.getElementById("alertFail").style.opacity = "1";
+            document.getElementById("alertFail").style.display = "block";
+            signOut();
+            latch = false;
+            return;
+          }
+          if (response.data != "error") {
+            console.log("loginSuccess");
+            SetProfileData(googleUser);
+            Load(googleUser);
+          }
+        })
 
 
 
 
-while(year > 1960){
+      if (latch) {
 
-let yearlatch = true;
+      }
+    }
 
-          for (i = 0; i < response.data.length; i++) {
+    function SetProfileData(googleUser) {
+      var profile = googleUser.getBasicProfile();
+
+      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+      console.log('Name: ' + profile.getName());
+      console.log('Image URL: ' + profile.getImageUrl());
+      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+      document.getElementById("loginButton").style.display = "none";
+      document.getElementById("loginNameText").style.display = "block";
+      document.getElementById("loginUserIcon").style.display = "block";
+      document.getElementById("alertSuccess").style.opacity = "1";
+      document.getElementById("alertSuccess").style.display = "block";
+      document.getElementById("logintext").style.display = "none";
+      document.getElementById("picturetext").style.display = "block";
+
+      document.getElementById("loginNameText").innerHTML = profile.getName() + "";
+      document.getElementById("loginUserIcon").src = profile.getImageUrl();
+    }
+
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+        document.getElementById("loginButton").style.display = "block";
+        document.getElementById("loginNameText").style.display = "none";
+        document.getElementById("loginUserIcon").style.display = "none";
+        document.getElementById("loginNameText").innerHTML = "N/A";
+        document.getElementById("loginUserIcon").src = "";
+        document.getElementById("logintext").style.display = "block";
+        document.getElementById("picturetext").style.display = "none";
+      });
+    }
+    function Load(googleUser) {
+      var profile = googleUser.getBasicProfile();
 
 
 
 
-if(response.data[i].Year == year){
 
-if(yearlatch){
-  let div = document.createElement('div');
 
-  div.innerHTML = `
+
+      axios.get('https://troop456loginapinodejs.herokuapp.com/pictures:' + profile.getEmail())
+        .then(response => {
+          if (response.data == "error") {
+            console.log("Error / 404");
+            document.getElementById("alertFail").style.opacity = "1";
+            document.getElementById("alertFail").style.display = "block";
+            signOut();
+            latch = false;
+            return;
+          }
+          if (
+          response.data != "error") {
+
+            if(!imageloadlatch){
+              return;
+            }
+            imageloadlatch = false;
+            console.log(response.data);
+            console.log(response.data.length);
+
+            let year = new Date().getFullYear() + 1;
+
+
+            let count = new Date().getFullYear() - 1960;
+
+            console.log(count);
+
+
+            let temp = 1;
+
+            
+            let currentrowcontainer = "";
+
+            while (year > 1960) {
+
+              let firstconainterlatch = true;
+
+              let yearlatch = true;
+
+              let imageItems = 0;
+
+              for (i = 0; i < response.data.length; i++) {
+
+
+                
+
+                if (response.data[i].Year == year) {
+
+                  if (yearlatch) {
+                    let div2 = document.createElement('div');
+
+                    div2.innerHTML = `
   <center>
     <h1 id="sectionTitle" style="color:white"></h1>
   </center>
   <hr class="year" width="95%">
   `;
-  document.body.appendChild(div);
+                    document.body.appendChild(div2);
 
-  div.querySelector("#sectionTitle").innerHTML = "Outings - " + year;
-  document.body.innerHTML += `
-<div id="container` + conatinercount +`" class="flex-container">
-`;
+                    div2.querySelector("#sectionTitle").innerHTML = "Outings - " + year;
+                  }
+
+
+
+
+                  yearlatch = false;
+
+
+if(((imageItems % 2) == 0)){
+
+console.log("true " + imageItems);
+
+let div3 = document.createElement('div');
+
+document.body.appendChild(div3);
+
+div3.classList.add("flex-container");
+
+currentrowcontainer = div3;
 }
 
-if(itemcount == 0 && groupitemlatch){
-conatinercount = conatinercount + 1;
-document.body.innerHTML += `
-<div id="container` + conatinercount +`" class="flex-container">
-`;
-  container = document.getElementById("container" + conatinercount);
+if(firstconainterlatch){
+console.log("true " + imageItems);
 
-  groupitemlatch = false;
+let div3 = document.createElement('div');
+
+document.body.appendChild(div3);
+
+div3.classList.add("flex-container");
+
+currentrowcontainer = div3;
+
+firstconainterlatch = false;
 }
 
 
-yearlatch = false;
+                  imageItems++;
 
 
-  let div = document.createElement('div');
-  div.innerHTML = `
-  <center>
+
+                  let div = document.createElement('div');
+                  div.innerHTML = `
+  <center class="centerpadding">
     <div class="featurebox" style="width: 20rem;">
       <a id="AlbumLink" target=”_blank” href="">
     <img id="thumbnailimg" style="max-height: 300px !important;  max-width: 340px !important; border-radius: 2%;" alt="Album thumbnail" src="" referrerpolicy="no-referrer">
@@ -370,58 +429,39 @@ yearlatch = false;
   `;
 
 
-  var url = "";
+
+
+                  var url = "";
 
 
 
-      console.log(response.data[i].Link);
+                  console.log(response.data[i].Link);
 
-LoadThumbnail(div.querySelector("#thumbnailimg"), 'https://troop456loginapinodejs.herokuapp.com/img:' + response.data[i].Thumbnail.split("/")[3]);
+                  LoadThumbnail(div.querySelector("#thumbnailimg"), 'https://troop456loginapinodejs.herokuapp.com/img:' + response.data[i].Thumbnail.split("/")[3]);
 
-  div.querySelector("#AlbumLink").href = response.data[i].Link;
-  div.querySelector("#title").innerHTML = response.data[i].Title;
-  div.querySelector("#desc").innerHTML = response.data[i].Description;
-  container.appendChild(div);
-  conatinercount += 1;
-  
-
-  
-        axios.get("https://troop456loginapinodejs.herokuapp.com/img:" + response.data[i].Thumbnail.split("/")[3])
-        .then((response) => {
-            var timestamp = new Date().getTime();  
-  var queryString = "?t=" + timestamp;  
-           var uri = response.data[0].url;
-           console.log(uri + queryString);
-          alert(uri + queryString);
-          
-          div.querySelector("#thumbnailimg").src = uri + queryString;
-        });
-  
-  
-  
-  
-}
-
-if(conatinercount == 3){
-
- groupitemlatch = true;
- containercount = 0;
-}
-
-  }
-  groupitemlatch = true;
-  containercount = 0;
-
-  console.log(temp);
-  temp = temp + 1;
-  year = year - 1;
-}
+                  div.querySelector("#AlbumLink").href = response.data[i].Link;
+                  div.querySelector("#title").innerHTML = response.data[i].Title;
+                  div.querySelector("#desc").innerHTML = response.data[i].Description;
+                  currentrowcontainer.appendChild(div);
 
 
 
 
-        }
-      })
+
+                }
+
+
+
+              }
+              temp = temp + 1;
+              year = year - 1;
+            }
+
+
+
+
+          }
+        })
 
 
 
@@ -429,40 +469,47 @@ if(conatinercount == 3){
 
 
 
-  }
+    }
 
 
 
-    function LoadThumbnail(obj, link){
+    function LoadThumbnail(obj, link) {
       axios.get(link)
         .then((response) => {
-           obj.src = response.data[0].url;
-           console.log(obj.src);
-        return response.data[0].url;
+          obj.src = response.data[0].url;
+          console.log(obj.src);
+          return response.data[0].url;
         });
     }
-</script>
-<script>
-var close = document.getElementsByClassName("closebtn");
-var i;
+  </script>
+  <script>
+    var close = document.getElementsByClassName("closebtn");
+    var i;
 
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function(){
-    var div = this.parentElement;
-    div.style.opacity = "0";
-    setTimeout(function(){ div.style.display = "none"; }, 600);
-  }
-}
-</script>
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function () {
+        var div = this.parentElement;
+        div.style.opacity = "0";
+        setTimeout(function () { div.style.display = "none"; }, 600);
+      }
+    }
+  </script>
 
   <!--BootStrap Code Do not Edit-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
   <!--End Of bootstrap code-->
   <!--Misc Script Start-->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <!--Misc Script End-->
 </body>
+
 </html>
