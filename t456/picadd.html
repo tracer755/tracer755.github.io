@@ -200,22 +200,22 @@
     <form>
       <div class="flex-container">
         <h4 style="color: white; padding: 3px;">Title:</h4>
-        <input type="text" name="Title" id="TitleInput" size="20">
+        <input type="text" name="Title" id="TitleInput" size="25">
       </div>
       <br>
       <div class="flex-container">
         <h4 style="color: white; padding: 3px;">Description:</h4>
-        <input type="text" name="Description" id="Description" size="20">
+        <input type="text" name="Description" id="Description" size="25">
       </div>
       <br>
       <div class="flex-container">
         <h4 style="color: white; padding: 3px;">Album Link:</h4>
-        <input type="text" name="AlbumLink" id="AlbumLinkInput" size="20">
+        <input type="text" name="AlbumLink" id="AlbumLinkInput" size="25">
       </div>
       <br>
       <div class="flex-container">
         <h4 style="color: white; padding: 3px;">Thumbnail Link:</h4>
-        <input type="text" name="ThumbnailLink" id="ThumbnailLink" size="20">
+        <input type="text" name="ThumbnailLink" id="ThumbnailLink" size="25">
       </div>
       <br>
       <div class="flex-container">
@@ -247,7 +247,7 @@
 
 
   <script>
-    var guser;
+    var guser = null;
 
 
 
@@ -292,6 +292,13 @@ btn.addEventListener('click', event => {
 });
 
     function submitimg(){
+      document.getElementById("statustext").style = "color: white";
+      //check to make sure user is logged in
+      if(guser == null){
+        document.getElementById("statustext").innerHTML = "You aren't loged in please do so then try again";
+        return;
+      }
+
       var profile = guser.getBasicProfile();
       var decsriptiontext = "";
 
@@ -317,6 +324,7 @@ btn.addEventListener('click', event => {
       }
 
 
+
       axios.get('https://troop456loginapinodejs.herokuapp.com/addpic:' + profile.getEmail() + "::" + document.getElementById("year").value + "::" + encodeURIComponent(document.getElementById("AlbumLinkInput").value) + "::" + encodeURIComponent(document.getElementById("ThumbnailLink").value) + "::" + document.getElementById("TitleInput").value + "::" + decsriptiontext)
         .then((response) => {
           console.log(response.data);
@@ -328,6 +336,11 @@ btn.addEventListener('click', event => {
             document.getElementById("statustext").innerHTML = "This entry already exists";
             return;
           }
+          if(response.data == "no auth"){
+            document.getElementById("statustext").innerHTML = "You are not authorized to use this tool. Naughty Naughty";
+            return;
+          }
+          document.getElementById("statustext").style = "color: green";
           document.getElementById("statustext").innerHTML = "Success!";
         });
 
