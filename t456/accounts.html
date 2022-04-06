@@ -144,7 +144,7 @@
             <h2 class="nav-link" style="font-family: " Lucida Console", "Courier New" , monospace;">-</h2>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="pictures.html">
               <h2 style="font-family: " Lucida Console", "Courier New" , monospace;">Pictures</h2>
             </a>
           </li>
@@ -196,6 +196,8 @@
         <h5 style="color: white; padding: 7px;">Add user | </h5>
       <h5 style="color: white; padding: 7px;">Email:</h5>
       <input style="padding-right: 15px;" type="text" name="Email" id="EmailInput" size="20">
+      <h5 style="color: white; padding: 7px;">Name:</h5>
+      <input style="padding-right: 15px;" type="text" name="Name" id="NameInput" size="20">
       <h5 style="color: white; padding: 7px;">Edit:</h5>
       <input type="checkbox" id="edittoggle" name="edittoggle" style="top: 50%;padding: 100px">
       <h5 style="color: white; padding: 7px;">Account:</h5>
@@ -225,14 +227,20 @@
         
       </div>
       
+      
   </center>
     </form>
     <button class="button-3" role="button" id="delbtn">Delete</button>
     </div>
 
+    <center><h3 id="statustext" style="color: white; display: none;">Null</h3></center>
 
 
-  <br><br>
+
+  <br>
+  <br>
+  <button class="button-3" role="button" id="reloadbtn" style="float: right; margin-right: 40px;">Reload</button>
+  <br>
 
 
 
@@ -246,6 +254,7 @@
       <div id="accountlist">
         <div class="flex-container">
           <h3 id="emailtext" style="float: left; color: white; padding-right: 20px; padding-left: 20px;">Email</h3>
+          <h3 id="emailtext" style="float: left; color: white; padding-right: 20px; padding-left: 20px;">Name</h3>
           <h3 id="editpermtext" style="float: left; color: white; padding-right: 20px; padding-left: 20px;">Edit Perms</h3>
           <h3 id="accountpermtext" style="float: left; color: white; padding-right: 20px; padding-left: 20px;">Account Perms</h3>
           <h3 id="accounttypetext" style="float: left; color: white; padding-right: 20px; padding-left: 20px;">Account type</h3>
@@ -267,9 +276,21 @@ btn.addEventListener('click', event => {
 
     function adduser(){
       var profile = guser.getBasicProfile();
-      console.log('https://troop456loginapinodejs.herokuapp.com/adduser:' + profile.getEmail() + "::" + document.getElementById("EmailInput").value + "::" + document.getElementById("edittoggle").checked + "::" + document.getElementById("accounttoggle").checked + "::" + document.getElementById("accttypeinput").value);
-      axios.get('https://troop456loginapinodejs.herokuapp.com/adduser:' + profile.getEmail() + "::" + document.getElementById("EmailInput").value + "::" + document.getElementById("edittoggle").checked + "::" + document.getElementById("accounttoggle").checked + "::" + document.getElementById("accttypeinput").value)
+      axios.get('https://troop456loginapinodejs.herokuapp.com/adduser:' + profile.getEmail() + "::" + document.getElementById("EmailInput").value + "::" + document.getElementById("edittoggle").checked + "::" + document.getElementById("accounttoggle").checked + "::" + document.getElementById("accttypeinput").value + "::" + document.getElementById("NameInput").value)
         .then(response => {
+          if(response.data == "error"){
+            document.getElementById("statustext").innerHTML = "error";
+            document.getElementById("statustext").style.display = "block";
+            return;
+          }
+          if(response.data == "edit success"){
+            document.getElementById("statustext").innerHTML = "Account successfuly edited";
+            document.getElementById("statustext").style.display = "block";
+            console.log(response.data);
+            return;
+          }
+          document.getElementById("statustext").innerHTML = "Account creation success";
+          document.getElementById("statustext").style.display = "block";
           console.log(response.data);
         })
         setTimeout(() => {reloadUserList();}, 500);
@@ -277,6 +298,7 @@ btn.addEventListener('click', event => {
 
     let btn2 = document.getElementById("delbtn");
 btn2.addEventListener('click', event => {
+
   deleteuser();
 });
 
@@ -284,10 +306,22 @@ btn2.addEventListener('click', event => {
       var profile = guser.getBasicProfile();
       axios.get('https://troop456loginapinodejs.herokuapp.com/deluser:' + profile.getEmail() + "::" + document.getElementById("EmailInput2").value)
         .then(response => {
+          if(response.data == "error"){
+            document.getElementById("statustext").innerHTML = "error";
+            document.getElementById("statustext").style.display = "block";
+            return;
+          }
+          document.getElementById("statustext").innerHTML = "Account deletion success";
+          document.getElementById("statustext").style.display = "block";
           console.log(response.data);
         })
         setTimeout(() => {reloadUserList();}, 500);
     }
+    let btn3 = document.getElementById("reloadbtn");
+btn3.addEventListener('click', event => {
+
+  reloadUserList();
+});
 
     function reloadUserList(){
       var profile = guser.getBasicProfile();
@@ -314,18 +348,23 @@ btn2.addEventListener('click', event => {
 
           div.classList.add('flex-container');
 
-          div.innerHTML = `<h5 id="emailtext" style="float: left; color: white; padding-right: 20px; padding-left: 20px;">Email</h5>
-            <h5 id="editpermtext" style="float: left; color: white; padding-right: 20px; padding-left: 20px;">Edit Perms</h5>
-            <h5 id="accountpermtext" style="float: left; color: white; padding-right: 20px; padding-left: 20px;">Account Prems</h5>
-            <h5 id="accounttypetext" style="float: left; color: white; padding-right: 20px; padding-left: 20px;">Account type</h5>`;
+          div.innerHTML = `
+            <h5 id="emailtext" style="float: left; color: white; padding-right: 20px; padding-left: 16px;">Email</h5>
+            <h5 id="username" style="float: left; color: white; padding-right: 20px; padding-left: 16px;">Name</h5>
+            <h5 id="editpermtext" style="float: left; color: white; padding-right: 20px; padding-left: 16px;">Edit Perms</h5>
+            <h5 id="accountpermtext" style="float: left; color: white; padding-right: 20px; padding-left: 16px;">Account Prems</h5>
+            <h5 id="accounttypetext" style="float: left; color: white; padding-right: 20px; padding-left: 16px;">Account type</h5>`;
 
 
           document.getElementById("accountlist").appendChild(div);
 
           div.querySelector("#emailtext").innerHTML = response.data[i].Email;
+          div.querySelector("#username").innerHTML = response.data[i].Name;
           div.querySelector("#editpermtext").innerHTML = response.data[i].Edit;
           div.querySelector("#accountpermtext").innerHTML = response.data[i].AccountControl;
           div.querySelector("#accounttypetext").innerHTML = response.data[i].Type;
+
+          div.style["padding-bottom"] = "10px";
 
           useritems.push(div);
         }
