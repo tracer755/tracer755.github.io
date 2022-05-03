@@ -1,0 +1,47 @@
+.yearline {
+    display: inline-block;
+    width: 100%;
+    border: 3.3px solid white;
+    background-color: white;
+    width: 90%;
+    border-radius: 18px;
+}
+.flex-container {
+display: flex;
+flex-direction: column;
+margin: auto;
+justify-content: center;
+}
+.centerpadding {
+padding: 6px;
+}
+
+
+@media (min-width: 700px) {
+.flex-container {
+    flex-direction: row;
+    margin: auto;
+}
+
+br.mobilehide {
+    display: initial;
+    margin: auto;
+}
+
+img.status {
+    width: 22%;
+}
+}
+.featurebox {
+    background-color: black;
+    border: 5px solid #AD91FF;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+
+    width: 400px !important;
+    max-height: 7000px !important;
+    max-width: 400px !important;
+    flex: 1;
+    transition: 0.3s;
+  }

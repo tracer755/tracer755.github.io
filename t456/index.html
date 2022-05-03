@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <Head>
@@ -12,105 +11,32 @@
   <!--End of metadata tags-->
 
   <!--css file start-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="css/AlertBox.css">
-  <!--< link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/flexboxes.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  
   <!--css file end-->
-
-
-<style>
-.alert {
-  padding: 20px;
-  background-color: #f44336;
-  color: white;
-  opacity: 1;
-  transition: opacity 0.6s;
-  margin-bottom: 15px;
-}
-
-.alert.success {background-color: #04AA6D;}
-.alert.info {background-color: #2196F3;}
-.alert.warning {background-color: #ff9800;}
-
-.closebtn {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.closebtn:hover {
-  color: black;
-}
-</style>
 
 </head>
 <body style="background-color: #1d1e28">
-  <!--Page Header start-->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html"><img class="circle" src="Img/MainLogo.png" alt="TroopLogo" width="75" height="75"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-                <a class="nav-link" href="#"><h2 style="font-family: "Lucida Console", "Courier New", monospace;">Troop 456</h2></a>
-          </li>
-          <li class="nav-item">
-            <h2 class="nav-link" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><h2 style="font-family: "Lucida Console", "Courier New", monospace;">Resources</h2></a>
-          </li>
-          <li class="nav-item">
-            <h2 class="nav-link" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><h2 style="font-family: "Lucida Console", "Courier New", monospace;">News</h2></a>
-          </li>
-          <li class="nav-item">
-            <h2 class="nav-link" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
-          </li>
-          <li id="picturesLink" class="nav-item" style="display: none;">
-            <a class="nav-link" href="pictures.html"><h2 style="font-family: "Lucida Console", "Courier New", monospace;">Pictures</h2></a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <div class="g-signin2" data-onsuccess="onSignIn" id="loginButton"></div>
 
-            <h2 id="loginNameText" style="display: none;">N/A</h2>
-          </li>
-          <li class="nav-item">
-            <img src="" alt="User icon" width="50" height="50" style="border-radius: 50%; display: none;" id="loginUserIcon">
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!--Page header end-->
+
+  
+
+
+
+
+
 
 <br><br>
-<!--Login alert-->
-<div class="alert success" id="alertSuccess" style="opacity: 0">
-  <span class="closebtn">&times;</span>
-  <center><strong>Success!</strong> Login was successful</center>
-</div>
 
 
-<div class="alert warning" id="alertFail" style="opacity: 0">
-  <span class="closebtn">&times;</span>
-  <center><strong>Warning!</strong> Either An error has occoured or you are trying to interact with something you not supposed to.</center>
-</div>
-<p></p>
 
-<br><br>
 
 <center>
   <h1 style="color: #fffae8">Troop 456</h1>
@@ -120,107 +46,58 @@
   <h2 style="color: #fffae8">Welcome!</h2>
   <br><br>
 </center>
-<h5 style="color: white; padding: 16px;">Troop 456 has been active for more than 50 years, and has proudly graduated over 90 eagle scouts.
+<h5 style="color: white; padding: 16px; margin-left: 15px; margin-right: 15px;">Troop 456 has been active for more than 50 years, and has proudly graduated over 90 eagle scouts.
 
-  We are a boy-led troop of about 30 Scouts, composed largely of boys that attend Powell, Euclid, and Newton middle schools; and Arapahoe, Heritage, and Littleton high schools. <strong>We welcome any new scouts!</strong>
+  We are a boy-led troop of about 25 Scouts, composed largely of boys that attend Powell, Euclid, and Newton middle schools; and Arapahoe, Heritage, and Littleton high schools. <strong>We welcome any new scouts!</strong>
 </h5>
 
-<h5 style="color: white; padding: 16px;">We are part the <strong>Black Beather District</strong> of the <a href="https://www.scouting.org/" target="_blank">BSA</a></h5>
+<h5 style="color: white; padding: 16px; margin-left: 15px; margin-right: 15px;">We are part of the <a class="orangelink" href="https://www.denverboyscouts.org/districts/black-feather/" target="_blank">Black Beather District</a> of the <a class="orangelink" href="https://www.scouting.org/" target="_blank">BSA</a></h5>
+<br><br>
+<center>
+<div class="flex-container">
 
+  <div style="width: 50% !important;">
+    <h4 style="color:white;">Troop 456 holds weekly troop meetings each Monday night from 7–8:30 p.m. in the basement of the Elks Lodge #1650, 5749 S Curtice St, Littleton, CO 80120.</h4>
+    <br>
+    <a class="nohoverlink" href="Information.html">
+      <div class="squareorangebutton">
+        <h5>Troop 456 Information</h6>
+      </div>
+    </a>
+    <br>
+    <iframe width="90%" height="100%" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJQ9TozDKAbIcRc9AalOtR9vg&key=AIzaSyC8h0CSynWlL6aPcsV3vMesHWFJAMRHZe4"></iframe>
+  </div>
+  
+  <div style="width: 50% !important;">
+    <h4 style="color:white;">If you are a boy between the ages of 11 and 18 years old and would like to join our troop, </h4>
+    <br>
+    <a class="nohoverlink" href="troop-contact.html">
+      <div class="squareorangebutton">
+        <h5>Let us know</h6>
+      </div>
+    </a>
+    <br>
+    <img style="max-width: 90%; border-radius: .4%;" src="Img/IMG-8799.jpg">
+  </div>
 
-<script>
-window.onload = function(){
+</div>
+</center>
 
-  document.getElementById("loginNameText").style.display = "none";
-  document.getElementById("loginUserIcon").style.display = "none";
-  document.getElementById("alertFail").style.display = "none";
-  document.getElementById("alertSuccess").style.display = "none";
-
-return;
-
-}
-
-function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-
-  let latch = true;
-
-  axios.get('https://troop456loginapinodejs.herokuapp.com/email:' + profile.getEmail())
-    .then(response => {
-      console.log(response.data);
-      if(response.data == "error"){
-        console.log("Error / 404");
-        document.getElementById("alertFail").style.opacity = "1";
-        document.getElementById("alertFail").style.display = "block";
-        signOut();
-        latch = false;
-        return;
-      }
-      if(response.data != "error"){
-        console.log("loginSuccess");
-        SetProfileData(googleUser);
-      }
-    })
+<br><br><br><br><br><br><br><br><br><br>
 
 
 
 
-    if(latch){
-
-    }
-}
-
-function SetProfileData(googleUser){
-  var profile = googleUser.getBasicProfile();
-
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  document.getElementById("loginButton").style.display = "none";
-  document.getElementById("loginNameText").style.display = "block";
-  document.getElementById("loginUserIcon").style.display = "block";
-  document.getElementById("alertSuccess").style.opacity = "1";
-  document.getElementById("alertSuccess").style.display = "block";
-  document.getElementById("picturesLink").style.display = "block";
-
-  document.getElementById("loginNameText").innerHTML = profile.getName() + "";
-  document.getElementById("loginUserIcon").src = profile.getImageUrl();
-}
-
-function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-      document.getElementById("loginButton").style.display = "block";
-      document.getElementById("loginNameText").style.display = "none";
-      document.getElementById("loginUserIcon").style.display = "none";
-      document.getElementById("loginNameText").innerHTML = "N/A";
-      document.getElementById("loginUserIcon").src = "";
-    });
-  }
-</script>
-<script>
-var close = document.getElementsByClassName("closebtn");
-var i;
-
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function(){
-    var div = this.parentElement;
-    div.style.opacity = "0";
-    setTimeout(function(){ div.style.display = "none"; }, 600);
-  }
-}
-</script>
 
   <!--BootStrap Code Do not Edit-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <!--End Of bootstrap code-->
   <!--Misc Script Start-->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="js/index.js"></script>
+  <script src="js/alertbox.js"></script>
+  <script src="js/Header_Footer-Injector.js"></script>
   <!--Misc Script End-->
 </body>
 </html>

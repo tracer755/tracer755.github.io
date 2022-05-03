@@ -13,8 +13,9 @@
   <!--End of metadata tags-->
 
   <!--css file start-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/AlertBox.css">
   <link rel="stylesheet" href="css/buttons.css">
   <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
@@ -72,16 +73,6 @@
       transition: 0.3s;
     }
 
-
-    hr.year {
-      height: 4px;
-      border-width: 0;
-      color: white;
-      background-color: white;
-      border: 2px solid white;
-      border-radius: 15px;
-    }
-
     .flex-container {
       display: flex;
       flex-direction: column;
@@ -109,61 +100,7 @@
 </head>
 
 <body style="background-color: #1d1e28">
-  <!--Page Header start-->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html"><img class="circle" src="Img/MainLogo.png" alt="TroopLogo" width="75"
-          height="75"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <h2 style="font-family: " Lucida Console", "Courier New" , monospace;">Troop 456</h2>
-            </a>
-          </li>
-          <li class="nav-item">
-            <h2 class="nav-link" style="font-family: " Lucida Console", "Courier New" , monospace;">-</h2>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <h2 style="font-family: " Lucida Console", "Courier New" , monospace;">Resources</h2>
-            </a>
-          </li>
-          <li class="nav-item">
-            <h2 class="nav-link" style="font-family: " Lucida Console", "Courier New" , monospace;">-</h2>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <h2 style="font-family: " Lucida Console", "Courier New" , monospace;">News</h2>
-            </a>
-          </li>
-          <li class="nav-item">
-            <h2 class="nav-link" style="font-family: " Lucida Console", "Courier New" , monospace;">-</h2>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pictures.html">
-              <h2 style="font-family: " Lucida Console", "Courier New" , monospace;">Pictures</h2>
-            </a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <div class="g-signin2" data-onsuccess="onSignIn" id="loginButton"></div>
-
-            <h2 id="loginNameText" style="display: none;">N/A</h2>
-          </li>
-          <li class="nav-item">
-            <img src="" alt="User icon" width="50" height="50" style="border-radius: 50%; display: none;"
-              id="loginUserIcon">
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!--Page header end-->
+  
 
   <br><br>
   <!--Login alert-->
@@ -276,6 +213,15 @@ btn.addEventListener('click', event => {
 
     function adduser(){
       var profile = guser.getBasicProfile();
+
+      if(document.getElementById("EmailInput").value == "" || document.getElementById("NameInput").value == ""){
+        document.getElementById("statustext").innerHTML = "A critical value has been left blank";
+        document.getElementById("statustext").style.display = "block";
+        return;
+      }
+
+
+
       axios.get('https://troop456loginapinodejs.herokuapp.com/adduser:' + profile.getEmail() + "::" + document.getElementById("EmailInput").value + "::" + document.getElementById("edittoggle").checked + "::" + document.getElementById("accounttoggle").checked + "::" + document.getElementById("accttypeinput").value + "::" + document.getElementById("NameInput").value)
         .then(response => {
           if(response.data == "error"){
@@ -304,6 +250,12 @@ btn2.addEventListener('click', event => {
 
     function deleteuser(){
       var profile = guser.getBasicProfile();
+      if(document.getElementById("EmailInput2").value == ""){
+        document.getElementById("statustext").innerHTML = "A critical value has been left blank";
+        document.getElementById("statustext").style.display = "block";
+        return;
+      }
+
       axios.get('https://troop456loginapinodejs.herokuapp.com/deluser:' + profile.getEmail() + "::" + document.getElementById("EmailInput2").value)
         .then(response => {
           if(response.data == "error"){
@@ -402,8 +354,6 @@ btn3.addEventListener('click', event => {
           console.log(response.data);
           if (response.data == "error") {
             console.log("Error / 404");
-            document.getElementById("alertFail").style.opacity = "1";
-            document.getElementById("alertFail").style.display = "block";
             signOut();
             latch = false;
             return;
@@ -425,8 +375,6 @@ btn3.addEventListener('click', event => {
       document.getElementById("loginButton").style.display = "none";
       document.getElementById("loginNameText").style.display = "block";
       document.getElementById("loginUserIcon").style.display = "block";
-      document.getElementById("alertSuccess").style.opacity = "1";
-      document.getElementById("alertSuccess").style.display = "block";
       document.getElementById("logintext").style.display = "none";
       document.getElementById("account header").style.display = "block";
 
@@ -464,19 +412,12 @@ btn3.addEventListener('click', event => {
   </script>
 
   <!--BootStrap Code Do not Edit-->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <!--End Of bootstrap code-->
   <!--Misc Script Start-->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="js/Header_Footer-Injector.js"></script>
   <!--Misc Script End-->
 </body>
 

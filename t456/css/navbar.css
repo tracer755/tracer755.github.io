@@ -1,0 +1,8 @@
+h2.navbartext{
+    color:grey !important;
+    transition: 300ms;
+}
+h2.navbartext:hover{
+    color:lightgray !important;
+    transition: 300ms;
+}
