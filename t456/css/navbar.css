@@ -6,3 +6,14 @@ h2.navbartext:hover{
     color:lightgray !important;
     transition: 300ms;
 }
+
+.navdash {
+display: none;
+}
+
+  
+@media (min-width: 700px) {
+    .navdash {
+        display: block;
+    }
+}

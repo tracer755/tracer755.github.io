@@ -1,3 +1,5 @@
+var guser = '';
+
 window.onload = function(){
 
     document.getElementById("loginNameText").style.display = "none";
@@ -24,6 +26,7 @@ window.onload = function(){
         if(response.data != "error"){
           console.log("loginSuccess");
           SetProfileData(googleUser);
+          guser = googleUser;
         }
       })
   

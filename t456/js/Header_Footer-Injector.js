@@ -76,19 +76,19 @@ const HeaderCode = `<!--Page Header start-->
               <a class="nav-link" href="index.html"><h2 class="navbartext" style="font-family: "Lucida Console", "Courier New", monospace;">Troop 456</h2></a>
         </li>
         <li class="nav-item">
-          <h2 class="nav-link navbartext" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
+          <h2 class="nav-link navbartext navdash" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"><h2 class="navbartext" style="font-family: "Lucida Console", "Courier New", monospace;">Resources</h2></a>
         </li>
         <li class="nav-item">
-          <h2 class="nav-link navbartext" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
+          <h2 class="nav-link navbartext navdash" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"><h2 class="navbartext" style="font-family: "Lucida Console", "Courier New", monospace;">News</h2></a>
         </li>
         <li class="nav-item">
-          <h2 class="nav-link navbartext" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
+          <h2 class="nav-link navbartext navdash" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
         </li>
         <li id="picturesLink" class="nav-item" style="display: none;">
           <a class="nav-link" href="pictures.html"><h2 class="navbartext" style="font-family: "Lucida Console", "Courier New", monospace;">Pictures</h2></a>
@@ -96,13 +96,11 @@ const HeaderCode = `<!--Page Header start-->
       </ul>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="margin-right:12px;">
         <li class="nav-item">
-
           <div class="g-signin2" data-onsuccess="onSignIn" id="loginButton"></div>
-
-          <a href="profile.html" class="nohoverlink"><h2 id="loginNameText" style="display: none; color:white;">N/A</h2></a>
-        </li>
-        <li class="nav-item">
-          <a href="profile.html" class="nohoverlink"><img src="" alt="User icon" width="50" height="50" style="border-radius: 50%; display: none;" id="loginUserIcon"></a>
+          <div style="display: flex; flex-direction: row;">
+            <a href="profile.html" class="nohoverlink"><h2 id="loginNameText" style="display: none; color:white;">N/A</h2></a>
+            <a href="profile.html" class="nohoverlink"><img src="" alt="User icon" width="50" height="50" style="border-radius: 50%; display: none;" id="loginUserIcon"></a>
+          </div
         </li>
       </ul>
     </div>
