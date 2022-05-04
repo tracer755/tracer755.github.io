@@ -2,8 +2,8 @@ var guser = null;
 var cardidtoggle = false;
 var idlist = [];
 
-let idtogglebtn = document.getElementById("toggleid");
-idtogglebtn.addEventListener('click', event => {
+function toggleidcards(){
+  console.log('Toggled card id\'s');
   const cards = document.getElementsByClassName("itemid");
   if(cardidtoggle){
     for (var i = 0; i < idlist.length; i++) {
@@ -19,7 +19,7 @@ idtogglebtn.addEventListener('click', event => {
     }
     cardidtoggle = true;
   }
-});
+}
 
 function ShowId(obj){
   obj.style = "color: white; display: block;";
@@ -46,19 +46,17 @@ function DeleteCard(){
   axios.get("https://troop456loginapinodejs.herokuapp.com/delpic:" + profile.getEmail() + "::" + document.getElementById("objid").value)
     .then(response => {
       if(response.data == "error"){
+        document.getElementById("delstatustext").style = "color: red !important";
         document.getElementById("delstatustext").innerHTML = "Error";
         return;
       }
-      document.getElementById("delstatustext").style = "color: green";
+      document.getElementById("delstatustext").style = "color: green !important";
       document.getElementById("delstatustext").innerHTML = "Success!";
+      console.log("Deleted card " + document.getElementById("objid").value + " succsessfully");
     });
 
 }
 
-let imgdelbtn = document.getElementById("imgdelbtn");
-imgdelbtn.addEventListener('click', event => {
-  DeleteCard();
-});
 
 let imageloadlatch = true;
 
@@ -67,14 +65,6 @@ let imageloadlatch = true;
 
 
 window.onload = function () {
-
-
-  document.getElementById("loginNameText").style.display = "none";
-  document.getElementById("loginUserIcon").style.display = "none";
-  document.getElementById("alertFail").style.display = "none";
-  document.getElementById("alertSuccess").style.display = "none";
-
-  return;
 
 }
 
@@ -174,14 +164,13 @@ function Load(googleUser) {
         }
         imageloadlatch = false;
         console.log(response.data);
-        console.log(response.data.length);
+
 
         let year = new Date().getFullYear() + 1;
 
 
         let count = new Date().getFullYear() - 1960;
 
-        console.log(count);
 
 
         let temp = 1;
@@ -234,8 +223,6 @@ function Load(googleUser) {
 
 if(((imageItems % 2) == 0)){
 
-console.log("true " + imageItems);
-
 let div3 = document.createElement('div');
 
 picturecontainer.appendChild(div3);
@@ -248,7 +235,6 @@ currentrowcontainer = div3;
 }
 
 if(firstconainterlatch){
-console.log("true " + imageItems);
 
 let div3 = document.createElement('div');
 
@@ -288,7 +274,6 @@ firstconainterlatch = false;
               var url = "";
 
 
-              console.log(response.data[i].Link);
 
               LoadThumbnail(div.querySelector("#thumbnailimg"), 'https://troop456loginapinodejs.herokuapp.com/img:' + response.data[i].Thumbnail.split("/")[3]);
 
@@ -328,22 +313,11 @@ firstconainterlatch = false;
 
 }
 
-function footerbottom(){
-        //set the footer to the bottom
-        let footercode = document.getElementById("sitefooter").innerHTML
-
-        document.getElementById("sitefooter").parentNode.removeChild(document.getElementById("sitefooter"))
-  
-        document.body.innerHTML += `<div id="sitefooter"></div>`
-  
-        document.getElementById("sitefooter").innerHTML = footercode
-}
 
 function LoadThumbnail(obj, link) {
   axios.get(link)
     .then((response) => {
       obj.src = response.data[0].url;
-      console.log(obj.src);
       return response.data[0].url;
     });
 }

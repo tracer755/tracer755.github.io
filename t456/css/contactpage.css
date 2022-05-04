@@ -1,0 +1,33 @@
+.leftbox {
+    width:100%; 
+    padding-left:5%;
+    padding-right: 5%;
+  }
+  .rightbox {
+    width:100%; 
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .miscleftbox{
+    width:100%; 
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  
+  @media (min-width: 700px) {
+    .leftbox {
+      width:40%; 
+      padding-left: 5%;
+      padding-right: 0%;
+    }
+    .rightbox{
+      width:40%; 
+      padding-right: 5%;
+      padding-left: 0%;
+    }
+    .miscleftbox{
+      width:25%;
+      padding-left: 5%;
+      padding-right: 0%;
+    }
+  }

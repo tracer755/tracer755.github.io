@@ -73,7 +73,7 @@ const HeaderCode = `<!--Page Header start-->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-              <a class="nav-link" href="#"><h2 class="navbartext" style="font-family: "Lucida Console", "Courier New", monospace;">Troop 456</h2></a>
+              <a class="nav-link" href="index.html"><h2 class="navbartext" style="font-family: "Lucida Console", "Courier New", monospace;">Troop 456</h2></a>
         </li>
         <li class="nav-item">
           <h2 class="nav-link navbartext" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
@@ -96,12 +96,13 @@ const HeaderCode = `<!--Page Header start-->
       </ul>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="margin-right:12px;">
         <li class="nav-item">
+
           <div class="g-signin2" data-onsuccess="onSignIn" id="loginButton"></div>
 
-          <h2 id="loginNameText" style="display: none; color:white;">N/A</h2>
+          <a href="profile.html" class="nohoverlink"><h2 id="loginNameText" style="display: none; color:white;">N/A</h2></a>
         </li>
         <li class="nav-item">
-          <img src="" alt="User icon" width="50" height="50" style="border-radius: 50%; display: none;" id="loginUserIcon">
+          <a href="profile.html" class="nohoverlink"><img src="" alt="User icon" width="50" height="50" style="border-radius: 50%; display: none;" id="loginUserIcon"></a>
         </li>
       </ul>
     </div>
@@ -116,4 +117,5 @@ FooterContainer.innerHTML = FooterCode
 HeaderContainer.innerHTML = HeaderCode
 
 //inject css
+document.head.innerHTML += `<link rel="stylesheet" href="css/navbar.css">`
 document.head.innerHTML += `<link rel="stylesheet" href="css/footer.css">`

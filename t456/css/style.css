@@ -19,25 +19,25 @@ h6{
 p{
     color:white !important;
 }
-a.orangelink {
+.orangelink {
     color: #cc8500 !important; 
     text-decoration: underline !important;
     transition: 200ms;
 }
-a.orangelink:hover {
+.orangelink:hover {
     color: orange !important;
     background-color: transparent !important;
     text-decoration: underline !important;
     transition: 200ms;
+}
+a.nohoverlink:hover{
+    text-decoration: none !important;
 }
 a{
     text-decoration: none;
 }
 a:hover{
     text-decoration: underline;
-}
-a.nohoverlink:hover{
-    text-decoration: none !important;
 }
 a.nav-link:hover{
     text-decoration: none;
@@ -57,4 +57,7 @@ a.nav-link:hover{
     background-color: #b44901;
     box-shadow: 10px 10px 5px black;
     transition: 1000ms;
+}
+li.orange{
+    color: orange;
 }

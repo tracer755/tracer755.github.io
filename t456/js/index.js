@@ -2,8 +2,6 @@ window.onload = function(){
 
     document.getElementById("loginNameText").style.display = "none";
     document.getElementById("loginUserIcon").style.display = "none";
-    document.getElementById("alertFail").style.display = "none";
-    document.getElementById("alertSuccess").style.display = "none";
   
   return;
   
