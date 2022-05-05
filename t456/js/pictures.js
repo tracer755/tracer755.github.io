@@ -85,7 +85,7 @@ function onSignIn(googleUser) {
       if (response.data != "error") {
 
         //check for edit perms if user has perms show the edit menu
-        if(response.data[0].Edit){
+        if(response.data[0].Edit == "true"){
           document.getElementById("edittools").style.display = "block";
         }
         
@@ -149,8 +149,6 @@ function Load(googleUser) {
     .then(response => {
       if (response.data == "error") {
         console.log("Error / 404");
-        document.getElementById("alertFail").style.opacity = "1";
-        document.getElementById("alertFail").style.display = "block";
         signOut();
         latch = false;
         return;
