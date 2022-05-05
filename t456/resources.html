@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<Head>
+  <meta name="google-signin-client_id" content="529630701561-hk5ka2erbhg4ao9orhlvi1ohrjn0npc3.apps.googleusercontent.com">
+
+  <!--MetaData tags-->
+  <title>Troop 456 Resources</title>
+  <link rel="icon" href="Img/MainLogo.png"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--End of metadata tags-->
+
+  <!--css file start-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/flexboxes.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  
+  <!--css file end-->
+<style>
+.rescourceline {
+    display: inline-block;
+    width: 60%;
+    border: 3.3px solid white;
+    background-color: white;
+    border-radius: 6px;
+}
+
+@media (min-width: 800px) {
+    .rescourceline {
+        display: inline-block;
+        width: 45%;
+        border: 3.3px solid white;
+        background-color: white;
+        border-radius: 6px;
+    }
+}
+</style>
+</head>
+<body style="background-color: #1d1e28">
+<br><br><br>
+
+<h6 style="padding-left:2%; padding-right:2%;">These are links for important documents that could be very helpful for camping and/or going on outings with the troop. If you have any questions or have a link that should be added, <a href="troop-contact.html" class="orangelink">contact a leader or webmaster</a>.</h6>
+<br>
+<div id="freeresources" style="padding:7%;">
+
+
+</div>
+
+
+  <!--BootStrap Code Do not Edit-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!--End Of bootstrap code-->
+  <!--Misc Script Start-->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="js/index.js"></script>
+  <script src="js/Header_Footer-Injector.js"></script>
+  <script>
+      loadfreeresources();
+      //load the resources that don't require login
+      function loadfreeresources(){
+        let resourcecontainer = document.getElementById("freeresources");
+
+        resourcecontainer.innerHTML = "";
+        
+        let json = '';
+
+        axios.get("https://troop456loginapinodejs.herokuapp.com/getfreeresources")
+        .then(response => {
+            json = response.data;
+        
+
+        console.log(json);
+
+        json.sections.forEach(element => {
+            
+        
+
+        let resourcetitletemplate = `    
+        <div id="${element.title.replace(/\s/g, '')}container">
+            <h1 id="${element.title.replace(/\s/g, '')}title" style="padding-left:8px;">${element.title}</h1>
+            <span class="rescourceline"></span>
+            <br>
+
+            <div id="${element.title.replace(/\s/g, '')}items" style="padding-top:15px;">
+
+            </div>
+        </div>`;
+
+        resourcecontainer.innerHTML += resourcetitletemplate;
+
+        let itemcontainerid = element.title.replace(/\s/g, '') + "items";
+        element.documents.forEach(element => {
+
+            if(element.url != ""){
+                let linkitemtemplate = `       
+                <div style="padding-top:12px; padding-bottom:12px; padding-left:6px;">
+                    <a class="orangelink" href="${element.url}" target="_blank"><h4 class="orangelink" style="color: white;">${element.title}</h4></a>
+                </div>`;
+                document.getElementById(itemcontainerid).innerHTML += linkitemtemplate;
+            }
+            else{
+                let textitemtemplate = `        
+                <div style="padding-top: 12px; padding-bottom:12px; padding-left:6px;">
+                    <h5 style="color: white;">${element.title}</h5>
+                </div>`;
+                document.getElementById(itemcontainerid).innerHTML += textitemtemplate;
+            }
+            
+        })
+        document.getElementById(itemcontainerid).innerHTML += `<br>`;
+        });
+        
+    })
+      }
+
+      function submititem(isfree, section, text, url){
+        var profile = guser.getBasicProfile();
+        axios.get("https://troop456loginapinodejs.herokuapp.com/addresources:" + profile.getEmail() + "::" + isfree + "::" + section + "::" + encodeURIComponent(text) + "::" + encodeURIComponent(url))
+        .then(response => {
+            console.log(response.data);
+            loadfreeresources();
+        })
+      }
+  </script>
+  <!--Misc Script End-->
+</body>
+</html>

@@ -26,7 +26,7 @@ const FooterCode = `<footer id="footer" class="footer-1">
 <h5 class="widget-title">Quick Links<span></span></h5>
 <ul class="thumbnail-widget">
 <li>
-<div class="thumb-content"><a class="texthover" href="#">Resources</a></div>	
+<div class="thumb-content"><a class="texthover" href="resources.html">Resources</a></div>	
 </li>
 <li>
 <div class="thumb-content"><a class="texthover" href="#">News</a></div>	
@@ -79,7 +79,7 @@ const HeaderCode = `<!--Page Header start-->
           <h2 class="nav-link navbartext navdash" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><h2 class="navbartext" style="font-family: "Lucida Console", "Courier New", monospace;">Resources</h2></a>
+          <a class="nav-link" href="resources.html"><h2 class="navbartext" style="font-family: "Lucida Console", "Courier New", monospace;">Resources</h2></a>
         </li>
         <li class="nav-item">
           <h2 class="nav-link navbartext navdash" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>

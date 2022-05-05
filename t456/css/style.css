@@ -20,7 +20,7 @@ p{
     color:white !important;
 }
 .orangelink {
-    color: #cc8500 !important; 
+    color: #cc8500; 
     text-decoration: underline !important;
     transition: 200ms;
 }
