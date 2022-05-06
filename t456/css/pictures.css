@@ -45,3 +45,6 @@ img.status {
     flex: 1;
     transition: 0.3s;
   }
+  .editbuttons{
+      display: none;
+  }
