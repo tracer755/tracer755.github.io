@@ -29,7 +29,7 @@ let leftcontainer = document.getElementById("leftcontainer");
               leftcontainer.innerHTML += `
               <div id="${element.name}user">
                 <h4>${element.name} - ${element.desc}</h4>
-                <a class="orangelink" target="_blank" href="mailto:${element.email}" style="position:relative; bottom:6px;"><h6 class="orangelink">${element.email}</h6></a>
+                <a class="whiteorangelink" target="_blank" href="mailto:${element.email}" style="position:relative; bottom:6px;"><h6 class="whiteorangelink">${element.email}</h6></a>
               </div>
               <br>
               `;
@@ -38,7 +38,7 @@ let leftcontainer = document.getElementById("leftcontainer");
                 rightcontainer.innerHTML += `
               <div id="${element.name}user">
                 <h4>${element.name} - ${element.desc}</h4>
-                <a class="orangelink" target="_blank" href="mailto:${element.email}" style="position:relative; bottom:6px;"><h6 class="orangelink">${element.email}</h6></a>
+                <a class="whiteorangelink" target="_blank" href="mailto:${element.email}" style="position:relative; bottom:6px;"><h6 class="whiteorangelink">${element.email}</h6></a>
               </div>
               <br>
               `;
@@ -50,8 +50,8 @@ let leftcontainer = document.getElementById("leftcontainer");
               if(side == "left"){
                 leftcontainer.innerHTML += `
                 <div id="${element.name}user">
-                  <a class="orangelink" target="_blank" href="mailto:T456adults@googlegroups.com" style="position:relative; bottom:6px;"><h6 class="orangelink">T456adults@googlegroups.com</h6></a>
-                  <a class="orangelink" target="_blank" href="mailto:T456Scouts@googlegroups.com" style="position:relative; bottom:6px;"><h6 class="orangelink">T456Scouts@googlegroups.com</h6></a>
+                  <a class="whiteorangelink" target="_blank" href="mailto:T456adults@googlegroups.com" style="position:relative; bottom:6px;"><h6 class="whiteorangelink">T456adults@googlegroups.com</h6></a>
+                  <a class="whiteorangelink" target="_blank" href="mailto:T456Scouts@googlegroups.com" style="position:relative; bottom:6px;"><h6 class="whiteorangelink">T456Scouts@googlegroups.com</h6></a>
                 </div>
                 <br>
                 `;
@@ -59,8 +59,8 @@ let leftcontainer = document.getElementById("leftcontainer");
               else{
                   rightcontainer.innerHTML += `
                 <div id="${element.name}user">
-                  <a class="orangelink" target="_blank" href="mailto:T456adults@googlegroups.com" style="position:relative; bottom:6px;"><h6 class="orangelink">T456adults@googlegroups.com</h6></a>
-                  <a class="orangelink" target="_blank" href="mailto:T456Scouts@googlegroups.com" style="position:relative; bottom:6px;"><h6 class="orangelink">T456Scouts@googlegroups.com</h6></a>
+                  <a class="whiteorangelink" target="_blank" href="mailto:T456adults@googlegroups.com" style="position:relative; bottom:6px;"><h6 class="whiteorangelink">T456adults@googlegroups.com</h6></a>
+                  <a class="whiteorangelink" target="_blank" href="mailto:T456Scouts@googlegroups.com" style="position:relative; bottom:6px;"><h6 class="whiteorangelink">T456Scouts@googlegroups.com</h6></a>
                 </div>
                 <br>
                 `;

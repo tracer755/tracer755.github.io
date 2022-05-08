@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<Head>
+  <meta name="google-signin-client_id"
+    content="529630701561-hk5ka2erbhg4ao9orhlvi1ohrjn0npc3.apps.googleusercontent.com">
+
+  <!--MetaData tags-->
+  <title>Upcoming</title>
+  <link rel="icon" href="Img/MainLogo.png" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--End of metadata tags-->
+
+  <!--css file start-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pictures.css">
+  <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
+  <!--css file end-->
+  <style>
+.content {
+  background-color: #2a2d32;
+  border-color: #2f3237;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 10px;
+  max-width: 100%;
+}
+.hidebox{
+  display: none;
+}
+.splitline1 {
+    display: inline-block;
+    border: .7px solid white;
+    background-color: white;
+    width: 50%;
+    border-radius: 28px;
+}
+@media (min-width: 700px) {
+  .content {
+    max-width: 50%;
+  }
+}
+  </style>
+</head>
+
+<body style="background-color: #1d1e28">
+<br><br>
+
+
+<div id="upcomingevents" style="padding:8%;">
+
+</div>
+
+  <!--BootStrap Code Do not Edit-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!--End Of bootstrap code-->
+  <!--Misc Script Start-->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="js/Header_Footer-Injector.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/months.js"></script>
+
+  <script>
+    let scoutbookcaljson = "";
+    let testing = '';
+    loadscoutbookcal();
+
+    function loadscoutbookcal(){
+      axios.get("https://troop456loginapinodejs.herokuapp.com/getscoutbookcal")
+        .then(response => {
+          let json = { Events: []};
+
+          response.data.VCALENDAR[0].VEVENT.forEach(element => {
+            let tempjson = 
+            JSON.parse(`{
+              "DtStart":"",
+              "DtEnd":"",
+              "Summary":"",
+              "Location":"",
+              "Description":"",
+              "Url":""
+            }`);
+            let dateString = "";
+            let timeString = "";
+            try{
+              dateString = element["DTSTART;TZID=America/Denver"].split("T")[0];
+              timeString = element["DTSTART;TZID=America/Denver"].split("T")[1];
+            }
+            catch{
+              dateString = element["DTSTART;VALUE=DATE"].split("T")[0];
+              timeString = element["DTSTART;VALUE=DATE"].split("T")[1];
+            }
+
+            let year = dateString.substring(0, 4);
+            let month = dateString.substring(4, 6);
+            let day = dateString.substring(6, 8);
+
+
+            let date = "";
+            try{
+              let hour = timeString.substring(0, 2);
+              let min = timeString.substring(2, 4);
+              let sec = timeString.substring(4, 6);
+              
+              date = new Date(year, month - 1, day, hour, min, sec);
+              
+            }
+            catch{
+              date = new Date(year, month - 1, day);
+            }
+            tempjson.DtStart = date;
+            tempjson.Summary = element.SUMMARY;
+            tempjson.Description = element.DESCRIPTION;
+            tempjson.Location = element.LOCATION;
+            tempjson.Url = element.URL;
+
+
+            try{
+              dateString = element["DTEND;TZID=America/Denver"].split("T")[0];
+              timeString = element["DTEND;TZID=America/Denver"].split("T")[1];
+            }
+            catch{
+              dateString = element["DTEND;VALUE=DATE"].split("T")[0];
+              timeString = element["DTEND;VALUE=DATE"].split("T")[1];
+            }
+
+            year = dateString.substring(0, 4);
+            month = dateString.substring(4, 6);
+            day = dateString.substring(6, 8);
+
+            try{
+              let hour = timeString.substring(0, 2);
+              let min = timeString.substring(2, 4);
+              let sec = timeString.substring(4, 6);
+              
+              date = new Date(year, month - 1, day, hour, min, sec);
+              
+            }
+            catch{
+              date = new Date(year, month - 1, day);
+            }
+            tempjson.DtEnd = date;
+            if(date > new Date()){
+            json.Events.push(tempjson);
+            }
+            
+          });
+          let string1 = JSON.stringify(json);
+          var parsed = JSON.parse(string1);  
+
+          scoutbookcaljson = parsed;
+          console.log(parsed);
+        })
+    }
+
+    let loadsbcdlatch = true;
+        loadupcomingscoutbookdatatopage();
+        function loadupcomingscoutbookdatatopage(){
+          if(scoutbookcaljson == ""){
+            setTimeout(() => { loadupcomingscoutbookdatatopage(); }, 500);
+            return;
+          }
+
+          if(loadsbcdlatch == false){
+            return;
+          }
+          loadsbcdlatch = false;
+
+          //load scoutbook data to the page
+          let currentmonth = "";
+          //numbertomonth()
+          let eventcontainer = document.getElementById("upcomingevents");
+          scoutbookcaljson.Events.forEach(element => {
+            if(element.DtStart.split("T")[0].split("-")[1] >= (new Date().getUTCMonth() + 1 + 4)){
+              return;
+            }
+            if(element.DtStart.split("T")[0].split("-")[1] != currentmonth){
+              currentmonth = element.DtStart.split("T")[0].split("-")[1];
+              let datetemplatehtml = `
+              <br>
+              <strong><h3>${numbertomonth(element.DtStart.split("T")[0].split("-")[1]) + ":"}</h3><strong>
+              `;
+              eventcontainer.innerHTML += datetemplatehtml;
+            }
+            let desc = String(element.Description).split("\\n\\nFor more information please visit:")[0].replace(/\\n/g, "<br>");
+            desc = desc.split("\\").join("");
+            
+
+            eventcontainer.innerHTML += `
+            <div id="eventitem">
+              <div style="padding-left:20px;" onclick="colapsable('content${hashCode(element.Summary + element.Description)}')">
+                <h4 style="padding:2px%">${element.Summary}</h4>
+              </div>
+              <div style="" class="hidebox content content${hashCode(element.Summary + element.Description)} collapse show">
+                <center style="padding-top:5px; padding-left: 15px; padding-right: 15px;">
+                  <h5>${element.Summary}</h5>
+                  <span class="splitline1"></span>
+                  <br>
+                  <h6>${desc}</h6>
+                  <span class="splitline1"></span>
+                  <br>
+                  <h6 style="width: 100%;">For more information or to rsvp: <a class="orangelink" target="_blank" href="${element.Url.replace("HTTPS", "https")}">Click here</a></h6>
+                </center>
+                <br>
+              </div>
+            </div>
+            `;
+            $(`.content${hashCode(element.Summary + element.Description)}`).collapse("show")
+            $(`.content${hashCode(element.Summary + element.Description)}`).collapse("hide")
+            let eventtemplatehtml = ``;
+          })
+
+        }
+
+        function colapsable(id){
+          let item = document.getElementsByClassName(id);
+          item[0].classList.remove("hidebox");
+          if(item[0].classList[3] == "show")
+            $("." + id).collapse("hide")
+          else
+            $("." + id).collapse("show")
+        }
+
+  </script>
+  <!--Misc Script End-->
+</body>
+
+</html>

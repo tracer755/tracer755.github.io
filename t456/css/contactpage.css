@@ -31,3 +31,15 @@
       padding-right: 0%;
     }
   }
+
+.whiteorangelink {
+    color: white !important; 
+    text-decoration: underline !important;
+    transition: 200ms;
+}
+.whiteorangelink:hover {
+    color: orange !important;
+    background-color: transparent !important;
+    text-decoration: underline !important;
+    transition: 200ms;
+}
