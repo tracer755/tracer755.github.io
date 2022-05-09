@@ -12,7 +12,7 @@ display: none;
 }
 
   
-@media (min-width: 700px) {
+@media (min-width: 900px) {
     .navdash {
         display: block;
     }

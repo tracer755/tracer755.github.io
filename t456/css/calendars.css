@@ -1,0 +1,16 @@
+.calenderbox{
+    padding-left:10px; padding-bottom:60px; padding-right:10px;
+}
+.calendersize{
+    width: 400px;
+    height: 300px;
+}
+@media (min-width: 700px) {
+    .calenderbox{
+        padding-left:180px; padding-bottom:60px; padding-right:180px;
+    }
+    .calendersize{
+        width: 800px;
+        height: 600px;
+    }
+}

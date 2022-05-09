@@ -152,6 +152,8 @@ function SetProfileData(googleUser) {
   document.getElementById("loginNameText").style.display = "block";
   document.getElementById("loginUserIcon").style.display = "block";
   document.getElementById("logintext").style.display = "none";
+  document.getElementById("picturesLink").style.display = "block";
+  document.getElementById("picturesLinkDash").style.display = "block";
 
   document.getElementById("loginNameText").innerHTML = profile.getName() + "";
   document.getElementById("loginUserIcon").src = profile.getImageUrl();

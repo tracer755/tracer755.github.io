@@ -32,7 +32,7 @@ const FooterCode = `<footer id="footer" class="footer-1">
 <div class="thumb-content"><a class="texthover" href="#">News</a></div>	
 </li>
 <li>
-<div class="thumb-content"><a href="#">About</a></div>	
+<div class="thumb-content"><a href="Information.html">About</a></div>	
 </li>
 </ul>
 </div>
@@ -41,6 +41,17 @@ const FooterCode = `<footer id="footer" class="footer-1">
 <div class="col-xs-12 col-sm-6 col-md-3">
 <div class="widget no-box">
 <h5 class="widget-title">Get Started<span></span></h5>
+<ul class="thumbnail-widget">
+<li>
+<p>If you are a boy 11 - 18 years old</p>
+</li>
+<li>
+<p>We would love to have you join out troop!</p>
+</li>
+<li>
+<div class="thumb-content"><a href="troop-contact.html">Get in touch</a></div>	
+</li>
+</ul>
 </div>
 </div>
 
@@ -73,7 +84,7 @@ const HeaderCode = `<!--Page Header start-->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-              <a class="nav-link" href="index.html"><h2 class="navbartext" style="font-family: "Lucida Console", "Courier New", monospace;">Troop 456</h2></a>
+          <a class="nav-link" href="index.html"><h2 class="navbartext" style="font-family: "Lucida Console", "Courier New", monospace;">Troop 456</h2></a>
         </li>
         <li class="nav-item">
           <h2 class="nav-link navbartext navdash" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
@@ -85,9 +96,15 @@ const HeaderCode = `<!--Page Header start-->
           <h2 class="nav-link navbartext navdash" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><h2 class="navbartext" style="font-family: "Lucida Console", "Courier New", monospace;">News</h2></a>
+          <a class="nav-link" href="news.html"><h2 class="navbartext" style="font-family: "Lucida Console", "Courier New", monospace;">News</h2></a>
         </li>
         <li class="nav-item">
+          <h2 class="nav-link navbartext navdash" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="upcoming.html"><h2 class="navbartext" style="font-family: "Lucida Console", "Courier New", monospace;">Events</h2></a>
+        </li>
+        <li id="picturesLinkDash" class="nav-item" style="display: none;">
           <h2 class="nav-link navbartext navdash" style="font-family: "Lucida Console", "Courier New", monospace;">-</h2>
         </li>
         <li id="picturesLink" class="nav-item" style="display: none;">

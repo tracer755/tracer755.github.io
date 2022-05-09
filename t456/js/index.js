@@ -48,6 +48,7 @@ window.onload = function(){
     document.getElementById("loginButton").style.display = "none";
     document.getElementById("loginNameText").style.display = "block";
     document.getElementById("loginUserIcon").style.display = "block";
+    document.getElementById("picturesLinkDash").style.display = "block";
     document.getElementById("picturesLink").style.display = "block";
   
     document.getElementById("loginNameText").innerHTML = profile.getName() + "";
