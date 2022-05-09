@@ -12,14 +12,14 @@ let leftcontainer = document.getElementById("leftcontainer");
             if(side == "left"){
               leftcontainer.innerHTML += `
               <div>
-                <h3 id="${element.name}title">${element.name}</h3>
+                <h3 id="${element.name}title"><strong>${element.name}</strong></h3>
                 <br>
               </div>`;
             }
             else{
               rightcontainer.innerHTML += `
               <div>
-                <h3 id="${element.name}title">${element.name}</h3>
+                <h3 id="${element.name}title"><strong>${element.name}</strong></h3>
                 <br>
               </div>`;
             }

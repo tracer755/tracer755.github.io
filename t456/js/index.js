@@ -27,6 +27,13 @@ window.onload = function(){
           console.log("loginSuccess");
           SetProfileData(googleUser);
           guser = googleUser;
+          try{
+            if(response.data[0].Edit == "true" || response.data[0].AccountControl == "true")
+              document.getElementById("admintool").style.display = "block";
+          }
+          catch{
+
+          }
         }
       })
   
