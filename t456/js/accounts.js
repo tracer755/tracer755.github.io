@@ -17,7 +17,7 @@ let btn = document.getElementById("submitbtn");
 
 
 
-      axios.get('https://troop456loginapinodejs.herokuapp.com/adduser:' + profile.getEmail() + "::" + document.getElementById("EmailInput").value + "::" + document.getElementById("edittoggle").checked + "::" + document.getElementById("accounttoggle").checked + "::" + document.getElementById("accttypeinput").value + "::" + document.getElementById("NameInput").value)
+      axios.get('https://troop456loginapinodejs.herokuapp.com/adduser:' + profile.getEmail() + "::" + document.getElementById("EmailInput").value.toLowerCase() + "::" + document.getElementById("edittoggle").checked + "::" + document.getElementById("accounttoggle").checked + "::" + document.getElementById("accttypeinput").value + "::" + document.getElementById("NameInput").value)
         .then(response => {
           if(response.data == "error"){
             document.getElementById("statustext").innerHTML = "error";

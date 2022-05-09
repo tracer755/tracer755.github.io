@@ -81,6 +81,7 @@ function submitimg(){
       console.log(response.data);
       if(response.data == "error"){
         document.getElementById("statustext").innerHTML = "An Error has occoured";
+        document.getElementById("statustext").style = "color: red !important";
         return;
       }
       if(response.data == "repeat"){
@@ -89,10 +90,12 @@ function submitimg(){
       }
       if(response.data == "no auth"){
         document.getElementById("statustext").innerHTML = "You are not authorized to use this tool. Naughty Naughty";
+        document.getElementById("statustext").style = "color: red !important";
         return;
       }
-      document.getElementById("statustext").style = "color: green";
       document.getElementById("statustext").innerHTML = "Success!";
+      document.getElementById("statustext").style = "color: green !important";
+      setTimeout(() => {  window.location.href = "pictures.html"; }, 1000);
     });
 
 
@@ -170,6 +173,7 @@ function signOut() {
     document.getElementById("loginUserIcon").src = "";
     document.getElementById("logintext").style.display = "block";
     document.getElementById("picturetext").style.display = "none";
+    document.getElementById("picturesLinkDash").style.display = "none";
   });
 }
 function Load(googleUser) {

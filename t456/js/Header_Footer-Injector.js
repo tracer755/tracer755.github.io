@@ -29,7 +29,7 @@ const FooterCode = `<footer id="footer" class="footer-1">
 <div class="thumb-content"><a class="texthover" href="resources.html">Resources</a></div>	
 </li>
 <li>
-<div class="thumb-content"><a class="texthover" href="#">News</a></div>	
+<div class="thumb-content"><a class="texthover" href="news.html">News</a></div>	
 </li>
 <li>
 <div class="thumb-content"><a href="Information.html">About</a></div>	
