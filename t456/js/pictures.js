@@ -1,4 +1,3 @@
-let guser = '';
 var cardidtoggle = false;
 var idlist = [];
 
@@ -36,7 +35,7 @@ function DeleteCard(id){
   console.log(id);
 document.getElementById("delstatustext").style = "color: white";
 document.getElementById("delstatustext").innerHTML = "Submitting...";
-if(guser == null){
+if(token == ""){
  document.getElementById("delstatustext").innerHTML = "You aren't signed in";
  return;
 }
@@ -44,10 +43,9 @@ if(document.getElementById("objid").value == ""){
  document.getElementById("delstatustext").innerHTML = "Text box is empty";
  return;
 }
-profile = guser.getBasicProfile();
 
 
-axios.get("https://troop456loginapinodejs.herokuapp.com/delpic:" + profile.getEmail() + "::" + id)
+axios.get("https://troop456loginapinodejs.herokuapp.com/delpic:" + tokentype + "::" + token + "::" + id)
  .then(response => {
    if(response.data == "error"){
      document.getElementById("delstatustext").style = "color: red !important";
@@ -68,14 +66,13 @@ function CardDelete(id){
     return;
   }
 
-if(guser == null){
+if(token == ""){
  document.getElementById("delstatustext").innerHTML = "You aren't signed in";
  return;
 }
-var profile = guser.getBasicProfile();
 
 
-axios.get("https://troop456loginapinodejs.herokuapp.com/delpic:" + profile.getEmail() + "::" + id)
+axios.get("https://troop456loginapinodejs.herokuapp.com/delpic:" + tokentype + "::" + token + "::" + id)
  .then(response => {
    if(response.data == "error"){
       console.log("error could not delete card");
@@ -93,95 +90,38 @@ let imageloadlatch = true;
 
 
 
-window.onload = function () {
+var loaddata = true
 
-}
+loadpictures()
 
-function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  guser = googleUser;
-  let latch = true;
-
-  axios.get('https://troop456loginapinodejs.herokuapp.com/email:' + profile.getEmail())
-    .then(response => {
-      console.log(response.data);
-      if (response.data == "error") {
-        console.log("Error / 404");
-        signOut();
-        latch = false;
-        return;
-      }
-      if (response.data != "error") {
-
-        //check for edit perms if user has perms show the edit menu
-        if(response.data[0].Edit == "true"){
-          document.getElementById("edittools").style.display = "block";
-        }
-        
-
-        console.log("loginSuccess");
-        SetProfileData(googleUser);
-        LoadImg(googleUser);
-      }
-    })
-
-
-
-
-  if (latch) {
-
+function loadpictures(){
+  if(token == "" || tokentype == ''){
+    setTimeout(() => { loadpictures(); }, 500);
+    return;
   }
+  if (userdata.Edit == "true") {
+    document.getElementById("edittools").style.display = "block";
+  }
+  SetUserData();
+  LoadImg();
 }
 
-function SetProfileData(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  guser = googleUser;
 
 
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  document.getElementById("loginButton").style.display = "none";
-  document.getElementById("loginNameText").style.display = "block";
-  document.getElementById("loginUserIcon").style.display = "block";
+
+function SetUserData() {
   document.getElementById("logintext").style.display = "none";
   document.getElementById("picturetext").style.display = "block";
-  document.getElementById("picturesLink").style.display = "block";
-  document.getElementById("picturesLinkDash").style.display = "block";
-  document.getElementById("loginNameText").innerHTML = profile.getName() + "";
-  document.getElementById("loginUserIcon").src = profile.getImageUrl();
-}
-
-function signOut() {
-  var auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function () {
-    console.log('User signed out.');
-    document.getElementById("loginButton").style.display = "block";
-    document.getElementById("loginNameText").style.display = "none";
-    document.getElementById("loginUserIcon").style.display = "none";
-    document.getElementById("loginNameText").innerHTML = "N/A";
-    document.getElementById("loginUserIcon").src = "";
-    document.getElementById("logintext").style.display = "block";
-    document.getElementById("picturetext").style.display = "none";
-  });
 }
 function LoadImg() {
-var profile = guser.getBasicProfile();
 
 
   let picturecontainer = document.getElementById('picturecards');
 
 
 
-  axios.get('https://troop456loginapinodejs.herokuapp.com/pictures:' + profile.getEmail())
+  axios.get('https://troop456loginapinodejs.herokuapp.com/pictures:' + tokentype + '|' + token)
     .then(response => {
-      if (response.data == "error") {
-        console.log("Error / 404");
-        signOut();
-        latch = false;
-        return;
-      }
       if (response.data != "error") {
 
 

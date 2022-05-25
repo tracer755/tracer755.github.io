@@ -1,7 +1,3 @@
-var guser = null;
-
-
-
 (function () {
     let year_satart = 1961;
     let year_end = (new Date).getFullYear(); // current year
@@ -45,12 +41,11 @@ submitimg();
 function submitimg(){
   document.getElementById("statustext").style = "color: white";
   //check to make sure user is logged in
-  if(guser == null){
+  if(token == ""){
     document.getElementById("statustext").innerHTML = "You aren't loged in please do so then try again";
     return;
   }
 
-  var profile = guser.getBasicProfile();
   var decsriptiontext = "";
 
   if(document.getElementById("Description").value == ""){
@@ -76,7 +71,7 @@ function submitimg(){
 
 
 
-  axios.get('https://troop456loginapinodejs.herokuapp.com/addpic:' + profile.getEmail() + "::" + document.getElementById("year").value + "::" + encodeURIComponent(document.getElementById("AlbumLinkInput").value) + "::" + encodeURIComponent(document.getElementById("ThumbnailLink").value) + "::" + document.getElementById("TitleInput").value + "::" + decsriptiontext)
+  axios.get('https://troop456loginapinodejs.herokuapp.com/addpic:' + tokentype + "::" + token + "::" + document.getElementById("year").value + "::" + encodeURIComponent(document.getElementById("AlbumLinkInput").value) + "::" + encodeURIComponent(document.getElementById("ThumbnailLink").value) + "::" + document.getElementById("TitleInput").value + "::" + decsriptiontext)
     .then((response) => {
       console.log(response.data);
       if(response.data == "error"){
@@ -108,99 +103,21 @@ function submitimg(){
 
 window.onload = function () {
   reloadpreview();
-
-  return;
-
 }
 
-function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-
-  guser = googleUser;
-
-  let latch = true;
-
-  axios.get('https://troop456loginapinodejs.herokuapp.com/email:' + profile.getEmail())
-    .then(response => {
-      console.log(response.data);
-      if (response.data == "error") {
-        console.log("Error / 404");
-        signOut();
-        latch = false;
-        return;
-      }
-      if (response.data != "error") {
-        console.log("loginSuccess");
-        SetProfileData(googleUser);
-        Load(googleUser);
-      }
-    })
-
-
-
-
-  if (latch) {
-
+loaduserdata()
+function loaduserdata() {
+  if (token == "" || tokentype == '') {
+    setTimeout(() => { loaduserdata() }, 500);
+    return;
   }
+  SetUserData();
 }
 
-function SetProfileData(googleUser) {
-  var profile = googleUser.getBasicProfile();
-
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  document.getElementById("loginButton").style.display = "none";
-  document.getElementById("loginNameText").style.display = "block";
-  document.getElementById("loginUserIcon").style.display = "block";
+function SetUserData() {
   document.getElementById("logintext").style.display = "none";
   document.getElementById("picturesLink").style.display = "block";
-  document.getElementById("picturesLinkDash").style.display = "block";
-
-  document.getElementById("loginNameText").innerHTML = profile.getName() + "";
-  document.getElementById("loginUserIcon").src = profile.getImageUrl();
 }
-
-function signOut() {
-  var auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function () {
-    console.log('User signed out.');
-    document.getElementById("loginButton").style.display = "block";
-    document.getElementById("loginNameText").style.display = "none";
-    document.getElementById("loginUserIcon").style.display = "none";
-    document.getElementById("loginNameText").innerHTML = "N/A";
-    document.getElementById("loginUserIcon").src = "";
-    document.getElementById("logintext").style.display = "block";
-    document.getElementById("picturetext").style.display = "none";
-    document.getElementById("picturesLinkDash").style.display = "none";
-  });
-}
-function Load(googleUser) {
-  var profile = googleUser.getBasicProfile();
-
-
-
-
-
-
-
-  axios.get('https://troop456loginapinodejs.herokuapp.com/pictures:' + profile.getEmail())
-    .then(response => {
-      if (response.data == "error") {
-        console.log("Error / 404");
-        document.getElementById("alertFail").style.opacity = "1";
-        document.getElementById("alertFail").style.display = "block";
-        signOut();
-        latch = false;
-        return;
-      }
-      if (
-      response.data != "error") {
-      }
-    })
-}
-
 
 
 function LoadThumbnail(obj, link) {

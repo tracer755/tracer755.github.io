@@ -114,9 +114,9 @@ const HeaderCode = `<!--Page Header start-->
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="margin-right:12px;">
         <li class="nav-item">
           <div class="g-signin2" data-onsuccess="onSignIn" id="loginButton"></div>
-          <div style="display: flex; flex-direction: row;">
-            <a href="profile.html" class="nohoverlink"><h2 id="loginNameText" style="display: none; color:white;">N/A</h2></a>
-            <a href="profile.html" class="nohoverlink"><img src="" alt="User icon" width="50" height="50" style="border-radius: 50%; display: none;" id="loginUserIcon"></a>
+          <div id="userbar" style="display: none; flex-direction: row;">
+            <a href="profile.html" class="nohoverlink"><h2 id="loginNameText" style="color:white;">N/A</h2></a>
+            <a href="profile.html" class="nohoverlink"><img src="" alt="User icon" width="50" height="50" style="border-radius: 50%;" id="loginUserIcon"></a>
           </div
         </li>
       </ul>

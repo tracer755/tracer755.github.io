@@ -17,36 +17,24 @@ let url = window.location.href.slice(window.location.href.indexOf('?') + 1).spli
     document.getElementById("year").innerHTML = option;
 })();
 
-gusercheck();
-
-function gusercheck(){
-    if(guser != ''){
-        loadimgedit();
-        loadlatch = false;
-    }
-    if(loadlatch){
-        setTimeout(() => {  gusercheck() }, 500);
-    }
+loaduserdata()
+function loaduserdata() {
+  if (token == "" || tokentype == '') {
+    setTimeout(() => { loaduserdata() }, 500);
+    return;
+  }
+  loadimgedit();
 }
 
 
-function loadimgedit(){
-    var profile = guser.getBasicProfile();
-    
-    console.log(url[0]);
 
-    axios.get('https://troop456loginapinodejs.herokuapp.com/pictures:' + profile.getEmail())
+function loadimgedit(){
+    axios.get('https://troop456loginapinodejs.herokuapp.com/pictures:' + tokentype + "|" + token)
     .then(response => {
-      if (response.data == "error") {
-        console.log("Error / 404");
-        signOut();
-        latch = false;
-        return;
-      }
-      else if(response.data != "error"){
+      if(response.data != "error"){
         response.data.forEach(element => {
             if(url[0] == element._id){
-                console.log(element.Title);
+                console.log("Editing: " + element.Title);
 
                 document.getElementById("year" + element.Year).selected = true;
 
@@ -81,18 +69,9 @@ function reloadpreview(){
 
 
 function submitedit(){
-    var profile = guser.getBasicProfile();
-    axios.get('https://troop456loginapinodejs.herokuapp.com/editpic:' + profile.getEmail() + "::" + document.getElementById("year").value + "::" + encodeURIComponent(document.getElementById("AlbumLinkInput").value) + "::" + encodeURIComponent(document.getElementById("ThumbnailLink").value) + "::" + encodeURIComponent(document.getElementById("TitleInput").value) + "::" + encodeURIComponent(document.getElementById("Description").value) + "::" + encodeURIComponent(url[0]))
+    axios.get('https://troop456loginapinodejs.herokuapp.com/editpic:' + tokentype + "::" + token + "::" + document.getElementById("year").value + "::" + encodeURIComponent(document.getElementById("AlbumLinkInput").value) + "::" + encodeURIComponent(document.getElementById("ThumbnailLink").value) + "::" + encodeURIComponent(document.getElementById("TitleInput").value) + "::" + encodeURIComponent(document.getElementById("Description").value) + "::" + encodeURIComponent(url[0]))
     .then(response => {
-      if (response.data == "error") {
-        document.getElementById("statustext").innerHTML = "An Error has occoured";
-        document.getElementById("statustext").style = "color: red !important";
-        console.log("Error / 404");
-        signOut();
-        latch = false;
-        return;
-      }
-      else if(response.data != "error"){
+      if(response.data != "error"){
         console.log(response.data);
         document.getElementById("statustext").innerHTML = "Success!";
         document.getElementById("statustext").style = "color: green !important";
