@@ -1,6 +1,8 @@
 const FooterIdName = "sitefooter"
 const HeaderIdName = "SiteHeader"
 
+
+
 //inject divs
 document.body.innerHTML = `<div id="SiteHeader"></div>` + document.body.innerHTML
 document.body.innerHTML += `<div id="sitefooter"></div>`
@@ -113,7 +115,9 @@ const HeaderCode = `<!--Page Header start-->
       </ul>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="margin-right:12px;">
         <li class="nav-item">
-          <div class="g-signin2" data-onsuccess="onSignIn" id="loginButton"></div>
+          <div id="loginButton">
+            <!--<div class="g-signin2" data-onsuccess="onSignIn"></div>-->
+          </div>
           <div id="userbar" style="display: none; flex-direction: row;">
             <a href="profile.html" class="nohoverlink"><h2 id="loginNameText" style="color:white;">N/A</h2></a>
             <a href="profile.html" class="nohoverlink"><img src="" alt="User icon" width="50" height="50" style="border-radius: 50%;" id="loginUserIcon"></a>
