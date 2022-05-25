@@ -115,8 +115,10 @@ const HeaderCode = `<!--Page Header start-->
       </ul>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="margin-right:12px;">
         <li class="nav-item">
-          <div id="loginButton">
-            <!--<div class="g-signin2" data-onsuccess="onSignIn"></div>-->
+          <div id="loginButton" class="flex-container">
+            <div class="g-signin2" data-onsuccess="onSignIn" style="padding-right:10px"></div>
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" data-use-continue-as="true" data-size="medium">
+            </fb:login-button>
           </div>
           <div id="userbar" style="display: none; flex-direction: row;">
             <a href="profile.html" class="nohoverlink"><h2 id="loginNameText" style="color:white;">N/A</h2></a>
