@@ -23,7 +23,6 @@ function testcookielogin(){
     return
     //console.log(document.cookie.match(new RegExp('(^| )' + "profileimg" + '=([^;]+)'))[2])
   }
-  console.log('https://troop456loginapinodejs.herokuapp.com/token:' + document.cookie.match(new RegExp('(^| )' + "tokentype" + '=([^;]+)'))[2] + "|" + document.cookie.match(new RegExp('(^| )' + "token" + '=([^;]+)'))[2])
   axios.get('https://troop456loginapinodejs.herokuapp.com/token:' + document.cookie.match(new RegExp('(^| )' + "tokentype" + '=([^;]+)'))[2] + "|" + document.cookie.match(new RegExp('(^| )' + "token" + '=([^;]+)'))[2])
     .then(response => {
       if(response.data != "error"){
