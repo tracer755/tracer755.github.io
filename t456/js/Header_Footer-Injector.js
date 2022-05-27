@@ -11,7 +11,8 @@ document.body.innerHTML += `<div id="sitefooter"></div>`
 let FooterContainer = document.getElementById(FooterIdName)
 let HeaderContainer = document.getElementById(HeaderIdName)
 
-const FooterCode = `<footer id="footer" class="footer-1">
+const FooterCode = `
+<footer id="footer" class="footer-1">
 <div class="main-footer widgets-dark typo-light">
 <div class="container">
 <div class="row">
@@ -76,7 +77,8 @@ const FooterCode = `<footer id="footer" class="footer-1">
 
 </footer>`
 
-const HeaderCode = `<!--Page Header start-->
+const HeaderCode = `
+<!--Page Header start-->
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.html"><img class="circle" src="Img/MainLogo.png" alt="TroopLogo" width="75" height="75"></a>

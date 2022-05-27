@@ -44,7 +44,7 @@ img.status {
     max-width: 400px !important;
     flex: 1;
     transition: 0.3s;
-  }
-  .editbuttons{
-      display: none;
-  }
+}
+.editbuttons {
+    display: none;
+}
