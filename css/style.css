@@ -20,7 +20,6 @@
 }
 
 div.aboutbox{
-    background-color: grey;
     width: 90%;
     padding: 15px;
     margin-left: auto;
@@ -41,7 +40,6 @@ img.aboutbox {
         flex-direction: row;
     }
     div.aboutbox {
-        background-color: grey;
         max-width: 320px;
         max-height: 520px;
         width: auto;
