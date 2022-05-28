@@ -1,5 +1,5 @@
 .circle{
-    border-radius: 15%;
+    border-radius: 13.5%;
 }
 
 .textnavbar{
@@ -20,15 +20,20 @@
 }
 
 div.aboutbox{
-    width: 90%;
+    width: 85%;
     padding: 15px;
+    padding-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
 }
 
 img.aboutbox {
-    width: 90% !important;
+    width: 100% !important;
     padding-bottom: 10px;
+}
+
+img.mainpagelogo{
+    width: 70%;
 }
 
 
@@ -43,7 +48,8 @@ img.aboutbox {
         max-width: 320px;
         max-height: 520px;
         width: auto;
-        padding: 15px;
+        padding: 12px;
+        padding-bottom: 0px;
         margin-left: 0;
         margin-right: 0;
     }
@@ -51,6 +57,9 @@ img.aboutbox {
     img.aboutbox {
         width: 240px !important;
         padding-bottom: 10px;
+    }
+    img.mainpagelogo {
+        width: 20%;
     }
 }
 
