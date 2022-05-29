@@ -36,8 +36,16 @@ img.mainpagelogo{
     width: 70%;
 }
 
+h2.eightybox {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
 
 @media (min-width: 700px) {
+    h2.eightybox{
+        margin-left:20%;
+        margin-right: 20%;
+    }
     .eightybox {
         margin: 3%;
     }
@@ -92,4 +100,37 @@ p {
 }
 body{
     background-color: #1d1e28;
+}
+
+div.bulletdropgameback{
+    background-image: url("../img/ss_bf19e7884d1170e2cd2d98da4cd0a358646a5db7.600x338.jpg");
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+div.redbutton{
+    padding: 7px;
+    padding-left: 23px;
+    padding-right: 23px;
+    background-color: rgba(255, 0, 0, 0.87);
+    box-shadow: 4px 4px 5px black;
+    margin: 5px;
+    display: inline-block;
+}
+
+div.redbutton:hover{
+    padding: 7px;
+    padding-left: 23px;
+    padding-right: 23px;
+    background-color: hsla(0, 98%, 45%, 0.87);
+    position: relative;
+    top: 4px;
+    left: 4px;
+    box-shadow: 0px 0px 3px black;
+    display: inline-block;
+}
+
+div.redbutton:active{
+    background-color: hsla(0, 99%, 38%, 0.87);
 }
