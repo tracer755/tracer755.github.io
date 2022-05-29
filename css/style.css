@@ -174,3 +174,8 @@ div.greybutton:hover {
 div.greybutton:active {
     background-color: rgba(20, 20, 20, 0.92)
 }
+
+@font-face {
+    font-family: 'CodeProLight';
+    src: url("/css/fonts/Code-Pro-Light-Demo.otf") format("opentype");
+}
