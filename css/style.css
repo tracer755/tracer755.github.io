@@ -41,6 +41,20 @@ h2.eightybox {
     margin-right: 2.5%;
 }
 
+.gamebuttondiplaybox {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    padding-right: 0%;
+}
+
+@media (min-width: 800px) {
+    .gamebuttondiplaybox {
+        padding-top: 150px;
+        padding-bottom: 150px;
+        padding-right: 60%;
+    }
+}
+
 @media (min-width: 700px) {
     h2.eightybox{
         margin-left:20%;
