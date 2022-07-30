@@ -19,7 +19,7 @@ function loadupcomingscoutbookdatatopage(){
     if(monthtonumber(element.DtStart.split("T")[0].split(" ")[1]) >= (new Date().getUTCMonth() + 1 + 4)){
         return;
     }
-        if (monthtonumber(element.DtStart.split("T")[0].split(" ")[1]) == new Date().getUTCMonth() + 1){
+    if (monthtonumber(element.DtEnd.split("T")[0].split(" ")[1]) == new Date().getUTCMonth() + 1){
         if(element.DtStart.split("T")[0].split(" ")[2] < (new Date().getDate())) {
             return;
         }
