@@ -15,7 +15,7 @@ function adduser(){
 
 
 
-  axios.get('https://troop456loginapinodejs.herokuapp.com/adduser:' + tokentype + "::" + token + "::" + document.getElementById("EmailInput").value.toLowerCase() + "::" + document.getElementById("edittoggle").checked + "::" + document.getElementById("accounttoggle").checked + "::" + document.getElementById("accttypeinput").value + "::" + document.getElementById("NameInput").value)
+  axios.get('https://fair-gold-mussel-robe.cyclic.app/adduser:' + tokentype + "::" + token + "::" + document.getElementById("EmailInput").value.toLowerCase() + "::" + document.getElementById("edittoggle").checked + "::" + document.getElementById("accounttoggle").checked + "::" + document.getElementById("accttypeinput").value + "::" + document.getElementById("NameInput").value)
     .then(response => {
       if(response.data == "error"){
         document.getElementById("statustext").innerHTML = "error";
@@ -48,7 +48,7 @@ function deleteuser(){
     return;
   }
 
-  axios.get('https://troop456loginapinodejs.herokuapp.com/deluser:' + tokentype + "::" + token + "::" + document.getElementById("EmailInput2").value)
+  axios.get('https://fair-gold-mussel-robe.cyclic.app/deluser:' + tokentype + "::" + token + "::" + document.getElementById("EmailInput2").value)
     .then(response => {
       if(response.data == "error"){
         document.getElementById("statustext").innerHTML = "error";
@@ -73,7 +73,7 @@ function reloadUserList(){
       useritems[i].remove();
     }
   }
-  axios.get('https://troop456loginapinodejs.herokuapp.com/userlist:' + tokentype + "|" + token)
+  axios.get('https://fair-gold-mussel-robe.cyclic.app/userlist:' + tokentype + "|" + token)
   .then(response => {
     if(response.data == "error"){
       return;

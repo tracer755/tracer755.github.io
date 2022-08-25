@@ -45,7 +45,7 @@ if(document.getElementById("objid").value == ""){
 }
 
 
-axios.get("https://troop456loginapinodejs.herokuapp.com/delpic:" + tokentype + "::" + token + "::" + id)
+axios.get("https://fair-gold-mussel-robe.cyclic.app/delpic:" + tokentype + "::" + token + "::" + id)
  .then(response => {
    if(response.data == "error"){
      document.getElementById("delstatustext").style = "color: red !important";
@@ -72,7 +72,7 @@ if(token == ""){
 }
 
 
-axios.get("https://troop456loginapinodejs.herokuapp.com/delpic:" + tokentype + "::" + token + "::" + id)
+axios.get("https://fair-gold-mussel-robe.cyclic.app/delpic:" + tokentype + "::" + token + "::" + id)
  .then(response => {
    if(response.data == "error"){
       console.log("error could not delete card");
@@ -120,7 +120,7 @@ function LoadImg() {
 
 
 
-  axios.get('https://troop456loginapinodejs.herokuapp.com/pictures:' + tokentype + '|' + token)
+  axios.get('https://fair-gold-mussel-robe.cyclic.app/pictures:' + tokentype + '|' + token)
     .then(response => {
       if (response.data != "error") {
 
@@ -246,7 +246,7 @@ firstconainterlatch = false;
 
 
 
-              LoadThumbnail(div.querySelector("#thumbnailimg"), 'https://troop456loginapinodejs.herokuapp.com/img:' + response.data[i].Thumbnail.split("/")[3]);
+              LoadThumbnail(div.querySelector("#thumbnailimg"), 'https://fair-gold-mussel-robe.cyclic.app/img:' + response.data[i].Thumbnail.split("/")[3]);
 
               div.querySelector("#AlbumLink").href = response.data[i].Link;
               div.querySelector("#title").innerHTML = response.data[i].Title;

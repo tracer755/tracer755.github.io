@@ -29,7 +29,7 @@ function loaduserdata() {
 
 
 function loadimgedit(){
-    axios.get('https://troop456loginapinodejs.herokuapp.com/pictures:' + tokentype + "|" + token)
+    axios.get('https://fair-gold-mussel-robe.cyclic.app/pictures:' + tokentype + "|" + token)
     .then(response => {
       if(response.data != "error"){
         response.data.forEach(element => {
@@ -54,9 +54,9 @@ reloadpreview();
 function reloadpreview(){
     if(document.getElementById("ThumbnailLink").value != previewimg){
       previewimg = document.getElementById("ThumbnailLink").value;
-      axios.get('https://troop456loginapinodejs.herokuapp.com/img:' + previewimg.split("/")[3])
+      axios.get('https://fair-gold-mussel-robe.cyclic.app/img:' + previewimg.split("/")[3])
       .then((response) => {
-        console.log(previewimg + " - " + 'https://troop456loginapinodejs.herokuapp.com/img:' + previewimg.split("/")[3] + "  -  " + response.data[0].url);
+        console.log(previewimg + " - " + 'https://fair-gold-mussel-robe.cyclic.app/img:' + previewimg.split("/")[3] + "  -  " + response.data[0].url);
         document.getElementById("thumbnailimg").src = response.data[0].url;
       });
     }
@@ -69,7 +69,7 @@ function reloadpreview(){
 
 
 function submitedit(){
-    axios.get('https://troop456loginapinodejs.herokuapp.com/editpic:' + tokentype + "::" + token + "::" + document.getElementById("year").value + "::" + encodeURIComponent(document.getElementById("AlbumLinkInput").value) + "::" + encodeURIComponent(document.getElementById("ThumbnailLink").value) + "::" + encodeURIComponent(document.getElementById("TitleInput").value) + "::" + encodeURIComponent(document.getElementById("Description").value) + "::" + encodeURIComponent(url[0]))
+    axios.get('https://fair-gold-mussel-robe.cyclic.app/editpic:' + tokentype + "::" + token + "::" + document.getElementById("year").value + "::" + encodeURIComponent(document.getElementById("AlbumLinkInput").value) + "::" + encodeURIComponent(document.getElementById("ThumbnailLink").value) + "::" + encodeURIComponent(document.getElementById("TitleInput").value) + "::" + encodeURIComponent(document.getElementById("Description").value) + "::" + encodeURIComponent(url[0]))
     .then(response => {
       if(response.data != "error"){
         console.log(response.data);

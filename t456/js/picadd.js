@@ -20,9 +20,9 @@ previewimg = "";
 function reloadpreview(){
   if(document.getElementById("ThumbnailLink").value != previewimg){
     previewimg = document.getElementById("ThumbnailLink").value;
-    axios.get('https://troop456loginapinodejs.herokuapp.com/img:' + previewimg.split("/")[3])
+    axios.get('https://fair-gold-mussel-robe.cyclic.app/img:' + previewimg.split("/")[3])
     .then((response) => {
-      console.log(previewimg + " - " + 'https://troop456loginapinodejs.herokuapp.com/img:' + previewimg.split("/")[3] + "  -  " + response.data[0].url);
+      console.log(previewimg + " - " + 'https://fair-gold-mussel-robe.cyclic.app/img:' + previewimg.split("/")[3] + "  -  " + response.data[0].url);
       document.getElementById("thumbnailimg").src = response.data[0].url;
     });
   }
@@ -71,7 +71,7 @@ function submitimg(){
 
 
 
-  axios.get('https://troop456loginapinodejs.herokuapp.com/addpic:' + tokentype + "::" + token + "::" + document.getElementById("year").value + "::" + encodeURIComponent(document.getElementById("AlbumLinkInput").value) + "::" + encodeURIComponent(document.getElementById("ThumbnailLink").value) + "::" + document.getElementById("TitleInput").value + "::" + decsriptiontext)
+  axios.get('https://fair-gold-mussel-robe.cyclic.app/addpic:' + tokentype + "::" + token + "::" + document.getElementById("year").value + "::" + encodeURIComponent(document.getElementById("AlbumLinkInput").value) + "::" + encodeURIComponent(document.getElementById("ThumbnailLink").value) + "::" + document.getElementById("TitleInput").value + "::" + decsriptiontext)
     .then((response) => {
       console.log(response.data);
       if(response.data == "error"){

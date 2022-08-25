@@ -4,7 +4,7 @@ let leftcontainer = document.getElementById("leftcontainer");
     loadcontactlist();
     
     function loadcontactlist(){
-      axios.get("https://troop456loginapinodejs.herokuapp.com/contactlist")
+      axios.get("https://fair-gold-mussel-robe.cyclic.app/contactlist")
         .then(response => {
           response.data.collections.forEach(element => {
             let side = element.place;

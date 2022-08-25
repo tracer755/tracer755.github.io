@@ -3,7 +3,7 @@ let testing = '';
 loadscoutbookcal();
 
 function loadscoutbookcal(){
-  axios.get("https://troop456loginapinodejs.herokuapp.com/getscoutbookcal")
+  axios.get("https://fair-gold-mussel-robe.cyclic.app/getscoutbookcal")
     .then(response => {
       let json = { Events: []};
 
