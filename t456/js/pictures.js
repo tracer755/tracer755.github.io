@@ -246,8 +246,9 @@ firstconainterlatch = false;
 
 
 
-              LoadThumbnail(div.querySelector("#thumbnailimg"), 'https://fair-gold-mussel-robe.cyclic.app/img:' + response.data[i].Thumbnail.split("/")[3]);
+              //LoadThumbnail(div.querySelector("#thumbnailimg"), 'https://fair-gold-mussel-robe.cyclic.app/img:' + response.data[i].Thumbnail.split("/")[3]);
 
+              div.querySelector("#thumbnailimg").src = response.data[i].Thumbnail;
               div.querySelector("#AlbumLink").href = response.data[i].Link;
               div.querySelector("#title").innerHTML = response.data[i].Title;
               div.querySelector("#desc").innerHTML = response.data[i].Description;
