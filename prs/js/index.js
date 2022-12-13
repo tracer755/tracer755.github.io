@@ -1,11 +1,11 @@
-axios.get('http://localhost:3000/latest')
+axios.get('https://cute-tan-bear-tie.cyclic.app/latest')
 .then(function (response) {
     console.log(response.data);
     document.getElementById('recent-photo').src = response.data;
 })
 
 
-axios.get('http://localhost:3000/photos')
+axios.get('https://cute-tan-bear-tie.cyclic.app/photos')
 .then(function (response){
     const container = document.getElementById("photos");
     response.data.forEach(element => {

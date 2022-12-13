@@ -13,7 +13,7 @@ async function upload(){
     var formData = new FormData();
     var imagefile = document.querySelector('#file');
     formData.append("image", imagefile.files[0]);
-    const resp = await axios.post('http://localhost:3000/upload?user_id=' + user_id + "&auth=" + token, formData, {headers: {'Content-Type': 'multipart/form-data'}})
+    const resp = await axios.post('https://cute-tan-bear-tie.cyclic.app/upload?user_id=' + user_id + "&auth=" + token, formData, {headers: {'Content-Type': 'multipart/form-data'}})
     if(resp.data == "success"){
         document.getElementById("label").innerHTML = "Success! :D"
     }
@@ -56,7 +56,7 @@ try{
     if(urlParams["code"] != undefined){
         console.log("Twitch code: " + urlParams["code"])
 
-        axios.get('http://localhost:3000/checklogin?code=' + urlParams["code"])
+        axios.get('https://cute-tan-bear-tie.cyclic.app/checklogin?code=' + urlParams["code"])
         .then(function (response){
             if(response.data != "error"){
                 document.getElementById("label").innerHTML = "Logged into twitch"
