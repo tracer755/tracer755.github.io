@@ -23,7 +23,7 @@ function testcookielogin(){
     return
     //console.log(document.cookie.match(new RegExp('(^| )' + "profileimg" + '=([^;]+)'))[2])
   }
-  axios.get('https://fair-gold-mussel-robe.cyclic.app/token:' + document.cookie.match(new RegExp('(^| )' + "tokentype" + '=([^;]+)'))[2] + "|" + document.cookie.match(new RegExp('(^| )' + "token" + '=([^;]+)'))[2])
+  axios.get('https://fair-gold-mussel-robe.cyclic.app/token?type=' + document.cookie.match(new RegExp('(^| )' + "tokentype" + '=([^;]+)'))[2] + "&token=" + document.cookie.match(new RegExp('(^| )' + "token" + '=([^;]+)'))[2])
     .then(response => {
       if(response.data != "error"){
         if (loggedin == false) {
@@ -43,7 +43,7 @@ function testcookielogin(){
 
 
 function onSignIn(googleUser) {
-  axios.get('https://fair-gold-mussel-robe.cyclic.app/token:' + 'g' + "|" + encodeURIComponent(googleUser.getAuthResponse().id_token))
+  axios.get('https://fair-gold-mussel-robe.cyclic.app/token?type=' + 'g' + "&token=" + encodeURIComponent(googleUser.getAuthResponse().id_token))
     .then(response => {
       if (response.data == "error"){
         console.log("No auth or error  | 404")
@@ -111,7 +111,7 @@ function hashCode(str) {
 function checkLoginState() {
   FB.getLoginStatus(function (resp) {
     console.log(resp)
-    axios.get('https://fair-gold-mussel-robe.cyclic.app/token:' + 'f' + "|" + resp.authResponse.accessToken)
+    axios.get('https://fair-gold-mussel-robe.cyclic.app/token?type=' + 'f' + "&token=" + resp.authResponse.accessToken)
       .then(response => {
         if (response.data == "error") {
           console.log("No auth or error  | 404")

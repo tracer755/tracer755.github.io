@@ -20,10 +20,11 @@ previewimg = "";
 function reloadpreview(){
   if(document.getElementById("ThumbnailLink").value != previewimg){
     previewimg = document.getElementById("ThumbnailLink").value;
-    axios.get('https://fair-gold-mussel-robe.cyclic.app/img:' + previewimg.split("/")[3])
+    axios.get('https://fair-gold-mussel-robe.cyclic.app/img?link=' + previewimg)
     .then((response) => {
-      console.log(previewimg + " - " + 'https://fair-gold-mussel-robe.cyclic.app/img:' + previewimg.split("/")[3] + "  -  " + response.data[0].url);
-      document.getElementById("thumbnailimg").src = response.data[0].url;
+      console.log('https://fair-gold-mussel-robe.cyclic.app/img?link=' + previewimg);
+      console.log(response.data)
+      document.getElementById("thumbnailimg").src = response.data;
     });
   }
     document.getElementById("AlbumLink").href = document.getElementById("AlbumLinkInput").value;
@@ -69,9 +70,14 @@ function submitimg(){
     return;
   }
 
+  var url = "https://fair-gold-mussel-robe.cyclic.app/upload?type=" + tokentype + "&token=" + token;
+  url += "&year=" + document.getElementById("year").value;
+  url += "&link=" + encodeURIComponent(document.getElementById("AlbumLinkInput").value);
+  url += "&thumbnaillink=" + encodeURIComponent(document.getElementById("ThumbnailLink").value);
+  url += "&title=" + document.getElementById("TitleInput").value;
+  url += "&desc=" + document.getElementById("Description").value;
 
-
-  axios.get('https://fair-gold-mussel-robe.cyclic.app/addpic:' + tokentype + "::" + token + "::" + document.getElementById("year").value + "::" + encodeURIComponent(document.getElementById("AlbumLinkInput").value) + "::" + encodeURIComponent(document.getElementById("ThumbnailLink").value) + "::" + document.getElementById("TitleInput").value + "::" + decsriptiontext)
+  axios.get(url)
     .then((response) => {
       console.log(response.data);
       if(response.data == "error"){
@@ -90,7 +96,7 @@ function submitimg(){
       }
       document.getElementById("statustext").innerHTML = "Success!";
       document.getElementById("statustext").style = "color: green !important";
-      setTimeout(() => {  window.location.href = "pictures.html"; }, 1000);
+      setTimeout(() => {  window.location.href = "pictures.html"; }, 1500);
     });
 
 

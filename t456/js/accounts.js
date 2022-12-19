@@ -13,9 +13,14 @@ function adduser(){
     return;
   }
 
+  url = "https://fair-gold-mussel-robe.cyclic.app/adduser?type=" + tokentype + "&token=" + token;
+  url += "&email=" + document.getElementById("EmailInput").value.toLowerCase();
+  url += "&edit=" + document.getElementById("edittoggle").checked;
+  url += "&accounts=" + document.getElementById("accounttoggle").checked;
+  url += "&accttype=" + document.getElementById("accttypeinput").value;
+  url += "&name=" + document.getElementById("NameInput").value;
 
-
-  axios.get('https://fair-gold-mussel-robe.cyclic.app/adduser:' + tokentype + "::" + token + "::" + document.getElementById("EmailInput").value.toLowerCase() + "::" + document.getElementById("edittoggle").checked + "::" + document.getElementById("accounttoggle").checked + "::" + document.getElementById("accttypeinput").value + "::" + document.getElementById("NameInput").value)
+  axios.get(url)
     .then(response => {
       if(response.data == "error"){
         document.getElementById("statustext").innerHTML = "error";
@@ -48,7 +53,7 @@ function deleteuser(){
     return;
   }
 
-  axios.get('https://fair-gold-mussel-robe.cyclic.app/deluser:' + tokentype + "::" + token + "::" + document.getElementById("EmailInput2").value)
+  axios.get('https://fair-gold-mussel-robe.cyclic.app/deluser?type=' + tokentype + "&token=" + token + "&email=" + document.getElementById("EmailInput2").value)
     .then(response => {
       if(response.data == "error"){
         document.getElementById("statustext").innerHTML = "error";
@@ -73,7 +78,7 @@ function reloadUserList(){
       useritems[i].remove();
     }
   }
-  axios.get('https://fair-gold-mussel-robe.cyclic.app/userlist:' + tokentype + "|" + token)
+  axios.get('https://fair-gold-mussel-robe.cyclic.app/userlist?type=' + tokentype + "&token=" + token)
   .then(response => {
     if(response.data == "error"){
       return;

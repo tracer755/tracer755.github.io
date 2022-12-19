@@ -66,29 +66,25 @@ function CardDelete(id){
     return;
   }
 
-if(token == ""){
- document.getElementById("delstatustext").innerHTML = "You aren't signed in";
- return;
-}
+  if(token == ""){
+  document.getElementById("delstatustext").innerHTML = "You aren't signed in";
+  return;
+  }
 
 
-axios.get("https://fair-gold-mussel-robe.cyclic.app/delpic:" + tokentype + "::" + token + "::" + id)
- .then(response => {
-   if(response.data == "error"){
-      console.log("error could not delete card");
-     return;
-   }
-    console.log("Deleted card succsessfully");
-    document.getElementById(id).innerHTML = "";
- });
+  axios.get("https://fair-gold-mussel-robe.cyclic.app/delpic?type=" + tokentype + "&token=" + token + "&id=" + id)
+  .then(response => {
+    if(response.data == "error"){
+        console.log("error could not delete card");
+      return;
+    }
+      console.log("Deleted card succsessfully");
+      document.getElementById(id).innerHTML = "";
+  });
 
 }
 
 let imageloadlatch = true;
-
-
-
-
 
 var loaddata = true
 
@@ -106,9 +102,6 @@ function loadpictures(){
   LoadImg();
 }
 
-
-
-
 function SetUserData() {
   document.getElementById("logintext").style.display = "none";
   document.getElementById("picturetext").style.display = "block";
@@ -120,7 +113,7 @@ function LoadImg() {
 
 
 
-  axios.get('https://fair-gold-mussel-robe.cyclic.app/pictures:' + tokentype + '|' + token)
+  axios.get('https://fair-gold-mussel-robe.cyclic.app/pictures?type=' + tokentype + '&token=' + token)
     .then(response => {
       if (response.data != "error") {
 
@@ -248,7 +241,7 @@ firstconainterlatch = false;
 
               //LoadThumbnail(div.querySelector("#thumbnailimg"), 'https://fair-gold-mussel-robe.cyclic.app/img:' + response.data[i].Thumbnail.split("/")[3]);
 
-              div.querySelector("#thumbnailimg").src = response.data[i].Thumbnail;
+              div.querySelector("#thumbnailimg").src = response.data[i].ThumbnailImg;
               div.querySelector("#AlbumLink").href = response.data[i].Link;
               div.querySelector("#title").innerHTML = response.data[i].Title;
               div.querySelector("#desc").innerHTML = response.data[i].Description;
@@ -285,7 +278,6 @@ firstconainterlatch = false;
 
 }
 
-
 function LoadThumbnail(obj, link) {
   axios.get(link)
     .then((response) => {
@@ -293,9 +285,7 @@ function LoadThumbnail(obj, link) {
       return response.data[0].url;
     });
 }
-
 var editbuttontoggle = false;
-
 function toggleeditbuttons(){
 
 

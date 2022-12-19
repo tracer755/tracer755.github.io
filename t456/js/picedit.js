@@ -1,5 +1,6 @@
 let loadlatch = true;
 let url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+let id = "";
 
 (function () {
     let year_satart = 1961;
@@ -25,19 +26,16 @@ function loaduserdata() {
   }
   loadimgedit();
 }
-
-
-
 function loadimgedit(){
-    axios.get('https://fair-gold-mussel-robe.cyclic.app/pictures:' + tokentype + "|" + token)
+    axios.get('https://fair-gold-mussel-robe.cyclic.app/pictures?type=' + tokentype + "&token=" + token)
     .then(response => {
       if(response.data != "error"){
         response.data.forEach(element => {
             if(url[0] == element._id){
-                console.log("Editing: " + element.Title);
-
+                console.log("Editing: ");
+                console.log(element);
+                id = element._id;
                 document.getElementById("year" + element.Year).selected = true;
-
                 document.getElementById("TitleInput").value = element.Title;
                 document.getElementById("Description").value = element.Description;
                 document.getElementById("AlbumLinkInput").value = element.Link;
@@ -47,17 +45,15 @@ function loadimgedit(){
       }
     })
 }
-
 let previewimg = '';
 reloadpreview();
-
 function reloadpreview(){
     if(document.getElementById("ThumbnailLink").value != previewimg){
       previewimg = document.getElementById("ThumbnailLink").value;
-      axios.get('https://fair-gold-mussel-robe.cyclic.app/img:' + previewimg.split("/")[3])
+      axios.get('https://fair-gold-mussel-robe.cyclic.app/img?link=' + previewimg)
       .then((response) => {
-        console.log(previewimg + " - " + 'https://fair-gold-mussel-robe.cyclic.app/img:' + previewimg.split("/")[3] + "  -  " + response.data[0].url);
-        document.getElementById("thumbnailimg").src = response.data[0].url;
+        console.log('https://fair-gold-mussel-robe.cyclic.app/img?link=' + previewimg);
+        document.getElementById("thumbnailimg").src = response.data;
       });
     }
       document.getElementById("AlbumLink").href = document.getElementById("AlbumLinkInput").value;
@@ -65,17 +61,31 @@ function reloadpreview(){
       document.getElementById("desc").innerHTML = document.getElementById("Description").value;
   
     setTimeout(() => {  reloadpreview(); }, 1000);
-  }
-
-
+}
 function submitedit(){
-    axios.get('https://fair-gold-mussel-robe.cyclic.app/editpic:' + tokentype + "::" + token + "::" + document.getElementById("year").value + "::" + encodeURIComponent(document.getElementById("AlbumLinkInput").value) + "::" + encodeURIComponent(document.getElementById("ThumbnailLink").value) + "::" + encodeURIComponent(document.getElementById("TitleInput").value) + "::" + encodeURIComponent(document.getElementById("Description").value) + "::" + encodeURIComponent(url[0]))
-    .then(response => {
-      if(response.data != "error"){
-        console.log(response.data);
-        document.getElementById("statustext").innerHTML = "Success!";
-        document.getElementById("statustext").style = "color: green !important";
-        setTimeout(() => {  window.location.href = "pictures.html"; }, 1000);
-      }
-    })
+  document.getElementById("statustext").innerHTML = "Submitting";
+  url = "https://fair-gold-mussel-robe.cyclic.app/editpic?type=" + tokentype + "&token=" + token;
+  url += "&year=" + document.getElementById("year").value;
+  url += "&link=" + encodeURIComponent(document.getElementById("AlbumLinkInput").value);
+  url += "&thumbnaillink=" + encodeURIComponent(document.getElementById("ThumbnailLink").value);
+  url += "&title=" + encodeURIComponent(document.getElementById("TitleInput").value);
+  url += "&desc=" + encodeURIComponent(document.getElementById("Description").value);
+  url += "&id=" + encodeURIComponent(id)
+  axios.get(url)
+  .then(response => {
+    if(response.data != "error"){
+      console.log(response.data);
+      document.getElementById("statustext").innerHTML = "Success!";
+      document.getElementById("statustext").style = "color: green !important";
+      setTimeout(() => {  window.location.href = "pictures.html"; }, 1500);
+    }
+    else if(response.data == "no auth"){
+      document.getElementById("statustext").innerHTML = "You do not have access to this. Naughty Naughty";
+      document.getElementById("statustext").style = "color: red !important";
+    }
+    else if(response.data == "error"){
+      document.getElementById("statustext").innerHTML = "An Error has occoured";
+      document.getElementById("statustext").style = "color: red !important";
+    }
+  })
 }
