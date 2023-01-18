@@ -98,14 +98,7 @@ function submitimg(){
       document.getElementById("statustext").style = "color: green !important";
       setTimeout(() => {  window.location.href = "pictures.html"; }, 1500);
     });
-
-
 }
-
-
-
-
-
 
 window.onload = function () {
   reloadpreview();
