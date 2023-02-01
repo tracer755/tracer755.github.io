@@ -1,7 +1,7 @@
 loaduserdata()
 function loaduserdata() {
   if (token == "" || tokentype == '') {
-    setTimeout(() => { loaduserdata() }, 500);
+    setTimeout(() => { loaduserdata() }, 100);
     return;
   }
   loadprofiledata();
@@ -20,18 +20,32 @@ function loadprofiledata(){
 
   accountelement.innerHTML = "Account Type: " + userdata.Type;
 
-      let permcount = 0;
+  let permcount = 0;
+  let tmp = "";
   if (userdata.Edit == "true"){
-    permselement.innerHTML += "Edit,  "
+    tmp += "Edit | "
     permcount++;
   }
   if (userdata.AccountControl == "true"){
-    permselement.innerHTML += "AccountControl,  "
+    tmp += "AccountControl | "
     permcount++;
   }
 
-  //if no perms
-  if(permcount == 0){
-    permselement.innerHTML += "None"
+  //if no perms logoutBtn
+  if(permcount > 0){
+    permselement.innerHTML = tmp.slice(0, -3)
+    document.getElementById("PermText").innerHTML = "Permissions"
   }
+  else{
+    permselement.style.display = "none"
+    permselement.style.lineHeight = "0px"
+    document.getElementById("PermText").style.display = "none"
+    document.getElementById("PermText").style.lineHeight = "0px"
+  }
+  document.getElementById("logoutBtn").style.display = "block";
+}
+
+function homepageredirect(){
+  signOut();
+  window.location.replace("/index.html");
 }

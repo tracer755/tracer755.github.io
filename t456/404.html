@@ -18,31 +18,57 @@
   <link rel="stylesheet" href="css/flexboxes.css">
   <link rel="stylesheet" href="css/buttons.css">
 
-    <!--css file end-->
-    <style>
-        body, html {
-            height: 100%;
-        }
-
-        .bg {
-            /* The image used */
-            background-image: url("Img/404_Back.jpg");
-
-            /* Full height */
-            height: 100%;
-
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
+  <!--css file end-->
+  <style>
+    body, html {
+      height: 100%;
+    }
+    div.clearbox {
+      background-color: rgba(255, 255, 255, .2);  
+      backdrop-filter: blur(7px);
+      border-radius: 1.2%;
+    }
+    .bg {
+      /* The image used */
+      background-image: url("Img/404_Back.jpg");
+      /* Full height */
+      height: 100%;
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    div.middlevert {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    div.bottomdiv {
+      position: absolute; 
+      bottom: 17px;
+      width: 100%;
+    }
+  </style>
 </head>
-<body style="background-image: url('/img/404_Back.jpg');">
+<body>
   <div class="bg">
-      <center>
-          <h1 style="font-size:40px">404</h1>
-      </center>
+    <center>
+      <div class="middlevert">
+        <h1 style="font-size: 160px !important;">404</h1>
+        <div class="clearbox" style="height: 400px; width: 600px;">
+          <h1 style="color: black !important; padding-top: 20px;">Looks like you got a bit lost</h1>
+          <div class="bottomdiv">
+            <a class="nohoverlink" style="padding-top: 200px;" href="index.html">
+              <div class="squareorangebutton" style="width: 65%;">
+                <h5>Go home</h6>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </center>
   </div>
   <!--BootStrap Code Do not Edit-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

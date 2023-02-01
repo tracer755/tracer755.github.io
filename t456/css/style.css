@@ -64,3 +64,6 @@ a.nav-link:hover{
 li.orange{
     color: orange;
 }
+img.profileimg{
+    border-radius: 50%;
+}
