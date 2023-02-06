@@ -4,8 +4,8 @@
   <meta name="google-signin-client_id" content="529630701561-hk5ka2erbhg4ao9orhlvi1ohrjn0npc3.apps.googleusercontent.com">
 
   <!--MetaData tags-->
-  <title>Troop 456 Profile</title>
-  <link rel="icon" href="Img/MainLogo.png"/>
+  <title>404</title>
+  <link rel="icon" href="Img/favicon.ico"/>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!--End of metadata tags-->
@@ -17,48 +17,22 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/flexboxes.css">
   <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/404.css">
 
   <!--css file end-->
   <style>
-    body, html {
-      height: 100%;
-    }
-    div.clearbox {
-      background-color: rgba(255, 255, 255, .2);  
-      backdrop-filter: blur(7px);
-      border-radius: 1.2%;
-    }
-    .bg {
-      /* The image used */
-      background-image: url("Img/404_Back.jpg");
-      /* Full height */
-      height: 100%;
-      /* Center and scale the image nicely */
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    div.middlevert {
-      margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    div.bottomdiv {
-      position: absolute; 
-      bottom: 17px;
-      width: 100%;
-    }
   </style>
 </head>
 <body>
-  <div class="bg">
+  <div class="bg" id="404Background">
     <center>
+      <br><br>
       <div class="middlevert">
-        <h1 style="font-size: 160px !important;">404</h1>
-        <div class="clearbox" style="height: 400px; width: 600px;">
+        <h1 style="font-size: 160px !important; text-shadow: 0px 0px 15px black;">404</h1>
+        <div class="clearbox" style="">
           <h1 style="color: black !important; padding-top: 20px;">Looks like you got a bit lost</h1>
+          <h4 style="color: black !important; padding-top: 10px;">We couldn't find the file you specified</h4>
+          <img src="https://static.thenounproject.com/png/5018320-200.png">
           <div class="bottomdiv">
             <a class="nohoverlink" style="padding-top: 200px;" href="index.html">
               <div class="squareorangebutton" style="width: 65%;">
@@ -77,6 +51,8 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script src="js/index.js"></script>
+  <script src="js/Header_Footer-Injector.js"></script>
+  <script src="js/404.js"></script>
   <!--Misc Script End-->
 </body>
 </html>
