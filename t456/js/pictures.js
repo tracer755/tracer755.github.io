@@ -92,7 +92,7 @@ loadpictures()
 
 function loadpictures(){
   if(token == "" || tokentype == ''){
-    setTimeout(() => { loadpictures(); }, 500);
+    setTimeout(() => { loadpictures(); }, 50);
     return;
   }
   if (userdata.Edit == "true") {

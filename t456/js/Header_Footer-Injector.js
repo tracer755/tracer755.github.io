@@ -46,10 +46,7 @@ const FooterCode = `
 <h5 class="widget-title">Get Started<span></span></h5>
 <ul class="thumbnail-widget">
 <li>
-<p>If you are a boy 11 - 18 years old</p>
-</li>
-<li>
-<p>We would love to have you join out troop!</p>
+<p>If you are a boy 11 - 18 years old<br> We would love to have you join out troop!</p>
 </li>
 <li>
 <div class="thumb-content"><a href="troop-contact.html">Get in touch</a></div>	
@@ -81,7 +78,7 @@ const HeaderCode = `
 <!--Page Header start-->
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.html"><img class="circle" src="Img/MainLogo.png" alt="TroopLogo" width="75" height="75"></a>
+    <a class="navbar-brand" href="index.html"><img class="circle" src="Img/android-chrome-192x192.png" alt="TroopLogo" width="75" height="75"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
