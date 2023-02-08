@@ -1,22 +1,19 @@
 .flex-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+@media (min-width: 700px) {
+  .flex-container {
+    flex-direction: row;
     margin: auto;
-
   }
-
-  @media (min-width: 700px) {
-    .flex-container {
-      flex-direction: row;
-      margin: auto;
-    }
-
-    br.mobilehide {
-      display: initial;
-      margin: auto;
-    }
-
-    img.status {
-      width: 22%;
-    }
+  br.mobilehide {
+    display: initial;
+    margin: auto;
   }
+  img.status {
+    width: 22%;
+  }
+}

@@ -1,12 +1,12 @@
 .flex-container {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
 }
 
-  @media (min-width: 700px) {
-    .flex-container {
-      flex-direction: row;
-      margin: auto;
-    }
+@media (min-width: 700px) {
+  .flex-container {
+    flex-direction: row;
+    margin: auto;
+  }
 }

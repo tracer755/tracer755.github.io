@@ -10,11 +10,11 @@
   display: none;
 }
 .splitline1 {
-    display: inline-block;
-    border: .7px solid white;
-    background-color: white;
-    width: 50%;
-    border-radius: 28px;
+  display: inline-block;
+  border: .7px solid white;
+  background-color: white;
+  width: 50%;
+  border-radius: 28px;
 }
 .meetingsheetbox{
   padding-left:10px; padding-bottom:60px; padding-right:10px;

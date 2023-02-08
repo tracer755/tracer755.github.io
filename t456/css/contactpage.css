@@ -1,45 +1,45 @@
 .leftbox {
-    width:100%; 
-    padding-left:5%;
-    padding-right: 5%;
-  }
-  .rightbox {
-    width:100%; 
+  width:100%; 
+  padding-left:5%;
+  padding-right: 5%;
+}
+.rightbox {
+  width:100%; 
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.miscleftbox{
+  width:100%; 
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+@media (min-width: 700px) {
+  .leftbox {
+    width:40%; 
     padding-left: 5%;
+    padding-right: 0%;
+  }
+  .rightbox{
+    width:40%; 
     padding-right: 5%;
+    padding-left: 0%;
   }
   .miscleftbox{
-    width:100%; 
+    width:25%;
     padding-left: 5%;
-    padding-right: 5%;
+    padding-right: 0%;
   }
-  
-  @media (min-width: 700px) {
-    .leftbox {
-      width:40%; 
-      padding-left: 5%;
-      padding-right: 0%;
-    }
-    .rightbox{
-      width:40%; 
-      padding-right: 5%;
-      padding-left: 0%;
-    }
-    .miscleftbox{
-      width:25%;
-      padding-left: 5%;
-      padding-right: 0%;
-    }
-  }
+}
 
 .whiteorangelink {
-    color: white !important; 
-    text-decoration: underline !important;
-    transition: 200ms;
+  color: white !important; 
+  text-decoration: underline !important;
+  transition: 200ms;
 }
 .whiteorangelink:hover {
-    color: orange !important;
-    background-color: transparent !important;
-    text-decoration: underline !important;
-    transition: 200ms;
+  color: orange !important;
+  background-color: transparent !important;
+  text-decoration: underline !important;
+  transition: 200ms;
 }

@@ -1,50 +1,49 @@
 .yearline {
-    display: inline-block;
-    width: 100%;
-    border: 3.3px solid white;
-    background-color: white;
-    width: 90%;
-    border-radius: 18px;
+  display: inline-block;
+  width: 100%;
+  border: 3.3px solid white;
+  background-color: white;
+  width: 90%;
+  border-radius: 18px;
 }
 .flex-container {
-display: flex;
-flex-direction: column;
-margin: auto;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
 }
 .centerpadding {
-padding: 6px;
+  padding: 6px;
 }
 
 
 @media (min-width: 700px) {
-.flex-container {
+  .flex-container {
     flex-direction: row;
     margin: auto;
-}
+  }
 
-br.mobilehide {
+  br.mobilehide {
     display: initial;
     margin: auto;
-}
+  }
 
-img.status {
+  img.status {
     width: 22%;
-}
+  }
 }
 .featurebox {
-    background-color: black;
-    border: 5px solid #5765FF;
-    margin: auto;
-    padding: 10px;
-    border-radius: 5px;
-
-    width: 400px !important;
-    max-height: 7000px !important;
-    max-width: 400px !important;
-    flex: 1;
-    transition: 0.3s;
+  background-color: black;
+  border: 5px solid #5765FF;
+  margin: auto;
+  padding: 10px;
+  border-radius: 5px;
+  width: 400px !important;
+  max-height: 7000px !important;
+  max-width: 400px !important;
+  flex: 1;
+  transition: 0.3s;
 }
 .editbuttons {
-    display: none;
+  display: none;
 }

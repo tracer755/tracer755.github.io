@@ -1,19 +1,19 @@
 h2.navbartext{
-    color:grey !important;
-    transition: 300ms;
+  color:grey !important;
+  transition: 300ms;
 }
 h2.navbartext:hover{
-    color:lightgray !important;
-    transition: 300ms;
+  color:lightgray !important;
+  transition: 300ms;
 }
 
 .navdash {
-display: none;
+  display: none;
 }
 
   
 @media (min-width: 900px) {
-    .navdash {
-        display: block;
-    }
+  .navdash {
+    display: block;
+  }
 }

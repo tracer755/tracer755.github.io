@@ -1,0 +1,23 @@
+.rescourceline {
+  display: inline-block;
+  width: 60%;
+  border: 3.3px solid white;
+  background-color: white;
+  border-radius: 6px;
+}
+
+@media (min-width: 800px) {
+  .rescourceline {
+    display: inline-block;
+    width: 45%;
+    border: 3.3px solid white;
+    background-color: white;
+    border-radius: 6px;
+  }
+}
+.editbuttons{
+  display: none;
+}
+.editbuttonsshow{
+  display: block !important;
+}

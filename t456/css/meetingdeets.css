@@ -1,8 +1,8 @@
 .infobox{
-    padding-left:30px; padding-bottom:60px; padding-right:30px;
+  padding-left:30px; padding-bottom:60px; padding-right:30px;
 }
 @media (min-width: 700px) {
-    .infobox{
-        padding-left:220px; padding-bottom:60px; padding-right:220px;
-    }
+  .infobox{
+    padding-left:100px; padding-bottom:60px; padding-right:100px;
+  }
 }

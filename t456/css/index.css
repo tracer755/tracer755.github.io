@@ -1,12 +1,12 @@
 .halfbox {
-    width:100% !important;
-    padding:2%;
-  }
+  width:100% !important;
+  padding:2%;
+}
   
   
-  @media (min-width: 700px) {
-    .halfbox {
-      width:50% !important; 
-      padding:0%;
-    }
+@media (min-width: 700px) {
+  .halfbox {
+    width:50% !important; 
+    padding:0%;
   }
+}

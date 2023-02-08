@@ -23,47 +23,47 @@ p{
     color:white !important;
 }
 .orangelink {
-    color: #cc8500 !important; 
-    text-decoration: underline !important;
-    transition: 200ms;
+  color: #cc8500 !important; 
+  text-decoration: underline !important;
+  transition: 200ms;
 }
 .orangelink:hover {
-    color: orange !important;
-    background-color: transparent !important;
-    text-decoration: underline !important;
-    transition: 200ms;
+  color: orange !important;
+  background-color: transparent !important;
+  text-decoration: underline !important;
+  transition: 200ms;
 }
 a.nohoverlink:hover{
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
 a{
-    text-decoration: none;
+  text-decoration: none;
 }
 a:hover{
-    text-decoration: underline;
+  text-decoration: underline;
 }
 a.nav-link:hover{
-    text-decoration: none;
+  text-decoration: none;
 }
 .squareorangebutton{
-    color: #c75102;
-    background-color: #c75102;
-    padding-top: 8px;
-    padding-bottom: 2px;
-    width: 85%;
-    border-radius: 2px;
-    transition: 1000ms;
+  color: #c75102;
+  background-color: #c75102;
+  padding-top: 8px;
+  padding-bottom: 2px;
+  width: 85%;
+  border-radius: 2px;
+  transition: 1000ms;
 }
 
 .squareorangebutton:hover{
-    color: #b44901;
-    background-color: #b44901;
-    box-shadow: 10px 10px 5px black;
-    transition: 1000ms;
+  color: #b44901;
+  background-color: #b44901;
+  box-shadow: 10px 10px 5px black;
+  transition: 1000ms;
 }
 li.orange{
-    color: orange;
+  color: orange;
 }
 img.profileimg{
-    border-radius: 50%;
+  border-radius: 50%;
 }
