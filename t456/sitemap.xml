@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://test.troop456.net/</loc>
+  <lastmod>2023-02-06T04:17:32+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://test.troop456.net/Information.html</loc>
+  <lastmod>2023-02-05T18:46:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://test.troop456.net/troop-contact.html</loc>
+  <lastmod>2023-02-05T18:46:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://test.troop456.net/meritbadge.html</loc>
+  <lastmod>2023-02-05T18:46:55+00:00</lastmod>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://test.troop456.net/meeting-details.html</loc>
+  <lastmod>2023-02-05T18:46:55+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://test.troop456.net/index.html</loc>
+  <lastmod>2023-02-06T04:17:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://test.troop456.net/communication.html</loc>
+  <lastmod>2023-02-05T18:46:55+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://test.troop456.net/picadd.html</loc>
+  <lastmod>2023-02-05T18:46:56+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://test.troop456.net/upcoming.html</loc>
+  <lastmod>2023-02-05T18:46:57+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://test.troop456.net/pictures.html</loc>
+  <lastmod>2023-02-05T18:46:56+00:00</lastmod>
+  <priority>0.45</priority>
+</url>
+<url>
+  <loc>https://test.troop456.net/calendars.html</loc>
+  <lastmod>2023-02-05T18:46:55+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://test.troop456.net/admin.html</loc>
+  <lastmod>2023-02-05T23:15:29+00:00</lastmod>
+  <priority>0.30</priority>
+</url>
+<url>
+  <loc>https://test.troop456.net/accounts.html</loc>
+  <lastmod>2023-02-05T18:46:54+00:00</lastmod>
+  <priority>0.25</priority>
+</url>
+
+
+</urlset>
