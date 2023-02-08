@@ -1,46 +1,47 @@
 let loadsbcdlatch = true;
 loadupcomingscoutbookdatatopage();
-function loadupcomingscoutbookdatatopage(){
-    if(scoutbookcaljson == ""){
-    setTimeout(() => { loadupcomingscoutbookdatatopage(); }, 500);
-    return;
-    }
 
-    if(loadsbcdlatch == false){
+function loadupcomingscoutbookdatatopage() {
+  if (scoutbookcaljson == "") {
+    setTimeout(() => {
+      loadupcomingscoutbookdatatopage();
+    }, 500);
     return;
-    }
-    loadsbcdlatch = false;
+  }
+  if (loadsbcdlatch == false) {
+    return;
+  }
+  loadsbcdlatch = false;
 
-    //load scoutbook data to the page
-    let currentmonth = "";
-    //numbertomonth()
-    let eventcontainer = document.getElementById("upcomingevents");
-    scoutbookcaljson.Events.forEach(element => {
-    if(monthtonumber(element.DtStart.split("T")[0].split(" ")[1]) >= (new Date().getUTCMonth() + 1 + 4)){
+  //load scoutbook data to the page
+  let currentmonth = "";
+  //numbertomonth()
+  let eventcontainer = document.getElementById("upcomingevents");
+  scoutbookcaljson.Events.forEach(element => {
+    if (monthtonumber(element.DtStart.split("T")[0].split(" ")[1]) >= (new Date().getUTCMonth() + 1 + 4)) {
+      return;
+    }
+    if (monthtonumber(element.DtEnd.split("T")[0].split(" ")[1]) == new Date().getUTCMonth() + 1) {
+      if (element.DtStart.split("T")[0].split(" ")[2] < (new Date().getDate())) {
         return;
+      }
     }
-    if (monthtonumber(element.DtEnd.split("T")[0].split(" ")[1]) == new Date().getUTCMonth() + 1){
-        if(element.DtStart.split("T")[0].split(" ")[2] < (new Date().getDate())) {
-            return;
-        }
-    }
-    if(element.DtStart.split("T")[0].split(" ")[1] != currentmonth){
-        currentmonth = element.DtStart.split("T")[0].split(" ")[1];
-        let datetemplatehtml = `
+    if (element.DtStart.split("T")[0].split(" ")[1] != currentmonth) {
+      currentmonth = element.DtStart.split("T")[0].split(" ")[1];
+      let datetemplatehtml = `
         <br>
         <strong><h3>${element.DtStart.split("T")[0].split(" ")[1] + ":"}</h3><strong>
         `;
-        eventcontainer.innerHTML += datetemplatehtml;
+      eventcontainer.innerHTML += datetemplatehtml;
     }
     let desc = String(element.Description).split("\\n\\nFor more information please visit:")[0].replace(/\\n/g, "<br>");
     desc = desc.split("\\").join("");
     let datetime = "";
 
-    if(element.DtStart.split("T")[0].split(" ")[2] == element.DtEnd.split("T")[0].split(" ")[2]){
-        datetime = element.DtStart.split("T")[0].split(" ")[1] + " " + element.DtStart.split("T")[0].split(" ")[2] + " " + hourparser(element.DtStart.split("T")[1].split(" ")[0], element.DtStart.split("T")[1].split(" ")[1]) + " to " + hourparser(element.DtEnd.split("T")[1].split(" ")[0], element.DtEnd.split("T")[1].split(" ")[1]);
-    }
-    else{
-        datetime = element.DtStart.split("T")[0].split(" ")[1] + " " + element.DtStart.split("T")[0].split(" ")[2] + " " + hourparser(element.DtStart.split("T")[1].split(" ")[0], element.DtStart.split("T")[1].split(" ")[1]) + " to " + element.DtEnd.split("T")[0].split(" ")[1] + " " + element.DtEnd.split("T")[0].split(" ")[2] + " " + hourparser(element.DtEnd.split("T")[1].split(" ")[0], element.DtEnd.split("T")[1].split(" ")[1]);
+    if (element.DtStart.split("T")[0].split(" ")[2] == element.DtEnd.split("T")[0].split(" ")[2]) {
+      datetime = element.DtStart.split("T")[0].split(" ")[1] + " " + element.DtStart.split("T")[0].split(" ")[2] + " " + hourparser(element.DtStart.split("T")[1].split(" ")[0], element.DtStart.split("T")[1].split(" ")[1]) + " to " + hourparser(element.DtEnd.split("T")[1].split(" ")[0], element.DtEnd.split("T")[1].split(" ")[1]);
+    } else {
+      datetime = element.DtStart.split("T")[0].split(" ")[1] + " " + element.DtStart.split("T")[0].split(" ")[2] + " " + hourparser(element.DtStart.split("T")[1].split(" ")[0], element.DtStart.split("T")[1].split(" ")[1]) + " to " + element.DtEnd.split("T")[0].split(" ")[1] + " " + element.DtEnd.split("T")[0].split(" ")[2] + " " + hourparser(element.DtEnd.split("T")[1].split(" ")[0], element.DtEnd.split("T")[1].split(" ")[1]);
     }
     eventcontainer.innerHTML += `
     <div id="eventitem">
@@ -64,26 +65,26 @@ function loadupcomingscoutbookdatatopage(){
     $(`.content${hashCode(element.Summary + element.Description)}`).collapse("show")
     $(`.content${hashCode(element.Summary + element.Description)}`).collapse("hide")
     let eventtemplatehtml = ``;
-    })
+  })
 
 }
 
-function colapsable(id){
-    let item = document.getElementsByClassName(id);
-    item[0].classList.remove("hidebox");
-    if(item[0].classList[3] == "show")
+function colapsable(id) {
+  let item = document.getElementsByClassName(id);
+  item[0].classList.remove("hidebox");
+  if (item[0].classList[3] == "show")
     $("." + id).collapse("hide")
-    else
+  else
     $("." + id).collapse("show")
 }
 
-function hourparser(hour, min){
-    if(hour == "12")
-        return("12:" + min + " PM");
-    if(hour == "24")
-        return("12:" + min + " AM");
-    if(hour > 12)
-        return(hour - 12 + ":" + min + " PM");
-    if(hour < 12)
-        return(hour + ":" + min + " AM")
+function hourparser(hour, min) {
+  if (hour == "12")
+    return ("12:" + min + " PM");
+  if (hour == "24")
+    return ("12:" + min + " AM");
+  if (hour > 12)
+    return (hour - 12 + ":" + min + " PM");
+  if (hour < 12)
+    return (hour + ":" + min + " AM")
 }

@@ -1,6 +1,5 @@
 var token = ""
 var tokentype = ""
-
 //user info
 var username = ""
 var email = ""
@@ -9,9 +8,10 @@ var userdata = ""
 var loggedin = false
 
 testcookielogin()
-function testcookielogin(){
 
-  if(document.cookie.match(new RegExp('(^| )' + "token" + '=([^;]+)')) == null){
+function testcookielogin() {
+
+  if (document.cookie.match(new RegExp('(^| )' + "token" + '=([^;]+)')) == null) {
     return
     //console.log(document.cookie.match(new RegExp('(^| )' + "token" + '=([^;]+)'))[2])
   }
@@ -25,7 +25,7 @@ function testcookielogin(){
   }
   axios.get('https://fair-gold-mussel-robe.cyclic.app/token?type=' + document.cookie.match(new RegExp('(^| )' + "tokentype" + '=([^;]+)'))[2] + "&token=" + document.cookie.match(new RegExp('(^| )' + "token" + '=([^;]+)'))[2])
     .then(response => {
-      if(response.data != "error"){
+      if (response.data != "error") {
         if (loggedin == false) {
           userdata = response.data[0]
           token = document.cookie.match(new RegExp('(^| )' + "token" + '=([^;]+)'))[2]
@@ -45,13 +45,12 @@ function testcookielogin(){
 function onSignIn(googleUser) {
   axios.get('https://fair-gold-mussel-robe.cyclic.app/token?type=' + 'g' + "&token=" + encodeURIComponent(googleUser.getAuthResponse().id_token))
     .then(response => {
-      if (response.data == "error"){
+      if (response.data == "error") {
         console.log("No auth or error  | 404")
         signOut()
         return;
-      }
-      else{
-        if(loggedin == false){
+      } else {
+        if (loggedin == false) {
           userdata = response.data[0]
           var profile = googleUser.getBasicProfile();
           token = googleUser.getAuthResponse().id_token
@@ -71,8 +70,8 @@ function onSignIn(googleUser) {
       }
     })
 }
-  
-function SetProfileData(){
+
+function SetProfileData() {
   console.log("Welcome " + username);
   //set user info
   document.getElementById("loginButton").style.display = "none";
@@ -84,10 +83,10 @@ function SetProfileData(){
   document.getElementById("picturesLinkDash").style.display = "block";
   document.getElementById("picturesLink").style.display = "block";
 }
-  
+
 function signOut() {
   var auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function () {
+  auth2.signOut().then(function() {
     console.log('User signed out.');
     document.getElementById("loginButton").style.display = "block";
     document.getElementById("userbar").style.display = "none";
@@ -103,13 +102,13 @@ function signOut() {
 
 function hashCode(str) {
   return str.split('').reduce((prevHash, currVal) =>
-    (((prevHash << 5) - prevHash) + currVal.charCodeAt(0))|0, 0);
+    (((prevHash << 5) - prevHash) + currVal.charCodeAt(0)) | 0, 0);
 }
 
 
 
 function checkLoginState() {
-  FB.getLoginStatus(function (resp) {
+  FB.getLoginStatus(function(resp) {
     console.log(resp)
     axios.get('https://fair-gold-mussel-robe.cyclic.app/token?type=' + 'f' + "&token=" + resp.authResponse.accessToken)
       .then(response => {
@@ -117,8 +116,7 @@ function checkLoginState() {
           console.log("No auth or error  | 404")
           signOut()
           return;
-        }
-        else {
+        } else {
           if (loggedin == false) {
             userdata = response.data[0]
             token = resp.authResponse.accessToken
@@ -131,8 +129,6 @@ function checkLoginState() {
                 document.cookie = "profileimg=" + profileimglink
                 document.getElementById("loginUserIcon").src = profileimglink;
               })
-            
-            
             console.log("logged in with facebook")
             SetProfileData()
           }
@@ -146,7 +142,7 @@ function checkLoginState() {
   })
 }
 
-window.fbAsyncInit = function () {
+window.fbAsyncInit = function() {
   FB.init({
     appId: '1063185174556839',
     cookie: true,
@@ -158,10 +154,13 @@ window.fbAsyncInit = function () {
 
 };
 
-(function (d, s, id) {
+(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) { return; }
-  js = d.createElement(s); js.id = id;
+  if (d.getElementById(id)) {
+    return;
+  }
+  js = d.createElement(s);
+  js.id = id;
   js.src = "https://connect.facebook.net/en_US/sdk.js";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));

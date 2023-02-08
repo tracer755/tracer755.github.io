@@ -1,13 +1,8 @@
 const FooterIdName = "sitefooter"
 const HeaderIdName = "SiteHeader"
-
-
-
 //inject divs
 document.body.innerHTML = `<div id="SiteHeader"></div>` + document.body.innerHTML
 document.body.innerHTML += `<div id="sitefooter"></div>`
-
-
 let FooterContainer = document.getElementById(FooterIdName)
 let HeaderContainer = document.getElementById(HeaderIdName)
 
@@ -79,7 +74,7 @@ const HeaderCode = `
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.html"><img class="circle" src="Img/android-chrome-192x192.png" alt="TroopLogo" width="75" height="75"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+    <button title="Menu Hamburger" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -129,13 +124,9 @@ const HeaderCode = `
   </div>
 </nav>
 <!--Page header end-->`
-
-
-
 //inject headers
 FooterContainer.innerHTML = FooterCode
 HeaderContainer.innerHTML = HeaderCode
-
 //inject css
 document.head.innerHTML += `<link rel="stylesheet" href="css/navbar.css">`
 document.head.innerHTML += `<link rel="stylesheet" href="css/footer.css">`

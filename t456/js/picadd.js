@@ -1,71 +1,71 @@
-(function () {
-    let year_satart = 1961;
-    let year_end = (new Date).getFullYear(); // current year
-    let year_selected = year_end;
+(function() {
+  let year_satart = 1961;
+  let year_end = (new Date).getFullYear(); // current year
+  let year_selected = year_end;
+  let option = '';
+  option = '<option>Year</option>'; // first option
 
-    let option = '';
-    option = '<option>Year</option>'; // first option
+  for (let i = year_satart; i <= year_end; i++) {
+    let selected = (i === year_selected ? ' selected' : '');
+    option += '<option value="' + i + '"' + selected + '>' + i + '</option>';
+  }
 
-    for (let i = year_satart; i <= year_end; i++) {
-        let selected = (i === year_selected ? ' selected' : '');
-        option += '<option value="' + i + '"' + selected + '>' + i + '</option>';
-    }
-
-    document.getElementById("year").innerHTML = option;
+  document.getElementById("year").innerHTML = option;
 })();
 
 previewimg = "";
 
 
-function reloadpreview(){
-  if(document.getElementById("ThumbnailLink").value != previewimg){
+function reloadpreview() {
+  if (document.getElementById("ThumbnailLink").value != previewimg) {
     previewimg = document.getElementById("ThumbnailLink").value;
     axios.get('https://fair-gold-mussel-robe.cyclic.app/img?link=' + previewimg)
-    .then((response) => {
-      console.log('https://fair-gold-mussel-robe.cyclic.app/img?link=' + previewimg);
-      console.log(response.data)
-      document.getElementById("thumbnailimg").src = response.data;
-    });
+      .then((response) => {
+        console.log('https://fair-gold-mussel-robe.cyclic.app/img?link=' + previewimg);
+        console.log(response.data)
+        document.getElementById("thumbnailimg").src = response.data;
+      });
   }
-    document.getElementById("AlbumLink").href = document.getElementById("AlbumLinkInput").value;
-    document.getElementById("title").innerHTML = document.getElementById("TitleInput").value;
-    document.getElementById("desc").innerHTML = document.getElementById("Description").value;
+  document.getElementById("AlbumLink").href = document.getElementById("AlbumLinkInput").value;
+  document.getElementById("title").innerHTML = document.getElementById("TitleInput").value;
+  document.getElementById("desc").innerHTML = document.getElementById("Description").value;
 
-  setTimeout(() => {  reloadpreview(); }, 1000);
+  setTimeout(() => {
+    reloadpreview();
+  }, 1000);
 }
 
 let btn = document.getElementById("btn");
 btn.addEventListener('click', event => {
-submitimg();
+  submitimg();
 });
 
-function submitimg(){
+function submitimg() {
   document.getElementById("statustext").style = "color: white";
   //check to make sure user is logged in
-  if(token == ""){
+  if (token == "") {
     document.getElementById("statustext").innerHTML = "You aren't loged in please do so then try again";
     return;
   }
 
   var decsriptiontext = "";
 
-  if(document.getElementById("Description").value == ""){
+  if (document.getElementById("Description").value == "") {
     decsriptiontext = "blank";
-  }
-  else{
+  } else {
     decsriptiontext = document.getElementById("Description").value;
   }
   document.getElementById("statustext").innerHTML = "Submiting...";
 
-  if(document.getElementById("AlbumLinkInput").value == ""){
+  if (document.getElementById("AlbumLinkInput").value == "") {
     document.getElementById("statustext").innerHTML = "A critical value has been left blank";
     return;
   }
-  if(document.getElementById("ThumbnailLink").value == ""){
+  if (document.getElementById("ThumbnailLink").value == "") {
     document.getElementById("statustext").innerHTML = "A critical value has been left blank";
     return;
   }
-  if(document.getElementById("TitleInput").value == ""){
+  if (document.getElementById("TitleInput").value == "") {
     document.getElementById("statustext").innerHTML = "A critical value has been left blank";
     return;
   }
@@ -80,34 +80,39 @@ function submitimg(){
   axios.get(url)
     .then((response) => {
       console.log(response.data);
-      if(response.data == "error"){
+      if (response.data == "error") {
         document.getElementById("statustext").innerHTML = "An Error has occoured";
         document.getElementById("statustext").style = "color: red !important";
         return;
       }
-      if(response.data == "repeat"){
+      if (response.data == "repeat") {
         document.getElementById("statustext").innerHTML = "This entry already exists";
         return;
       }
-      if(response.data == "no auth"){
+      if (response.data == "no auth") {
         document.getElementById("statustext").innerHTML = "You are not authorized to use this tool. Naughty Naughty";
         document.getElementById("statustext").style = "color: red !important";
         return;
       }
       document.getElementById("statustext").innerHTML = "Success!";
       document.getElementById("statustext").style = "color: green !important";
-      setTimeout(() => {  window.location.href = "pictures.html"; }, 1500);
+      setTimeout(() => {
+        window.location.href = "pictures.html";
+      }, 1500);
     });
 }
 
-window.onload = function () {
+window.onload = function() {
   reloadpreview();
 }
 
 loaduserdata()
+
 function loaduserdata() {
   if (token == "" || tokentype == '') {
-    setTimeout(() => { loaduserdata() }, 500);
+    setTimeout(() => {
+      loaduserdata()
+    }, 500);
     return;
   }
   SetUserData();
