@@ -6,22 +6,22 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>https://www.bulletdropstudios.com/</loc>
+  <loc>https://bulletdropstudios.com/</loc>
   <lastmod>2022-05-29T23:23:54+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.bulletdropstudios.com/BulletDrop</loc>
+  <loc>https://bulletdropstudios.com/BulletDrop</loc>
   <lastmod>2022-05-29T23:23:54+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.bulletdropstudios.com/about</loc>
+  <loc>https://bulletdropstudios.com/about</loc>
   <lastmod>2022-05-29T23:23:54+00:00</lastmod>
   <priority>0.70</priority>
 </url>
 <url>
-  <loc>https://www.bulletdropstudios.com/games</loc>
+  <loc>https://bulletdropstudios.com/games</loc>
   <lastmod>2022-05-29T23:23:54+00:00</lastmod>
   <priority>0.90</priority>
 </url>
