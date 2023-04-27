@@ -1,0 +1,100 @@
+@font-face {
+  font-family: Outage_Cut;
+  src: url("../fonts/Outage_Cut.ttf");
+}
+.OutageFontCut{
+  font-family: Outage_Cut;
+}
+@font-face {
+  font-family: Outage;
+  src: url("../fonts/Outage.ttf");
+}
+.OutageFont{
+  font-family: Outage;
+}
+@font-face {
+  font-family: Quicksand;
+  src: url("../fonts/Quicksand-Medium.ttf");
+}
+.QuicksandFont{
+  font-family: Quicksand;
+}
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+h1{
+  
+}
+div.headerImageBox{
+  padding-right: 25%;
+  padding-left: 5%;
+  width: 65%;
+}
+div.headderBox{
+  padding-top: 2vh;
+}
+.halfbox {
+  width: 50% !important; 
+  padding: 0%;
+}
+.halfbox2 {
+  width: 49% !important; 
+  padding: .5%;
+}
+.quarterbox {
+  width: 25% !important; 
+  padding: 0%;
+}
+div.centerItems{
+  vertical-align: middle;
+}
+body{
+  background-color: #00060d;
+}
+br{
+  user-select: none;
+}
+.navBarItemPadding{
+  margin-left: 1.15vw;
+  margin-right: 1.15vw;
+  margin-top: 15px;
+  font-size: 2.2vw;
+}
+.navBarBuyButtonPadding{
+  margin-left: 1.6vw;
+  margin-right: 1.15vw;
+  margin-top: 15px;
+  font-size: 2.2vw;
+}
+a.navBarItemLink{
+  color: white;
+  text-decoration: underline solid transparent;
+  transition: .4s ease;
+  text-underline-position: under;
+  text-decoration-thickness: .17vw;
+  font-family: Quicksand;
+}
+a.navBarItemLink:hover{
+  color: #008bc2;
+  text-decoration: underline solid;
+  text-decoration-thickness: .17vw;
+  transition: .7s ease;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+  width: 70%;
+}
+div.footerBox{
+  background-image: linear-gradient(to top, #0c151f 90%, #00060d);
+}
+img.footerLogo{
+  margin-top: 45px;
+  margin-bottom: 45px;
+}

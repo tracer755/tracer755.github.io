@@ -1,0 +1,8 @@
+div.newsBox{
+  width: 70%; 
+  margin-left: 15%; 
+  margin-right: 15%; 
+  padding:5px; 
+  background-color: #080e14; 
+  border: 1px solid #202f40;
+}
