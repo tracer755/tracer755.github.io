@@ -12,8 +12,8 @@ div.newsBox{
   background-repeat: no-repeat; 
 }
 div.homeHeadderPadding{
-  padding-top: 8vh; 
-  padding-bottom: 10vh; 
+  padding-top: 2vh; 
+  padding-bottom: 14vh; 
 }
 
 @media (min-width: 700px) {

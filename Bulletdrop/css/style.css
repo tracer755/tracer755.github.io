@@ -32,7 +32,7 @@
 div.headerImageBox{
   padding-right: 25%;
   padding-left: 5%;
-  width: 65%;
+  width: 100%;
 }
 div.headderBox{
   padding-top: 2vh;
@@ -102,21 +102,22 @@ img.footerLogo{
 }
 h4.featureListText{
   color: white; 
-  font-size: 2.5vw;
+  font-size: 2.9vw;
+  margin: .3vw;
 }
 h2.featureText{
   color: white; 
   padding-top: 15px; 
-  font-size: 3.3vw;
+  font-size: 3.8vw;
 }
 h1.featureTitleText{
   color: white; 
   padding-top: 25px; 
-  font-size: 4.8vw;
+  font-size: 6vw;
 }
 ul.featureList{
   color: white; 
-  font-size: 2.2vw; 
+  font-size: 3vw;
 }
 
 @media (min-width: 700px) {
@@ -141,6 +142,7 @@ ul.featureList{
   h4.featureListText{
     color: white; 
     font-size: 1.4vw;
+    margin: auto;
   }
   h2.featureText{
     color: white; 
@@ -155,5 +157,10 @@ ul.featureList{
   ul.featureList{
     color: white; 
     font-size: 1.4vw; 
+  }
+  div.headerImageBox{
+    padding-right: 25%;
+    padding-left: 5%;
+    width: 65%;
   }
 }
