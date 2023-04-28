@@ -20,12 +20,14 @@
   font-family: Quicksand;
 }
 .flexContainer {
-  display: flex;
+  display: row;
   flex-direction: row;
   margin: auto;
 }
-h1{
-  
+.flex_FlexContainer {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
 }
 div.headerImageBox{
   padding-right: 25%;
@@ -36,7 +38,7 @@ div.headderBox{
   padding-top: 2vh;
 }
 .halfbox {
-  width: 50% !important; 
+  width: 100% !important; 
   padding: 0%;
 }
 .halfbox2 {
@@ -89,7 +91,7 @@ hr {
   border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0;
-  width: 70%;
+  width: 80%;
 }
 div.footerBox{
   background-image: linear-gradient(to top, #0c151f 90%, #00060d);
@@ -97,4 +99,53 @@ div.footerBox{
 img.footerLogo{
   margin-top: 45px;
   margin-bottom: 45px;
+}
+h4.featureListText{
+  color: white; 
+  font-size: 2vw;
+}
+h2.featureText{
+  color: white; 
+  padding-top: 15px; 
+  font-size: 2.5vw;
+}
+h1.featureTitleText{
+  color: white; 
+  padding-top: 25px; 
+  font-size: 3.3vw;
+}
+
+@media (min-width: 700px) {
+  .halfbox {
+    width: 50% !important; 
+    padding: 0%;
+  }
+  .flexContainer {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+  }
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+    width: 70%;
+  }
+  h4.featureListText{
+    color: white; 
+    font-size: 1.4vw;
+  }
+  h2.featureText{
+    color: white; 
+    padding-top: 15px; 
+    font-size: 2.1vw;
+  }
+  h1.featureTitleText{
+    color: white; 
+    padding-top: 25px; 
+    font-size: 2.6vw;
+  }
 }
