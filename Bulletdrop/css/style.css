@@ -91,7 +91,7 @@ hr {
   border-top: 1px solid #ccc;
   margin: 1em 0;
   padding: 0;
-  width: 80%;
+  width: 85%;
 }
 div.footerBox{
   background-image: linear-gradient(to top, #0c151f 90%, #00060d);
@@ -102,17 +102,21 @@ img.footerLogo{
 }
 h4.featureListText{
   color: white; 
-  font-size: 2vw;
+  font-size: 2.5vw;
 }
 h2.featureText{
   color: white; 
   padding-top: 15px; 
-  font-size: 2.5vw;
+  font-size: 3.3vw;
 }
 h1.featureTitleText{
   color: white; 
   padding-top: 25px; 
-  font-size: 3.3vw;
+  font-size: 4.8vw;
+}
+ul.featureList{
+  color: white; 
+  font-size: 2.2vw; 
 }
 
 @media (min-width: 700px) {
@@ -147,5 +151,9 @@ h1.featureTitleText{
     color: white; 
     padding-top: 25px; 
     font-size: 2.6vw;
+  }
+  ul.featureList{
+    color: white; 
+    font-size: 1.4vw; 
   }
 }
