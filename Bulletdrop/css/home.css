@@ -15,6 +15,10 @@ div.homeHeadderPadding{
   padding-top: 2vh; 
   padding-bottom: 14vh; 
 }
+h2.commingToText{
+  font-size: 4.28vw;
+  padding-top: 30px;
+}
 
 @media (min-width: 700px) {
   .homeHeadderImage{
@@ -25,5 +29,9 @@ div.homeHeadderPadding{
   div.homeHeadderPadding{
     padding-top: 29.3vh; 
     padding-bottom: 31.746vh; 
+  }
+  h2.commingToText{
+    font-size: 2.14vw;
+    padding-top: 0px;
   }
 }

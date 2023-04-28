@@ -20,7 +20,7 @@
   font-family: Quicksand;
 }
 .flexContainer {
-  display: row;
+  display: column;
   flex-direction: row;
   margin: auto;
 }
@@ -119,6 +119,18 @@ ul.featureList{
   color: white; 
   font-size: 3vw;
 }
+.hideOnSmallScreenFlex{
+  display: none;
+}
+.showOnSmallScreen{
+  display: block;
+}
+.featureReorder1{
+  order: 2; 
+}
+.featureReorder2{
+  order: 1; 
+}
 
 @media (min-width: 700px) {
   .halfbox {
@@ -163,4 +175,49 @@ ul.featureList{
     padding-left: 5%;
     width: 65%;
   }
+  .hideOnSmallScreenFlex{
+    display: flex;
+  }
+  .showOnSmallScreen{
+    display: none;
+  }
+  .featureReorder1{
+    order: 1; 
+  }
+  .featureReorder2{
+    order: 2; 
+  }
+}
+
+
+
+
+
+
+
+.hamburgerContainer {
+  display: inline-block;
+  cursor: pointer;
+  float: right;
+  padding-right: 5vw;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.toggleHamburger .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+.toggleHamburger .bar2 {
+  opacity: 0;
+}
+
+.toggleHamburger .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
 }

@@ -20,10 +20,17 @@
           </a>
         </div>
       </div>
-      <div class="halfbox flex_FlexContainer">
+      <div class="halfbox flex_FlexContainer hideOnSmallScreenFlex">
         <h1 class="navBarItemPadding"><a class="navBarItemLink" href="">About</a></h1>
         <h1 class="navBarItemPadding"><a class="navBarItemLink" href="">News</a></h1>
         <h1 class="navBarBuyButtonPadding"><a class="navBarItemLink" href="">Buy Soon</a></h1>
+      </div>
+      <div class="showOnSmallScreen" style="width: 55%;">
+        <div class="hamburgerContainer" onclick="changeMenuHamburger(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
       </div>
     </div>
     <br><br><br><br>
@@ -32,7 +39,7 @@
         <h2 class="OutageFont" style="color: white; user-select: none;">This site is a WIP and is not finished</h2>
       </div>
       <div class="centerItems halfbox" style="">
-        <h2 class="OutageFont" style="color: white; user-select: none; font-size: 2.14vw;">Coming to</h2>
+        <h2 class="OutageFont commingToText" style="color: white; user-select: none;">Coming to</h2>
         <img width="28%" style="user-select: none; filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(120deg) brightness(107%) contrast(107%);" src="img/Steam_2016_logo_black.svg">
       </div>
     </div>
@@ -60,14 +67,14 @@
   </div>
   <br><br>
   <div class="flexContainer">
-    <div class="halfbox">
+    <div class="halfbox featureReorder1">
       <center>
         <h1 class="OutageFont featureTitleText">Immersive world</h1>
         <hr />
         <h2 class="featureText">Placeholder</h2>
       </center>
     </div>
-    <div class="halfbox">
+    <div class="halfbox featureReorder2">
       <img src="https://pbs.twimg.com/media/FmkW20HWYAAB-sF?format=jpg&name=4096x4096" width="100%" style="-webkit-mask-image: linear-gradient(to left, white 75%, transparent); mask-image: linear-gradient(to left, white 75%, transparent);">
     </div>
   </div>
@@ -100,5 +107,6 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script src="js/headder.js"></script>
 </body>
 </html>
