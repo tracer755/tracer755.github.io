@@ -208,10 +208,12 @@ ul.featureList{
   background-color: white;
   margin: 6px 0;
   transition: 0.4s;
+  border-radius: 1px;
 }
 
 .toggleHamburger .bar1 {
   transform: translate(0, 11px) rotate(-45deg);
+  border-radius: 20px;
 }
 
 .toggleHamburger .bar2 {
@@ -220,4 +222,5 @@ ul.featureList{
 
 .toggleHamburger .bar3 {
   transform: translate(0, -11px) rotate(45deg);
+  border-radius: 20px;
 }
