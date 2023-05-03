@@ -7,7 +7,7 @@ div.newsBox{
   border: 1px solid #202f40;
 }
 .homeHeadderImage{
-  background-image: linear-gradient(to bottom, transparent 95%, #00060d), url('https://pbs.twimg.com/media/FmkW20HWYAAB-sF?format=jpg&name=4096x4096'); 
+  background-image: linear-gradient(to bottom, transparent 95%, #00060d), url('../img/FmkW20HWYAAB-sF.jpeg'); 
   background-size: cover; 
   background-repeat: no-repeat; 
 }
@@ -22,7 +22,7 @@ h2.commingToText{
 
 @media (min-width: 700px) {
   .homeHeadderImage{
-    background-image: linear-gradient(to bottom, transparent 95%, #00060d), url('https://pbs.twimg.com/media/FmkW20HWYAAB-sF?format=jpg&name=4096x4096'); 
+    background-image: linear-gradient(to bottom, transparent 95%, #00060d), url('../img/FmkW20HWYAAB-sF.jpeg'); 
     background-size: 100%; 
     background-repeat: no-repeat; 
   }
