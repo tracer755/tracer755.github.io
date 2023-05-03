@@ -7,7 +7,7 @@ div.newsBox{
   border: 1px solid #202f40;
 }
 .homeHeadderImage{
-  background-image: linear-gradient(to bottom, transparent 95%, #00060d), url('../img/FmkW20HWYAAB-sF.jpeg'); 
+  background-image: linear-gradient(to bottom, transparent 95%, #00060d), url('../content/img/FmkW20HWYAAB-sF.jpeg'); 
   background-size: cover; 
   background-repeat: no-repeat; 
 }
@@ -22,7 +22,7 @@ h2.commingToText{
 
 @media (min-width: 700px) {
   .homeHeadderImage{
-    background-image: linear-gradient(to bottom, transparent 95%, #00060d), url('../img/FmkW20HWYAAB-sF.jpeg'); 
+    background-image: linear-gradient(to bottom, transparent 95%, #00060d), url('../content/img/FmkW20HWYAAB-sF.jpeg'); 
     background-size: 100%; 
     background-repeat: no-repeat; 
   }
