@@ -1,6 +1,7 @@
 @font-face {
   font-family: Outage_Cut;
   src: url("../fonts/Outage_Cut.ttf");
+  font-display: swap;
 }
 .OutageFontCut{
   font-family: Outage_Cut;
@@ -8,6 +9,7 @@
 @font-face {
   font-family: Outage;
   src: url("../fonts/Outage.ttf");
+  font-display: swap;
 }
 .OutageFont{
   font-family: Outage;
@@ -15,6 +17,7 @@
 @font-face {
   font-family: Quicksand;
   src: url("../fonts/Quicksand-Medium.ttf");
+  font-display: swap;
 }
 .QuicksandFont{
   font-family: Quicksand;
